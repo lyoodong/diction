@@ -24,7 +24,7 @@ class RealmRepository {
     }
     
     func write<T: Object>(object: T, writetype: WriteType )  {
-        
+
         switch writetype {
         case .add:
             do {
@@ -47,7 +47,6 @@ class RealmRepository {
     }
     
     func delete<T: Object>(object: T)  {
-        
         try! realm.write {
             realm.delete(object)
             
