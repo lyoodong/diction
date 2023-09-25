@@ -29,7 +29,7 @@
 ## 📒 커밋 메시지 
 | 유형 | 설명 | 예시 |
 |----|----|----|
-|FIX | 버그, 오류 해결	| ex) [FIX] #10 - callback error | 
+| FIX | 버그, 오류 해결	| ex) [FIX] #10 - callback error | 
  ADD 
  Feat 이외의 부수적인 코드 추가/라이브러리 추가/ 새로운 View나 Activity 생성	 ex) [ADD] #11 - LoginActivity
  FEAT
