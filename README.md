@@ -25,27 +25,19 @@
 |----|----|----|----|
 |2022.09.26| Xcode Update | 업데이트는 마음 먹고 하자. | [📄](ㄹ리링링링ㅋㅋㅋ |
 
+## 📒 커밋 메시지 형식
 
-## 📒 커밋 메시지 
-| 유형 | 설명 | 예시 |
-|----|----|----|
-| FIX | 버그, 오류 해결	| ex) [FIX] #10 - callback error | 
- ADD 
- Feat 이외의 부수적인 코드 추가/라이브러리 추가/ 새로운 View나 Activity 생성	 ex) [ADD] #11 - LoginActivity
- FEAT
- 새로운 기능 구현	 ex) [FEAT] #11 - google login
- DEL 
- 쓸모없는 코드 삭제	 ex) [DEL] #12 - unnecessary import package
- REMOVE
- 파일 삭제	 ex) [REMOVE] #12 - 중복 파일 삭제
- REFACTOR 
- 내부 로직은 변경 하지 않고 기존의 코드 개선하는 리팩토링 시, 세미콜론 줄바꿈 포함	 ex) [REFACTOR] #15 - MVP architecture to MVVM
- CHORE 
- 그 이외의 잡일/ 버전 코드 수정, 패키지 구조 변경, 파일 이동, 가독성이나 변수명, reformat 등	 ex) [CHORE] #20 - delete unnecessary import package
- DESIGN
- just 화면	 ex) [DESIGN] #30 - iphone 12 레이아웃 조정
- COMMENT
- 필요한 주석 추가 및 변경	 ex) [COMMENT] #30 - 메인 뷰컨 주석 추가
- DOCS	 README나 wiki 등 내용 추가 및 변경	 ex) [DOCS] #30 - README 내용 추가
- TEST 	 테스트 코드 추가	 ex) [TEST] #30 - 로그인 토큰 테스트 코드 추가
+| 유형     | 설명                                                          | 예시                                     |
+|----------|---------------------------------------------------------------|------------------------------------------|
+| FIX      | 버그 또는 오류 해결                                           | [FIX] #10 - 콜백 오류 수정                |
+| ADD      | 새로운 코드, 라이브러리, 뷰, 또는 액티비티 추가              | [ADD] #11 - LoginActivity 추가             |
+| FEAT     | 새로운 기능 구현                                              | [FEAT] #11 - Google 로그인 추가             |
+| DEL      | 불필요한 코드 삭제                                            | [DEL] #12 - 불필요한 패키지 삭제            |
+| REMOVE   | 파일 삭제                                                     | [REMOVE] #12 - 중복 파일 삭제             |
+| REFACTOR | 내부 로직은 변경하지 않고 코드 개선 (세미콜론, 줄바꿈 포함) | [REFACTOR] #15 - MVP 아키텍처를 MVVM으로 변경 |
+| CHORE    | 그 외의 작업 (버전 코드 수정, 패키지 구조 변경, 파일 이동 등) | [CHORE] #20 - 불필요한 패키지 삭제          |
+| DESIGN   | 화면 디자인 수정                                               | [DESIGN] #30 - iPhone 12 레이아웃 조정      |
+| COMMENT  | 필요한 주석 추가 또는 변경                                     | [COMMENT] #30 - 메인 뷰컨 주석 추가         |
+| DOCS     | README 또는 위키 등 문서 내용 추가 또는 변경                  | [DOCS] #30 - README 내용 추가              |
+| TEST     | 테스트 코드 추가                                              | [TEST] #30 - 로그인 토큰 테스트 코드 추가  |
 
