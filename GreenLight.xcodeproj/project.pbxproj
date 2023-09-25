@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BED31A1F2AC191C8007E8B2B /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED31A1E2AC191C8007E8B2B /* BaseView.swift */; };
+		BED31A212AC191D7007E8B2B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED31A202AC191D7007E8B2B /* BaseViewController.swift */; };
+		BED31A232AC191E7007E8B2B /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED31A222AC191E7007E8B2B /* BaseCollectionViewCell.swift */; };
 		BED362652ABC257F00143C55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED362642ABC257F00143C55 /* AppDelegate.swift */; };
 		BED362672ABC257F00143C55 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED362662ABC257F00143C55 /* SceneDelegate.swift */; };
 		BED362692ABC257F00143C55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED362682ABC257F00143C55 /* ViewController.swift */; };
@@ -22,9 +25,17 @@
 		BEE96DA82AC1878E00CDD722 /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = BEE96DA72AC1878E00CDD722 /* Tabman */; };
 		BEE96DAB2AC187CC00CDD722 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = BEE96DAA2AC187CC00CDD722 /* Realm */; };
 		BEE96DAD2AC187CC00CDD722 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BEE96DAC2AC187CC00CDD722 /* RealmSwift */; };
+		BEE96DBA2AC18F9C00CDD722 /* Ext+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE96DB92AC18F9C00CDD722 /* Ext+UIColor.swift */; };
+		BEE96DBC2AC18FA100CDD722 /* Ext+UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE96DBB2AC18FA100CDD722 /* Ext+UIFont.swift */; };
+		BEE96DBE2AC18FDB00CDD722 /* Protocol+IDF.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE96DBD2AC18FDB00CDD722 /* Protocol+IDF.swift */; };
+		BEE96DC02AC18FF800CDD722 /* Ext+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE96DBF2AC18FF800CDD722 /* Ext+UIViewController.swift */; };
+		BEE96DC22AC18FFF00CDD722 /* Ext+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE96DC12AC18FFF00CDD722 /* Ext+UIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BED31A1E2AC191C8007E8B2B /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		BED31A202AC191D7007E8B2B /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		BED31A222AC191E7007E8B2B /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		BED362612ABC257F00143C55 /* GreenLight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GreenLight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BED362642ABC257F00143C55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BED362662ABC257F00143C55 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +47,11 @@
 		BED3627B2ABC357400143C55 /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		BED3627D2ABC3B9800143C55 /* NewQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewQuestionViewController.swift; sourceTree = "<group>"; };
 		BED3627F2ABC50BC00143C55 /* DetailQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailQuestionViewController.swift; sourceTree = "<group>"; };
+		BEE96DB92AC18F9C00CDD722 /* Ext+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+UIColor.swift"; sourceTree = "<group>"; };
+		BEE96DBB2AC18FA100CDD722 /* Ext+UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+UIFont.swift"; sourceTree = "<group>"; };
+		BEE96DBD2AC18FDB00CDD722 /* Protocol+IDF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Protocol+IDF.swift"; sourceTree = "<group>"; };
+		BEE96DBF2AC18FF800CDD722 /* Ext+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+UIViewController.swift"; sourceTree = "<group>"; };
+		BEE96DC12AC18FFF00CDD722 /* Ext+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+UIView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,12 +90,9 @@
 		BED362632ABC257F00143C55 /* GreenLight */ = {
 			isa = PBXGroup;
 			children = (
-				BED362642ABC257F00143C55 /* AppDelegate.swift */,
-				BED362662ABC257F00143C55 /* SceneDelegate.swift */,
-				BED362682ABC257F00143C55 /* ViewController.swift */,
-				BED3627A2ABC2A4200143C55 /* Wireframe */,
-				BED3626D2ABC258000143C55 /* Assets.xcassets */,
-				BED362722ABC258000143C55 /* Info.plist */,
+				BEE96DAF2AC18E6C00CDD722 /* Resource */,
+				BEE96DAE2AC18E6400CDD722 /* Source */,
+				BEE96DB22AC18EC500CDD722 /* Data */,
 			);
 			path = GreenLight;
 			sourceTree = "<group>";
@@ -94,6 +107,97 @@
 				BED3627F2ABC50BC00143C55 /* DetailQuestionViewController.swift */,
 			);
 			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		BEE96DAE2AC18E6400CDD722 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				BED3627A2ABC2A4200143C55 /* Wireframe */,
+				BEE96DB12AC18EAF00CDD722 /* Presenter */,
+				BEE96DB02AC18EA200CDD722 /* Application */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		BEE96DAF2AC18E6C00CDD722 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				BED3626D2ABC258000143C55 /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		BEE96DB02AC18EA200CDD722 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				BED362722ABC258000143C55 /* Info.plist */,
+				BED362662ABC257F00143C55 /* SceneDelegate.swift */,
+				BED362642ABC257F00143C55 /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		BEE96DB12AC18EAF00CDD722 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				BEE96DB42AC18F2000CDD722 /* Gloabl */,
+				BED362682ABC257F00143C55 /* ViewController.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		BEE96DB22AC18EC500CDD722 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				BEE96DB32AC18ECC00CDD722 /* Model */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		BEE96DB32AC18ECC00CDD722 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BEE96DB42AC18F2000CDD722 /* Gloabl */ = {
+			isa = PBXGroup;
+			children = (
+				BEE96DB72AC18F4200CDD722 /* Base */,
+				BEE96DB62AC18F2900CDD722 /* Extension */,
+				BEE96DB52AC18F2500CDD722 /* Protocol */,
+			);
+			path = Gloabl;
+			sourceTree = "<group>";
+		};
+		BEE96DB52AC18F2500CDD722 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				BEE96DBD2AC18FDB00CDD722 /* Protocol+IDF.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		BEE96DB62AC18F2900CDD722 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				BEE96DB92AC18F9C00CDD722 /* Ext+UIColor.swift */,
+				BEE96DBB2AC18FA100CDD722 /* Ext+UIFont.swift */,
+				BEE96DBF2AC18FF800CDD722 /* Ext+UIViewController.swift */,
+				BEE96DC12AC18FFF00CDD722 /* Ext+UIView.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		BEE96DB72AC18F4200CDD722 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				BED31A1E2AC191C8007E8B2B /* BaseView.swift */,
+				BED31A202AC191D7007E8B2B /* BaseViewController.swift */,
+				BED31A222AC191E7007E8B2B /* BaseCollectionViewCell.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,11 +285,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEE96DC22AC18FFF00CDD722 /* Ext+UIView.swift in Sources */,
+				BED31A1F2AC191C8007E8B2B /* BaseView.swift in Sources */,
 				BED362692ABC257F00143C55 /* ViewController.swift in Sources */,
+				BEE96DBE2AC18FDB00CDD722 /* Protocol+IDF.swift in Sources */,
 				BED3627E2ABC3B9800143C55 /* NewQuestionViewController.swift in Sources */,
+				BED31A232AC191E7007E8B2B /* BaseCollectionViewCell.swift in Sources */,
+				BED31A212AC191D7007E8B2B /* BaseViewController.swift in Sources */,
 				BED362652ABC257F00143C55 /* AppDelegate.swift in Sources */,
+				BEE96DC02AC18FF800CDD722 /* Ext+UIViewController.swift in Sources */,
 				BED362672ABC257F00143C55 /* SceneDelegate.swift in Sources */,
+				BEE96DBC2AC18FA100CDD722 /* Ext+UIFont.swift in Sources */,
 				BED3627C2ABC357400143C55 /* MyViewController.swift in Sources */,
+				BEE96DBA2AC18F9C00CDD722 /* Ext+UIColor.swift in Sources */,
 				BED362792ABC2A4000143C55 /* MainViewController.swift in Sources */,
 				BED362802ABC50BC00143C55 /* DetailQuestionViewController.swift in Sources */,
 			);
@@ -328,7 +440,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7HDHR2SNR7;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = GreenLight/Info.plist;
+				INFOPLIST_FILE = /Users/dongwanryoo/GreenLight/GreenLight/Source/Application/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -356,7 +468,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7HDHR2SNR7;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = GreenLight/Info.plist;
+				INFOPLIST_FILE = /Users/dongwanryoo/GreenLight/GreenLight/Source/Application/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
