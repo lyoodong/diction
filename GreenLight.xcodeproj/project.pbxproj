@@ -17,6 +17,11 @@
 		BED3627E2ABC3B9800143C55 /* NewQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED3627D2ABC3B9800143C55 /* NewQuestionViewController.swift */; };
 		BED362802ABC50BC00143C55 /* DetailQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED3627F2ABC50BC00143C55 /* DetailQuestionViewController.swift */; };
 		BED362842ABC51A900143C55 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = BED362832ABC51A900143C55 /* SnapKit */; };
+		BEE96DA22AC1871800CDD722 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = BEE96DA12AC1871800CDD722 /* Then */; };
+		BEE96DA52AC1874E00CDD722 /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = BEE96DA42AC1874E00CDD722 /* Hero */; };
+		BEE96DA82AC1878E00CDD722 /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = BEE96DA72AC1878E00CDD722 /* Tabman */; };
+		BEE96DAB2AC187CC00CDD722 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = BEE96DAA2AC187CC00CDD722 /* Realm */; };
+		BEE96DAD2AC187CC00CDD722 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BEE96DAC2AC187CC00CDD722 /* RealmSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,7 +43,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEE96DAD2AC187CC00CDD722 /* RealmSwift in Frameworks */,
 				BED362842ABC51A900143C55 /* SnapKit in Frameworks */,
+				BEE96DA82AC1878E00CDD722 /* Tabman in Frameworks */,
+				BEE96DA52AC1874E00CDD722 /* Hero in Frameworks */,
+				BEE96DA22AC1871800CDD722 /* Then in Frameworks */,
+				BEE96DAB2AC187CC00CDD722 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +114,11 @@
 			name = GreenLight;
 			packageProductDependencies = (
 				BED362832ABC51A900143C55 /* SnapKit */,
+				BEE96DA12AC1871800CDD722 /* Then */,
+				BEE96DA42AC1874E00CDD722 /* Hero */,
+				BEE96DA72AC1878E00CDD722 /* Tabman */,
+				BEE96DAA2AC187CC00CDD722 /* Realm */,
+				BEE96DAC2AC187CC00CDD722 /* RealmSwift */,
 			);
 			productName = GreenLight;
 			productReference = BED362612ABC257F00143C55 /* GreenLight.app */;
@@ -135,6 +150,10 @@
 			mainGroup = BED362582ABC257F00143C55;
 			packageReferences = (
 				BED362822ABC51A900143C55 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				BEE96DA02AC1871800CDD722 /* XCRemoteSwiftPackageReference "Then" */,
+				BEE96DA32AC1874E00CDD722 /* XCRemoteSwiftPackageReference "Hero" */,
+				BEE96DA62AC1878E00CDD722 /* XCRemoteSwiftPackageReference "Tabman" */,
+				BEE96DA92AC187CC00CDD722 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = BED362622ABC257F00143C55 /* Products */;
 			projectDirPath = "";
@@ -389,6 +408,38 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		BEE96DA02AC1871800CDD722 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		BEE96DA32AC1874E00CDD722 /* XCRemoteSwiftPackageReference "Hero" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/HeroTransitions/Hero";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		BEE96DA62AC1878E00CDD722 /* XCRemoteSwiftPackageReference "Tabman" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/uias/Tabman";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		BEE96DA92AC187CC00CDD722 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = exactVersion;
+				version = 10.42.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -396,6 +447,31 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BED362822ABC51A900143C55 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		BEE96DA12AC1871800CDD722 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BEE96DA02AC1871800CDD722 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+		BEE96DA42AC1874E00CDD722 /* Hero */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BEE96DA32AC1874E00CDD722 /* XCRemoteSwiftPackageReference "Hero" */;
+			productName = Hero;
+		};
+		BEE96DA72AC1878E00CDD722 /* Tabman */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BEE96DA62AC1878E00CDD722 /* XCRemoteSwiftPackageReference "Tabman" */;
+			productName = Tabman;
+		};
+		BEE96DAA2AC187CC00CDD722 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BEE96DA92AC187CC00CDD722 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		BEE96DAC2AC187CC00CDD722 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BEE96DA92AC187CC00CDD722 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
