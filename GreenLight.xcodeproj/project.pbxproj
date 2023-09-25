@@ -15,6 +15,8 @@
 		BED31A292AC198B8007E8B2B /* FolderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED31A282AC198B8007E8B2B /* FolderModel.swift */; };
 		BED31A2B2AC198BE007E8B2B /* MappingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED31A2A2AC198BE007E8B2B /* MappingModel.swift */; };
 		BED31A2D2AC1ACB4007E8B2B /* Protocol+RealmCRUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED31A2C2AC1ACB4007E8B2B /* Protocol+RealmCRUD.swift */; };
+		BED31A302AC1AE53007E8B2B /* CRUDType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED31A2F2AC1AE53007E8B2B /* CRUDType.swift */; };
+		BED31A322AC1AE94007E8B2B /* CRUDManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED31A312AC1AE94007E8B2B /* CRUDManager.swift */; };
 		BED362652ABC257F00143C55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED362642ABC257F00143C55 /* AppDelegate.swift */; };
 		BED362672ABC257F00143C55 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED362662ABC257F00143C55 /* SceneDelegate.swift */; };
 		BED362692ABC257F00143C55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED362682ABC257F00143C55 /* ViewController.swift */; };
@@ -46,6 +48,8 @@
 		BED31A282AC198B8007E8B2B /* FolderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderModel.swift; sourceTree = "<group>"; };
 		BED31A2A2AC198BE007E8B2B /* MappingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappingModel.swift; sourceTree = "<group>"; };
 		BED31A2C2AC1ACB4007E8B2B /* Protocol+RealmCRUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Protocol+RealmCRUD.swift"; sourceTree = "<group>"; };
+		BED31A2F2AC1AE53007E8B2B /* CRUDType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRUDType.swift; sourceTree = "<group>"; };
+		BED31A312AC1AE94007E8B2B /* CRUDManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRUDManager.swift; sourceTree = "<group>"; };
 		BED362612ABC257F00143C55 /* GreenLight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GreenLight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BED362642ABC257F00143C55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BED362662ABC257F00143C55 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +85,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BED31A2E2AC1AE39007E8B2B /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				BED31A2F2AC1AE53007E8B2B /* CRUDType.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		BED31A332AC1AE9C007E8B2B /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				BED31A312AC1AE94007E8B2B /* CRUDManager.swift */,
+				BEE96DB32AC18ECC00CDD722 /* Models */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
 		BED362582ABC257F00143C55 = {
 			isa = PBXGroup;
 			children = (
@@ -159,12 +180,12 @@
 		BEE96DB22AC18EC500CDD722 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				BEE96DB32AC18ECC00CDD722 /* Model */,
+				BED31A332AC1AE9C007E8B2B /* Realm */,
 			);
 			path = Data;
 			sourceTree = "<group>";
 		};
-		BEE96DB32AC18ECC00CDD722 /* Model */ = {
+		BEE96DB32AC18ECC00CDD722 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				BED31A242AC19895007E8B2B /* QuestionModel.swift */,
@@ -172,12 +193,13 @@
 				BED31A282AC198B8007E8B2B /* FolderModel.swift */,
 				BED31A2A2AC198BE007E8B2B /* MappingModel.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		BEE96DB42AC18F2000CDD722 /* Gloabl */ = {
 			isa = PBXGroup;
 			children = (
+				BED31A2E2AC1AE39007E8B2B /* Enum */,
 				BEE96DB72AC18F4200CDD722 /* Base */,
 				BEE96DB62AC18F2900CDD722 /* Extension */,
 				BEE96DB52AC18F2500CDD722 /* Protocol */,
@@ -305,6 +327,7 @@
 				BED362692ABC257F00143C55 /* ViewController.swift in Sources */,
 				BEE96DBE2AC18FDB00CDD722 /* Protocol+IDF.swift in Sources */,
 				BED3627E2ABC3B9800143C55 /* NewQuestionViewController.swift in Sources */,
+				BED31A322AC1AE94007E8B2B /* CRUDManager.swift in Sources */,
 				BED31A2D2AC1ACB4007E8B2B /* Protocol+RealmCRUD.swift in Sources */,
 				BED31A232AC191E7007E8B2B /* BaseCollectionViewCell.swift in Sources */,
 				BED31A212AC191D7007E8B2B /* BaseViewController.swift in Sources */,
@@ -320,6 +343,7 @@
 				BEE96DBA2AC18F9C00CDD722 /* Ext+UIColor.swift in Sources */,
 				BED362792ABC2A4000143C55 /* MainViewController.swift in Sources */,
 				BED362802ABC50BC00143C55 /* DetailQuestionViewController.swift in Sources */,
+				BED31A302AC1AE53007E8B2B /* CRUDType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
