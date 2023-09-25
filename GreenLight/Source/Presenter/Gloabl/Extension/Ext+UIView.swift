@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension UIView: returnIDF {
+extension UIView: ReturnIDF {
     static var IDF: String {
         return String(describing: self)
     }

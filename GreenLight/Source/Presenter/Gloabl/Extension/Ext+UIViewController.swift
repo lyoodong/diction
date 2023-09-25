@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension UIViewController: returnIDF {
+extension UIViewController: ReturnIDF {
     static var IDF: String {
         return String(describing: self)
     }

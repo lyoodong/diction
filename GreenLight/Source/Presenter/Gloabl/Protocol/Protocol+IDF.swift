@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol returnIDF {
+protocol ReturnIDF {
     static var IDF:String { get }
 }
