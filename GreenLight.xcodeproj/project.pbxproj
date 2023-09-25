@@ -13,7 +13,6 @@
 		BED31A252AC19895007E8B2B /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED31A242AC19895007E8B2B /* QuestionModel.swift */; };
 		BED31A272AC198A9007E8B2B /* AnswerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED31A262AC198A9007E8B2B /* AnswerModel.swift */; };
 		BED31A292AC198B8007E8B2B /* FolderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED31A282AC198B8007E8B2B /* FolderModel.swift */; };
-		BED31A2B2AC198BE007E8B2B /* MappingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED31A2A2AC198BE007E8B2B /* MappingModel.swift */; };
 		BED31A2D2AC1ACB4007E8B2B /* Protocol+RealmCRUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED31A2C2AC1ACB4007E8B2B /* Protocol+RealmCRUD.swift */; };
 		BED31A302AC1AE53007E8B2B /* CRUDType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED31A2F2AC1AE53007E8B2B /* CRUDType.swift */; };
 		BED31A322AC1AE94007E8B2B /* CRUDManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED31A312AC1AE94007E8B2B /* CRUDManager.swift */; };
@@ -46,7 +45,6 @@
 		BED31A242AC19895007E8B2B /* QuestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
 		BED31A262AC198A9007E8B2B /* AnswerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerModel.swift; sourceTree = "<group>"; };
 		BED31A282AC198B8007E8B2B /* FolderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderModel.swift; sourceTree = "<group>"; };
-		BED31A2A2AC198BE007E8B2B /* MappingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappingModel.swift; sourceTree = "<group>"; };
 		BED31A2C2AC1ACB4007E8B2B /* Protocol+RealmCRUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Protocol+RealmCRUD.swift"; sourceTree = "<group>"; };
 		BED31A2F2AC1AE53007E8B2B /* CRUDType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRUDType.swift; sourceTree = "<group>"; };
 		BED31A312AC1AE94007E8B2B /* CRUDManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRUDManager.swift; sourceTree = "<group>"; };
@@ -191,7 +189,6 @@
 				BED31A242AC19895007E8B2B /* QuestionModel.swift */,
 				BED31A262AC198A9007E8B2B /* AnswerModel.swift */,
 				BED31A282AC198B8007E8B2B /* FolderModel.swift */,
-				BED31A2A2AC198BE007E8B2B /* MappingModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -337,7 +334,6 @@
 				BEE96DC02AC18FF800CDD722 /* Ext+UIViewController.swift in Sources */,
 				BED362672ABC257F00143C55 /* SceneDelegate.swift in Sources */,
 				BEE96DBC2AC18FA100CDD722 /* Ext+UIFont.swift in Sources */,
-				BED31A2B2AC198BE007E8B2B /* MappingModel.swift in Sources */,
 				BED31A292AC198B8007E8B2B /* FolderModel.swift in Sources */,
 				BED3627C2ABC357400143C55 /* MyViewController.swift in Sources */,
 				BEE96DBA2AC18F9C00CDD722 /* Ext+UIColor.swift in Sources */,
