@@ -10,6 +10,11 @@
 		BED31A1F2AC191C8007E8B2B /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED31A1E2AC191C8007E8B2B /* BaseView.swift */; };
 		BED31A212AC191D7007E8B2B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED31A202AC191D7007E8B2B /* BaseViewController.swift */; };
 		BED31A232AC191E7007E8B2B /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED31A222AC191E7007E8B2B /* BaseCollectionViewCell.swift */; };
+		BED31A252AC19895007E8B2B /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED31A242AC19895007E8B2B /* QuestionModel.swift */; };
+		BED31A272AC198A9007E8B2B /* AnswerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED31A262AC198A9007E8B2B /* AnswerModel.swift */; };
+		BED31A292AC198B8007E8B2B /* FolderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED31A282AC198B8007E8B2B /* FolderModel.swift */; };
+		BED31A2B2AC198BE007E8B2B /* MappingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED31A2A2AC198BE007E8B2B /* MappingModel.swift */; };
+		BED31A2D2AC1ACB4007E8B2B /* Protocol+RealmCRUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED31A2C2AC1ACB4007E8B2B /* Protocol+RealmCRUD.swift */; };
 		BED362652ABC257F00143C55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED362642ABC257F00143C55 /* AppDelegate.swift */; };
 		BED362672ABC257F00143C55 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED362662ABC257F00143C55 /* SceneDelegate.swift */; };
 		BED362692ABC257F00143C55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED362682ABC257F00143C55 /* ViewController.swift */; };
@@ -36,6 +41,11 @@
 		BED31A1E2AC191C8007E8B2B /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		BED31A202AC191D7007E8B2B /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		BED31A222AC191E7007E8B2B /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		BED31A242AC19895007E8B2B /* QuestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
+		BED31A262AC198A9007E8B2B /* AnswerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerModel.swift; sourceTree = "<group>"; };
+		BED31A282AC198B8007E8B2B /* FolderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderModel.swift; sourceTree = "<group>"; };
+		BED31A2A2AC198BE007E8B2B /* MappingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappingModel.swift; sourceTree = "<group>"; };
+		BED31A2C2AC1ACB4007E8B2B /* Protocol+RealmCRUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Protocol+RealmCRUD.swift"; sourceTree = "<group>"; };
 		BED362612ABC257F00143C55 /* GreenLight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GreenLight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BED362642ABC257F00143C55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BED362662ABC257F00143C55 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -157,6 +167,10 @@
 		BEE96DB32AC18ECC00CDD722 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BED31A242AC19895007E8B2B /* QuestionModel.swift */,
+				BED31A262AC198A9007E8B2B /* AnswerModel.swift */,
+				BED31A282AC198B8007E8B2B /* FolderModel.swift */,
+				BED31A2A2AC198BE007E8B2B /* MappingModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -175,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				BEE96DBD2AC18FDB00CDD722 /* Protocol+IDF.swift */,
+				BED31A2C2AC1ACB4007E8B2B /* Protocol+RealmCRUD.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -290,12 +305,17 @@
 				BED362692ABC257F00143C55 /* ViewController.swift in Sources */,
 				BEE96DBE2AC18FDB00CDD722 /* Protocol+IDF.swift in Sources */,
 				BED3627E2ABC3B9800143C55 /* NewQuestionViewController.swift in Sources */,
+				BED31A2D2AC1ACB4007E8B2B /* Protocol+RealmCRUD.swift in Sources */,
 				BED31A232AC191E7007E8B2B /* BaseCollectionViewCell.swift in Sources */,
 				BED31A212AC191D7007E8B2B /* BaseViewController.swift in Sources */,
+				BED31A252AC19895007E8B2B /* QuestionModel.swift in Sources */,
 				BED362652ABC257F00143C55 /* AppDelegate.swift in Sources */,
+				BED31A272AC198A9007E8B2B /* AnswerModel.swift in Sources */,
 				BEE96DC02AC18FF800CDD722 /* Ext+UIViewController.swift in Sources */,
 				BED362672ABC257F00143C55 /* SceneDelegate.swift in Sources */,
 				BEE96DBC2AC18FA100CDD722 /* Ext+UIFont.swift in Sources */,
+				BED31A2B2AC198BE007E8B2B /* MappingModel.swift in Sources */,
+				BED31A292AC198B8007E8B2B /* FolderModel.swift in Sources */,
 				BED3627C2ABC357400143C55 /* MyViewController.swift in Sources */,
 				BEE96DBA2AC18F9C00CDD722 /* Ext+UIColor.swift in Sources */,
 				BED362792ABC2A4000143C55 /* MainViewController.swift in Sources */,
