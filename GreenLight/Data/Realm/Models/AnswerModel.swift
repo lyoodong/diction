@@ -14,9 +14,8 @@ class AnswerModel: Object {
     @Persisted var creationDate: Date
     @Persisted var answeringTime: Date
     
-    convenience init(answerID: ObjectId, answerRecord: String, creationDate: Date, answeringTime: Date) {
+    convenience init( answerRecord: String, creationDate: Date, answeringTime: Date) {
         self.init()
-        self.answerID = answerID
         self.answerRecord = answerRecord
         self.creationDate = creationDate
         self.answeringTime = answeringTime

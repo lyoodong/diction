@@ -14,12 +14,11 @@ class QuestionModel: Object {
     @Persisted var familiarityDegree: String
     @Persisted var creationDate: Date
     @Persisted var limitTime: Date
-        
-    let forlders = List<ObjectId>()
+    @Persisted var forlders = List<FolderModel>()
+    @Persisted var answers = List<AnswerModel>()
     
-    convenience init(questionID: ObjectId, questionTitle: String, familiarityDegree: String, creationDate: Date, limitTime: Date) {
+    convenience init(questionTitle: String, familiarityDegree: String, creationDate: Date, limitTime: Date) {
         self.init()
-        self.questionID = questionID
         self.questionTitle = questionTitle
         self.familiarityDegree = familiarityDegree
         self.creationDate = creationDate

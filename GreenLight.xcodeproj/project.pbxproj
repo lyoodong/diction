@@ -18,7 +18,7 @@
 		BED31A322AC1AE94007E8B2B /* CRUDManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED31A312AC1AE94007E8B2B /* CRUDManager.swift */; };
 		BED362652ABC257F00143C55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED362642ABC257F00143C55 /* AppDelegate.swift */; };
 		BED362672ABC257F00143C55 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED362662ABC257F00143C55 /* SceneDelegate.swift */; };
-		BED362692ABC257F00143C55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED362682ABC257F00143C55 /* ViewController.swift */; };
+		BED362692ABC257F00143C55 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED362682ABC257F00143C55 /* TestViewController.swift */; };
 		BED3626C2ABC257F00143C55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BED3626A2ABC257F00143C55 /* Main.storyboard */; };
 		BED3626E2ABC258000143C55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BED3626D2ABC258000143C55 /* Assets.xcassets */; };
 		BED362792ABC2A4000143C55 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED362782ABC2A3F00143C55 /* MainViewController.swift */; };
@@ -51,7 +51,7 @@
 		BED362612ABC257F00143C55 /* GreenLight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GreenLight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BED362642ABC257F00143C55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BED362662ABC257F00143C55 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BED362682ABC257F00143C55 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BED362682ABC257F00143C55 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		BED3626B2ABC257F00143C55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BED3626D2ABC258000143C55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BED362722ABC258000143C55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -170,7 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				BEE96DB42AC18F2000CDD722 /* Gloabl */,
-				BED362682ABC257F00143C55 /* ViewController.swift */,
+				BED362682ABC257F00143C55 /* TestViewController.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -321,7 +321,7 @@
 			files = (
 				BEE96DC22AC18FFF00CDD722 /* Ext+UIView.swift in Sources */,
 				BED31A1F2AC191C8007E8B2B /* BaseView.swift in Sources */,
-				BED362692ABC257F00143C55 /* ViewController.swift in Sources */,
+				BED362692ABC257F00143C55 /* TestViewController.swift in Sources */,
 				BEE96DBE2AC18FDB00CDD722 /* Protocol+IDF.swift in Sources */,
 				BED3627E2ABC3B9800143C55 /* NewQuestionViewController.swift in Sources */,
 				BED31A322AC1AE94007E8B2B /* CRUDManager.swift in Sources */,
