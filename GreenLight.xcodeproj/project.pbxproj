@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BEC118332AC822AC0087BDD2 /* SampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC118322AC822AC0087BDD2 /* SampleVC.swift */; };
 		BED31A1F2AC191C8007E8B2B /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED31A1E2AC191C8007E8B2B /* BaseView.swift */; };
 		BED31A212AC191D7007E8B2B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED31A202AC191D7007E8B2B /* BaseViewController.swift */; };
 		BED31A232AC191E7007E8B2B /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED31A222AC191E7007E8B2B /* BaseCollectionViewCell.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BEC118322AC822AC0087BDD2 /* SampleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SampleVC.swift; path = Gloabl/Protocol/SampleVC.swift; sourceTree = "<group>"; };
 		BED31A1E2AC191C8007E8B2B /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		BED31A202AC191D7007E8B2B /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		BED31A222AC191E7007E8B2B /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 			children = (
 				BEE96DB42AC18F2000CDD722 /* Gloabl */,
 				BED362682ABC257F00143C55 /* TestViewController.swift */,
+				BEC118322AC822AC0087BDD2 /* SampleVC.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				BED31A292AC198B8007E8B2B /* FolderModel.swift in Sources */,
 				BED3627C2ABC357400143C55 /* MyViewController.swift in Sources */,
 				BEE96DBA2AC18F9C00CDD722 /* Ext+UIColor.swift in Sources */,
+				BEC118332AC822AC0087BDD2 /* SampleVC.swift in Sources */,
 				BED362792ABC2A4000143C55 /* MainViewController.swift in Sources */,
 				BED362802ABC50BC00143C55 /* DetailQuestionViewController.swift in Sources */,
 				BED31A302AC1AE53007E8B2B /* CRUDType.swift in Sources */,
@@ -481,6 +485,8 @@
 				DEVELOPMENT_TEAM = 7HDHR2SNR7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = /Users/dongwanryoo/GreenLight/GreenLight/Source/Application/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "마이크를 허가해주세요.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "음성인식을 허가해주세요.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -509,6 +515,8 @@
 				DEVELOPMENT_TEAM = 7HDHR2SNR7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = /Users/dongwanryoo/GreenLight/GreenLight/Source/Application/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "마이크를 허가해주세요.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "음성인식을 허가해주세요.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

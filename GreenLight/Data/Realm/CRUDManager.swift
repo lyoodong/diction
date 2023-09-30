@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-class RealmRepository {
+class CRUDManager {
     
     var realm = try! Realm()
 
