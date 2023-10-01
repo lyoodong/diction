@@ -10,8 +10,7 @@ import Then
 import SnapKit
 
 final class TabBarViewController: UITabBarController {
-    
-    //추가할 VC
+
     private let main = MainViewController()
     private let myPage = MyPageViewController()
     
@@ -29,7 +28,6 @@ final class TabBarViewController: UITabBarController {
         randomTapConstraints()
     }
     
-    //탭바 설정
     func viewSet(){
         addViewControllers()
         self.tabBar.roundCorners(cornerRadius: 18, maskedCorners: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
@@ -38,14 +36,12 @@ final class TabBarViewController: UITabBarController {
         self.tabBar.backgroundColor = .white
     }
     
-    //탭바에 VC추가
     func addViewControllers() {
         let mainTab = createViewController(title: "내 질문", imageName: "headphones", viewController: main)
         let myPageTab = createViewController(title: "내 정보", imageName: "person.fill", viewController: myPage)
         self.viewControllers = [mainTab, myPageTab]
     }
     
-    //VC에 네비게이션 컨트롤러 연결 및 각 탭에 대한 이미지 설정
     func createViewController(title: String, imageName: String, viewController: UIViewController) -> UINavigationController {
         let nav = UINavigationController(rootViewController: viewController)
         let image = UIImage(systemName:imageName)
