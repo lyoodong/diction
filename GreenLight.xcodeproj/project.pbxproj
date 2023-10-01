@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BEA9E23E2AC948BB00D747DD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = BEA9E23D2AC948BB00D747DD /* SnapKit */; };
+		BEAAB7C12AC950790019E295 /* RandomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAB7C02AC950790019E295 /* RandomViewController.swift */; };
 		BEC118332AC822AC0087BDD2 /* SampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC118322AC822AC0087BDD2 /* SampleVC.swift */; };
 		BEC118392AC945E90087BDD2 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC118382AC945E90087BDD2 /* TabBarViewController.swift */; };
 		BEC1183B2AC946050087BDD2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC1183A2AC946050087BDD2 /* MainViewController.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BEAAB7C02AC950790019E295 /* RandomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomViewController.swift; sourceTree = "<group>"; };
 		BEC118322AC822AC0087BDD2 /* SampleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SampleVC.swift; path = Gloabl/Protocol/SampleVC.swift; sourceTree = "<group>"; };
 		BEC118382AC945E90087BDD2 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		BEC1183A2AC946050087BDD2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 		BEC118352AC93CE00087BDD2 /* Random */ = {
 			isa = PBXGroup;
 			children = (
+				BEAAB7C02AC950790019E295 /* RandomViewController.swift */,
 			);
 			path = Random;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEC1183D2AC946250087BDD2 /* MyPageViewController.swift in Sources */,
+				BEAAB7C12AC950790019E295 /* RandomViewController.swift in Sources */,
 				BEE96DC22AC18FFF00CDD722 /* Ext+UIView.swift in Sources */,
 				BED31A1F2AC191C8007E8B2B /* BaseView.swift in Sources */,
 				BED362692ABC257F00143C55 /* TestViewController.swift in Sources */,
