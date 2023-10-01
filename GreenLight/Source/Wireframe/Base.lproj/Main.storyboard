@@ -1021,7 +1021,7 @@
         <!--main-->
         <scene sceneID="7Im-B7-U3U">
             <objects>
-                <viewController id="xhx-2v-1W0" customClass="MainViewController" customModule="GreenLight" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xhx-2v-1W0" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GJ8-fu-dOP">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1525,7 +1525,6 @@
         <!--main-->
         <scene sceneID="wfj-8n-DuW">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LJ0-MI-FfZ" sceneMemberID="firstResponder"/>
                 <viewController id="KbV-qU-xbD" customClass="MainViewController" customModule="GreenLight" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eZU-ln-7Qm">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
@@ -1727,6 +1726,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="main" image="airpodsmax" catalog="system" selectedImage="airpodsmax" id="bT3-if-kNq"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LJ0-MI-FfZ" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-254" y="-673"/>
         </scene>

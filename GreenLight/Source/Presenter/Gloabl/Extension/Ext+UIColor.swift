@@ -10,6 +10,8 @@ import UIKit
 extension UIColor {
     
     static let mainWhite = UIColor(hexString: "#FFFFFF")
+    static let mainBlue = UIColor(hexString: "#6078FA")
+    static let bgGrey = UIColor(hexString: "#F8F8FA")
     
 }
  

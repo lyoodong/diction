@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BEA9E23E2AC948BB00D747DD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = BEA9E23D2AC948BB00D747DD /* SnapKit */; };
 		BEC118332AC822AC0087BDD2 /* SampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC118322AC822AC0087BDD2 /* SampleVC.swift */; };
+		BEC118392AC945E90087BDD2 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC118382AC945E90087BDD2 /* TabBarViewController.swift */; };
+		BEC1183B2AC946050087BDD2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC1183A2AC946050087BDD2 /* MainViewController.swift */; };
+		BEC1183D2AC946250087BDD2 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC1183C2AC946250087BDD2 /* MyPageViewController.swift */; };
 		BED31A1F2AC191C8007E8B2B /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED31A1E2AC191C8007E8B2B /* BaseView.swift */; };
 		BED31A212AC191D7007E8B2B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED31A202AC191D7007E8B2B /* BaseViewController.swift */; };
 		BED31A232AC191E7007E8B2B /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED31A222AC191E7007E8B2B /* BaseCollectionViewCell.swift */; };
@@ -20,13 +24,10 @@
 		BED362652ABC257F00143C55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED362642ABC257F00143C55 /* AppDelegate.swift */; };
 		BED362672ABC257F00143C55 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED362662ABC257F00143C55 /* SceneDelegate.swift */; };
 		BED362692ABC257F00143C55 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED362682ABC257F00143C55 /* TestViewController.swift */; };
-		BED3626C2ABC257F00143C55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BED3626A2ABC257F00143C55 /* Main.storyboard */; };
-		BED3626E2ABC258000143C55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BED3626D2ABC258000143C55 /* Assets.xcassets */; };
-		BED362792ABC2A4000143C55 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED362782ABC2A3F00143C55 /* MainViewController.swift */; };
+		BED362792ABC2A4000143C55 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED362782ABC2A3F00143C55 /* HomeViewController.swift */; };
 		BED3627C2ABC357400143C55 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED3627B2ABC357400143C55 /* MyViewController.swift */; };
 		BED3627E2ABC3B9800143C55 /* NewQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED3627D2ABC3B9800143C55 /* NewQuestionViewController.swift */; };
 		BED362802ABC50BC00143C55 /* DetailQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED3627F2ABC50BC00143C55 /* DetailQuestionViewController.swift */; };
-		BED362842ABC51A900143C55 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = BED362832ABC51A900143C55 /* SnapKit */; };
 		BEE96DA22AC1871800CDD722 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = BEE96DA12AC1871800CDD722 /* Then */; };
 		BEE96DA52AC1874E00CDD722 /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = BEE96DA42AC1874E00CDD722 /* Hero */; };
 		BEE96DA82AC1878E00CDD722 /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = BEE96DA72AC1878E00CDD722 /* Tabman */; };
@@ -41,6 +42,10 @@
 
 /* Begin PBXFileReference section */
 		BEC118322AC822AC0087BDD2 /* SampleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SampleVC.swift; path = Gloabl/Protocol/SampleVC.swift; sourceTree = "<group>"; };
+		BEC118382AC945E90087BDD2 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		BEC1183A2AC946050087BDD2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		BEC1183C2AC946250087BDD2 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		BEC1183E2AC947E30087BDD2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BED31A1E2AC191C8007E8B2B /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		BED31A202AC191D7007E8B2B /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		BED31A222AC191E7007E8B2B /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -56,8 +61,7 @@
 		BED362682ABC257F00143C55 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		BED3626B2ABC257F00143C55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BED3626D2ABC258000143C55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BED362722ABC258000143C55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BED362782ABC2A3F00143C55 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		BED362782ABC2A3F00143C55 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BED3627B2ABC357400143C55 /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		BED3627D2ABC3B9800143C55 /* NewQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewQuestionViewController.swift; sourceTree = "<group>"; };
 		BED3627F2ABC50BC00143C55 /* DetailQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailQuestionViewController.swift; sourceTree = "<group>"; };
@@ -74,9 +78,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEE96DAD2AC187CC00CDD722 /* RealmSwift in Frameworks */,
-				BED362842ABC51A900143C55 /* SnapKit in Frameworks */,
 				BEE96DA82AC1878E00CDD722 /* Tabman in Frameworks */,
 				BEE96DA52AC1874E00CDD722 /* Hero in Frameworks */,
+				BEA9E23E2AC948BB00D747DD /* SnapKit in Frameworks */,
 				BEE96DA22AC1871800CDD722 /* Then in Frameworks */,
 				BEE96DAB2AC187CC00CDD722 /* Realm in Frameworks */,
 			);
@@ -85,6 +89,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BEC118342AC93CD50087BDD2 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				BEC118382AC945E90087BDD2 /* TabBarViewController.swift */,
+				BEC1183A2AC946050087BDD2 /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		BEC118352AC93CE00087BDD2 /* Random */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Random;
+			sourceTree = "<group>";
+		};
+		BEC118362AC93CE50087BDD2 /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				BEC1183C2AC946250087BDD2 /* MyPageViewController.swift */,
+			);
+			path = MyPage;
+			sourceTree = "<group>";
+		};
 		BED31A2E2AC1AE39007E8B2B /* Enum */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,7 +161,7 @@
 			children = (
 				BED3626A2ABC257F00143C55 /* Main.storyboard */,
 				BED3627D2ABC3B9800143C55 /* NewQuestionViewController.swift */,
-				BED362782ABC2A3F00143C55 /* MainViewController.swift */,
+				BED362782ABC2A3F00143C55 /* HomeViewController.swift */,
 				BED3627B2ABC357400143C55 /* MyViewController.swift */,
 				BED3627F2ABC50BC00143C55 /* DetailQuestionViewController.swift */,
 			);
@@ -161,9 +189,9 @@
 		BEE96DB02AC18EA200CDD722 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				BED362722ABC258000143C55 /* Info.plist */,
 				BED362662ABC257F00143C55 /* SceneDelegate.swift */,
 				BED362642ABC257F00143C55 /* AppDelegate.swift */,
+				BEC1183E2AC947E30087BDD2 /* Info.plist */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -172,6 +200,9 @@
 			isa = PBXGroup;
 			children = (
 				BEE96DB42AC18F2000CDD722 /* Gloabl */,
+				BEC118362AC93CE50087BDD2 /* MyPage */,
+				BEC118352AC93CE00087BDD2 /* Random */,
+				BEC118342AC93CD50087BDD2 /* Main */,
 				BED362682ABC257F00143C55 /* TestViewController.swift */,
 				BEC118322AC822AC0087BDD2 /* SampleVC.swift */,
 			);
@@ -254,12 +285,12 @@
 			);
 			name = GreenLight;
 			packageProductDependencies = (
-				BED362832ABC51A900143C55 /* SnapKit */,
 				BEE96DA12AC1871800CDD722 /* Then */,
 				BEE96DA42AC1874E00CDD722 /* Hero */,
 				BEE96DA72AC1878E00CDD722 /* Tabman */,
 				BEE96DAA2AC187CC00CDD722 /* Realm */,
 				BEE96DAC2AC187CC00CDD722 /* RealmSwift */,
+				BEA9E23D2AC948BB00D747DD /* SnapKit */,
 			);
 			productName = GreenLight;
 			productReference = BED362612ABC257F00143C55 /* GreenLight.app */;
@@ -290,11 +321,11 @@
 			);
 			mainGroup = BED362582ABC257F00143C55;
 			packageReferences = (
-				BED362822ABC51A900143C55 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				BEE96DA02AC1871800CDD722 /* XCRemoteSwiftPackageReference "Then" */,
 				BEE96DA32AC1874E00CDD722 /* XCRemoteSwiftPackageReference "Hero" */,
 				BEE96DA62AC1878E00CDD722 /* XCRemoteSwiftPackageReference "Tabman" */,
 				BEE96DA92AC187CC00CDD722 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				BEA9E23C2AC948BB00D747DD /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = BED362622ABC257F00143C55 /* Products */;
 			projectDirPath = "";
@@ -310,8 +341,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BED3626E2ABC258000143C55 /* Assets.xcassets in Resources */,
-				BED3626C2ABC257F00143C55 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,11 +351,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEC1183D2AC946250087BDD2 /* MyPageViewController.swift in Sources */,
 				BEE96DC22AC18FFF00CDD722 /* Ext+UIView.swift in Sources */,
 				BED31A1F2AC191C8007E8B2B /* BaseView.swift in Sources */,
 				BED362692ABC257F00143C55 /* TestViewController.swift in Sources */,
 				BEE96DBE2AC18FDB00CDD722 /* Protocol+IDF.swift in Sources */,
 				BED3627E2ABC3B9800143C55 /* NewQuestionViewController.swift in Sources */,
+				BEC118392AC945E90087BDD2 /* TabBarViewController.swift in Sources */,
 				BED31A322AC1AE94007E8B2B /* CRUDManager.swift in Sources */,
 				BED31A2D2AC1ACB4007E8B2B /* Protocol+RealmCRUD.swift in Sources */,
 				BED31A232AC191E7007E8B2B /* BaseCollectionViewCell.swift in Sources */,
@@ -336,12 +367,13 @@
 				BED31A272AC198A9007E8B2B /* AnswerModel.swift in Sources */,
 				BEE96DC02AC18FF800CDD722 /* Ext+UIViewController.swift in Sources */,
 				BED362672ABC257F00143C55 /* SceneDelegate.swift in Sources */,
+				BEC1183B2AC946050087BDD2 /* MainViewController.swift in Sources */,
 				BEE96DBC2AC18FA100CDD722 /* Ext+UIFont.swift in Sources */,
 				BED31A292AC198B8007E8B2B /* FolderModel.swift in Sources */,
 				BED3627C2ABC357400143C55 /* MyViewController.swift in Sources */,
 				BEE96DBA2AC18F9C00CDD722 /* Ext+UIColor.swift in Sources */,
 				BEC118332AC822AC0087BDD2 /* SampleVC.swift in Sources */,
-				BED362792ABC2A4000143C55 /* MainViewController.swift in Sources */,
+				BED362792ABC2A4000143C55 /* HomeViewController.swift in Sources */,
 				BED362802ABC50BC00143C55 /* DetailQuestionViewController.swift in Sources */,
 				BED31A302AC1AE53007E8B2B /* CRUDType.swift in Sources */,
 			);
@@ -489,7 +521,6 @@
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "음성인식을 허가해주세요.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -519,8 +550,6 @@
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "음성인식을 허가해주세요.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				"INFOPLIST_KEY_UIMainStoryboardFile[sdk=*]" = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -560,9 +589,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		BED362822ABC51A900143C55 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		BEA9E23C2AC948BB00D747DD /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 5.0.0;
@@ -603,9 +632,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		BED362832ABC51A900143C55 /* SnapKit */ = {
+		BEA9E23D2AC948BB00D747DD /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = BED362822ABC51A900143C55 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = BEA9E23C2AC948BB00D747DD /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
 		BEE96DA12AC1871800CDD722 /* Then */ = {
