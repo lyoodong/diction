@@ -20,7 +20,7 @@ class BaseView: UIView {
     }
     
     func viewSet() {
-        self.backgroundColor = .black
+        self.backgroundColor = .bgGrey
     }
     
     func constraints() {
