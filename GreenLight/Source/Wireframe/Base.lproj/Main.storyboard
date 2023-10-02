@@ -1432,7 +1432,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G0c-Hv-vYd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="418" y="-2"/>
+            <point key="canvasLocation" x="417.55725190839695" y="-2.1126760563380285"/>
         </scene>
         <!--Random-->
         <scene sceneID="dKD-TI-v2s">
@@ -1525,7 +1525,7 @@
         <!--main-->
         <scene sceneID="wfj-8n-DuW">
             <objects>
-                <viewController id="KbV-qU-xbD" customClass="MainViewController" customModule="GreenLight" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="KbV-qU-xbD" customClass="HomeViewController" customModule="GreenLight" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eZU-ln-7Qm">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

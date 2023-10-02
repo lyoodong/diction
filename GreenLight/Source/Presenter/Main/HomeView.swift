@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainView: BaseView {
+class HomeView: BaseView {
     
     lazy var mainCollectionView = BaseCollectionView()
     

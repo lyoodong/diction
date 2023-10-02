@@ -11,7 +11,7 @@ import SnapKit
 
 final class TabBarViewController: UITabBarController {
     
-    private let main = MainViewController()
+    private let home = HomeViewController()
     private let myPage = MyPageViewController()
     
     private let randomTap = UIButton().then {
@@ -41,7 +41,7 @@ final class TabBarViewController: UITabBarController {
     }
     
     func addViewControllers() {
-        let mainTab = createViewController(title: "내 질문", imageName: "headphones", viewController: main)
+        let mainTab = createViewController(title: "내 질문", imageName: "headphones", viewController: home)
         let myPageTab = createViewController(title: "내 정보", imageName: "person.fill", viewController: myPage)
         self.navigationController?.navigationBar.isHidden = true
         self.viewControllers = [mainTab, myPageTab]

@@ -7,12 +7,12 @@
 
 import UIKit
 
-class MainViewController: BaseViewController {
+class HomeViewController: BaseViewController {
     
-    let mainView = MainView()
+    let homeView = HomeView()
     
     override func loadView() {
-        view = mainView
+        view = homeView
     }
     
     override func viewSet() {
@@ -27,7 +27,7 @@ class MainViewController: BaseViewController {
 }
 
 // MARK: - setNavigationItem
-extension MainViewController {
+extension HomeViewController {
     
     func setNavigationItem() {
         navigationItem.title = "나의 질문"
@@ -53,7 +53,7 @@ extension MainViewController {
 }
 
 // MARK: - UISearchBarDelegate
-extension MainViewController: UISearchBarDelegate {
+extension HomeViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
     }
@@ -63,12 +63,12 @@ extension MainViewController: UISearchBarDelegate {
     }
 }
 
-extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func setCollectionView() {
-        mainView.mainCollectionView.delegate = self
-        mainView.mainCollectionView.dataSource = self
-        mainView.mainCollectionView.register(BaseCollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        homeView.mainCollectionView.delegate = self
+        homeView.mainCollectionView.dataSource = self
+        homeView.mainCollectionView.register(BaseCollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
