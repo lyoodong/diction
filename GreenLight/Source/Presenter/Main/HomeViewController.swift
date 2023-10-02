@@ -30,11 +30,11 @@ class HomeViewController: BaseViewController {
 extension HomeViewController {
     
     func setNavigationItem() {
+    
         navigationItem.title = "나의 질문"
         navigationItem.largeTitleDisplayMode = .automatic
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.barStyle = .default
-        
+        navigationController?.navigationBar.barStyle = .black
         
         let logoImage = UIImage(systemName: "star.fill")
         let logoBarButton = UIBarButtonItem(image: logoImage, style: .plain, target: self, action: nil)
@@ -43,11 +43,11 @@ extension HomeViewController {
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: nil)
         navigationItem.rightBarButtonItem = addButton
         
-        let searchBarController = BaseSearchController()
-        searchBarController.searchBar.delegate = self
-        searchBarController.searchBar.searchTextField.backgroundColor = .white
-        searchBarController.searchBar.searchTextField.placeholder = " 질문을 검색해 보세요"
-        navigationItem.searchController = searchBarController
+//        let searchBarController = BaseSearchController()
+//        searchBarController.searchBar.delegate = self
+//        searchBarController.searchBar.searchTextField.backgroundColor = .white
+//        searchBarController.searchBar.searchTextField.placeholder = " 질문을 검색해 보세요"
+//        navigationItem.searchController = searchBarController
     }
     
 }
@@ -66,9 +66,9 @@ extension HomeViewController: UISearchBarDelegate {
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func setCollectionView() {
-        homeView.mainCollectionView.delegate = self
-        homeView.mainCollectionView.dataSource = self
-        homeView.mainCollectionView.register(BaseCollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        homeView.homeCollectionView.delegate = self
+        homeView.homeCollectionView.dataSource = self
+        homeView.homeCollectionView.register(BaseCollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

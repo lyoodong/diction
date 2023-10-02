@@ -18,7 +18,8 @@ class BaseCollectionViewCell: UICollectionViewCell {
     }
     
     lazy var levelStatusImageView = UIImageView().then {
-        $0.image = UIImage(named: "lowLevel")
+        let image = UIImage(systemName: "star")
+        $0.image = image
     }
     
     lazy var levelStatusLabel = UILabel().then {
@@ -30,6 +31,7 @@ class BaseCollectionViewCell: UICollectionViewCell {
     lazy var levelStatusStackView = UIStackView().then {
         $0.backgroundColor = .tabBarGrey
         $0.spacing = 4
+        $0.layer.cornerRadius = 6
         $0.addArrangedSubview(levelStatusImageView)
         $0.addArrangedSubview(levelStatusLabel)
     }
@@ -95,14 +97,14 @@ class BaseCollectionViewCell: UICollectionViewCell {
             $0.top.equalTo(Constant.spacing * 3)
             $0.leading.equalTo(Constant.spacing * 3)
         }
-        
+    
         levelStatusStackView.snp.makeConstraints {
             $0.top.equalTo(cellTitleLabel.snp.bottom).offset(Constant.spacing)
             $0.leading.equalTo(Constant.spacing * 3)
         }
         
         interviewStackView.snp.makeConstraints {
-            $0.top.equalTo(cellTitleLabel.snp.bottom).offset(Constant.spacing)
+            $0.top.equalTo(levelStatusStackView.snp.bottom).offset(Constant.spacing)
             $0.leading.equalTo(Constant.spacing * 3)
         }
     }

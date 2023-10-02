@@ -36,8 +36,9 @@ final class TabBarViewController: UITabBarController {
         self.tabBar.roundCorners(cornerRadius: 18, maskedCorners: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
         self.tabBar.tintColor = .mainBlue
         self.tabBar.unselectedItemTintColor = .tabBarGrey
-        self.tabBar.barTintColor = .white
+        self.tabBar.backgroundColor = .white
         self.tabBar.isTranslucent = true
+        
     }
     
     func addViewControllers() {
