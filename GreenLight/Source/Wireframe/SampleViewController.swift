@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class SampleViewController: UIViewController {
     
     @IBOutlet var questionBox: UIView!
     @IBOutlet var questionBox2: UIView!
