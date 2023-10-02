@@ -10,7 +10,7 @@ import Then
 import SnapKit
 
 final class TabBarViewController: UITabBarController {
-
+    
     private let main = MainViewController()
     private let myPage = MyPageViewController()
     
@@ -23,22 +23,27 @@ final class TabBarViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.isHidden = true
         viewSet()
-        randomTapConstraints()
     }
     
     func viewSet(){
+        tabBarSet()
         addViewControllers()
+        randomTapLayout()
+    }
+    
+    func tabBarSet() {
         self.tabBar.roundCorners(cornerRadius: 18, maskedCorners: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
         self.tabBar.tintColor = .mainBlue
         self.tabBar.unselectedItemTintColor = .tabBarGrey
-        self.tabBar.backgroundColor = .white
+        self.tabBar.barTintColor = .white
+        self.tabBar.isTranslucent = true
     }
     
     func addViewControllers() {
         let mainTab = createViewController(title: "내 질문", imageName: "headphones", viewController: main)
         let myPageTab = createViewController(title: "내 정보", imageName: "person.fill", viewController: myPage)
+        self.navigationController?.navigationBar.isHidden = true
         self.viewControllers = [mainTab, myPageTab]
     }
     
@@ -47,11 +52,11 @@ final class TabBarViewController: UITabBarController {
         let image = UIImage(systemName:imageName)
         nav.tabBarItem.image = image
         nav.tabBarItem.title = title
-
+        
         return nav
     }
     
-    func randomTapConstraints() {
+    func randomTapLayout() {
         view.addSubview(randomTap)
         
         randomTap.snp.makeConstraints {

@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		BEA9E23E2AC948BB00D747DD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = BEA9E23D2AC948BB00D747DD /* SnapKit */; };
 		BEAAB7C12AC950790019E295 /* RandomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAB7C02AC950790019E295 /* RandomViewController.swift */; };
+		BEAAB7C42AC956290019E295 /* BaseSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAB7C32AC956290019E295 /* BaseSearchController.swift */; };
+		BEAAB7C62AC957EE0019E295 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAB7C52AC957EE0019E295 /* MainView.swift */; };
+		BEAAB7C92AC96BC20019E295 /* BaseColletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAB7C82AC96BC20019E295 /* BaseColletionView.swift */; };
+		BEAAB7CC2AC96D330019E295 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAB7CB2AC96D330019E295 /* Constant.swift */; };
 		BEC118332AC822AC0087BDD2 /* SampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC118322AC822AC0087BDD2 /* SampleVC.swift */; };
 		BEC118392AC945E90087BDD2 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC118382AC945E90087BDD2 /* TabBarViewController.swift */; };
 		BEC1183B2AC946050087BDD2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC1183A2AC946050087BDD2 /* MainViewController.swift */; };
@@ -43,6 +47,10 @@
 
 /* Begin PBXFileReference section */
 		BEAAB7C02AC950790019E295 /* RandomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomViewController.swift; sourceTree = "<group>"; };
+		BEAAB7C32AC956290019E295 /* BaseSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSearchController.swift; sourceTree = "<group>"; };
+		BEAAB7C52AC957EE0019E295 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		BEAAB7C82AC96BC20019E295 /* BaseColletionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseColletionView.swift; sourceTree = "<group>"; };
+		BEAAB7CB2AC96D330019E295 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		BEC118322AC822AC0087BDD2 /* SampleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SampleVC.swift; path = Gloabl/Protocol/SampleVC.swift; sourceTree = "<group>"; };
 		BEC118382AC945E90087BDD2 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		BEC1183A2AC946050087BDD2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -91,11 +99,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BEAAB7CA2AC96D290019E295 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				BEAAB7CB2AC96D330019E295 /* Constant.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
 		BEC118342AC93CD50087BDD2 /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				BEC118382AC945E90087BDD2 /* TabBarViewController.swift */,
 				BEC1183A2AC946050087BDD2 /* MainViewController.swift */,
+				BEAAB7C52AC957EE0019E295 /* MainView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -233,6 +250,7 @@
 		BEE96DB42AC18F2000CDD722 /* Gloabl */ = {
 			isa = PBXGroup;
 			children = (
+				BEAAB7CA2AC96D290019E295 /* Constant */,
 				BED31A2E2AC1AE39007E8B2B /* Enum */,
 				BEE96DB72AC18F4200CDD722 /* Base */,
 				BEE96DB62AC18F2900CDD722 /* Extension */,
@@ -267,6 +285,8 @@
 				BED31A1E2AC191C8007E8B2B /* BaseView.swift */,
 				BED31A202AC191D7007E8B2B /* BaseViewController.swift */,
 				BED31A222AC191E7007E8B2B /* BaseCollectionViewCell.swift */,
+				BEAAB7C32AC956290019E295 /* BaseSearchController.swift */,
+				BEAAB7C82AC96BC20019E295 /* BaseColletionView.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -355,6 +375,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEC1183D2AC946250087BDD2 /* MyPageViewController.swift in Sources */,
+				BEAAB7C62AC957EE0019E295 /* MainView.swift in Sources */,
 				BEAAB7C12AC950790019E295 /* RandomViewController.swift in Sources */,
 				BEE96DC22AC18FFF00CDD722 /* Ext+UIView.swift in Sources */,
 				BED31A1F2AC191C8007E8B2B /* BaseView.swift in Sources */,
@@ -363,12 +384,14 @@
 				BED3627E2ABC3B9800143C55 /* NewQuestionViewController.swift in Sources */,
 				BEC118392AC945E90087BDD2 /* TabBarViewController.swift in Sources */,
 				BED31A322AC1AE94007E8B2B /* CRUDManager.swift in Sources */,
+				BEAAB7C92AC96BC20019E295 /* BaseColletionView.swift in Sources */,
 				BED31A2D2AC1ACB4007E8B2B /* Protocol+RealmCRUD.swift in Sources */,
 				BED31A232AC191E7007E8B2B /* BaseCollectionViewCell.swift in Sources */,
 				BED31A212AC191D7007E8B2B /* BaseViewController.swift in Sources */,
 				BED31A252AC19895007E8B2B /* QuestionModel.swift in Sources */,
 				BED362652ABC257F00143C55 /* AppDelegate.swift in Sources */,
 				BED31A272AC198A9007E8B2B /* AnswerModel.swift in Sources */,
+				BEAAB7CC2AC96D330019E295 /* Constant.swift in Sources */,
 				BEE96DC02AC18FF800CDD722 /* Ext+UIViewController.swift in Sources */,
 				BED362672ABC257F00143C55 /* SceneDelegate.swift in Sources */,
 				BEC1183B2AC946050087BDD2 /* MainViewController.swift in Sources */,
@@ -380,6 +403,7 @@
 				BED362792ABC2A4000143C55 /* HomeViewController.swift in Sources */,
 				BED362802ABC50BC00143C55 /* DetailQuestionViewController.swift in Sources */,
 				BED31A302AC1AE53007E8B2B /* CRUDType.swift in Sources */,
+				BEAAB7C42AC956290019E295 /* BaseSearchController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
