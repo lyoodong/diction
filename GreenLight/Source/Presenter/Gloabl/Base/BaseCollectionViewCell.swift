@@ -14,7 +14,7 @@ class BaseCollectionViewCell: UICollectionViewCell {
     lazy var cellTitleLabel = UILabel().then {
         $0.text = "새싹 5기 면접 질문"
         $0.textColor = .black
-        $0.font = UIFont.boldSystemFont(ofSize: 24)
+        $0.font = UIFont.boldSystemFont(ofSize: 20)
     }
     
     let levelStatusImageView = UIImageView().then {
@@ -62,10 +62,9 @@ class BaseCollectionViewCell: UICollectionViewCell {
     }
     
     lazy var editButton = UIButton().then {
-        let image = UIImage(named: "Edit_fill")
+        let image = UIImage(named: "Edit")
         $0.setImage(image, for: .normal)
     }
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -80,13 +79,12 @@ class BaseCollectionViewCell: UICollectionViewCell {
     
     func viewSet() {
         self.backgroundColor = .mainWhite
-        addSubView()
         self.layer.cornerRadius = 12
-        
+        addSubView()
     }
     
     func addSubView() {
-        [cellTitleLabel, levelStatusStackView, interviewStackView].forEach(addSubview)
+        [cellTitleLabel, levelStatusStackView, interviewStackView, editButton].forEach(addSubview)
     }
     
     func constraints() {
@@ -109,6 +107,13 @@ class BaseCollectionViewCell: UICollectionViewCell {
             $0.top.equalTo(levelStatusStackView.snp.bottom).offset(Constant.spacing)
             $0.leading.equalTo(Constant.spacing * 3)
         }
+        
+        editButton.snp.makeConstraints {
+            $0.top.equalTo(Constant.spacing * 3)
+            $0.trailing.equalTo(-Constant.spacing * 3)
+            $0.size.equalTo(18)
+        }
+
     }
     
 }

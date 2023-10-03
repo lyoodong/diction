@@ -15,7 +15,7 @@ final class QuestionView: BaseView {
     }
     
     override func viewSet() {
-        self.backgroundColor = .mainBlue
+        self.backgroundColor = .bgGrey
         addSubView()
     }
     
@@ -27,11 +27,12 @@ final class QuestionView: BaseView {
         
         sortButton.snp.makeConstraints {
             $0.top.equalTo(self.safeAreaLayoutGuide)
-            $0.trailing.equalTo(self.safeAreaLayoutGuide).inset(Constant.spacing * 3)
+            $0.trailing.equalTo(self.safeAreaLayoutGuide).inset(Constant.spacing)
             
         }
+        
         questionCollectionView.snp.makeConstraints {
-            $0.top.equalTo(sortButton.snp.bottom).offset(Constant.spacing * 2)
+            $0.top.equalTo(sortButton.snp.bottom)
             $0.leading.equalTo(self.safeAreaLayoutGuide)
             $0.trailing.equalTo(self.safeAreaLayoutGuide)
             $0.bottom.equalToSuperview()

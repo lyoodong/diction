@@ -47,17 +47,14 @@ extension QuestionViewController {
         navigationItem.title = "새싹 5기 면접질문"
         navigationItem.largeTitleDisplayMode = .always
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.barStyle = .black
+        navigationController?.navigationBar.tintColor = .black
+        
         
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: nil)
-        addButton.tintColor = .white
+        addButton.tintColor = .black
         navigationItem.rightBarButtonItem = addButton
         
         let searchBarController = BaseSearchController()
-        
-//        let textFieldInsideSearchBar = searchBarController.searchBar.value(forKey: "searchField") as? UITextField
-//        textFieldInsideSearchBar?.borderStyle = .bezel
-//        textFieldInsideSearchBar?.backgroundColor = .white
         
         searchBarController.searchBar.searchTextField.borderStyle = .none
         searchBarController.searchBar.searchTextField.backgroundColor = .white
@@ -98,6 +95,11 @@ extension QuestionViewController: UICollectionViewDelegate, UICollectionViewData
         }
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = DetailViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 
 }

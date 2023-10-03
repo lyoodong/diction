@@ -39,10 +39,12 @@ final class HomeViewController: BaseViewController {
 extension HomeViewController {
     
     private func setNavigationItem() {
-        
+    
         self.navigationItem.title = "나의 질문"
         self.navigationItem.largeTitleDisplayMode = .always
-        self.navigationController?.navigationBar.barStyle = .black
+        self.navigationItem.backButtonTitle = ""
+        navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor.black]
+        navigationController?.navigationBar.largeTitleTextAttributes = [.font: UIFont.boldSystemFont(ofSize: 26)]
         
         let logoImage = UIImage(systemName: "star.fill")
         let logoBarButton = UIBarButtonItem(image: logoImage, style: .plain, target: self, action: nil)
@@ -56,7 +58,6 @@ extension HomeViewController {
         self.navigationItem.title = "나의 질문"
         self.navigationItem.largeTitleDisplayMode = .always
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationController?.navigationBar.barStyle = .black
 
     }
     
