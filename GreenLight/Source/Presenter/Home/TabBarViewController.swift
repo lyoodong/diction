@@ -27,28 +27,26 @@ final class TabBarViewController: UITabBarController {
     }
     
     func viewSet(){
-        tabBarSet()
+        setTabBar()
         addViewControllers()
         randomTapLayout()
     }
     
-    func tabBarSet() {
+    func setTabBar() {
         self.tabBar.roundCorners(cornerRadius: 18, maskedCorners: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
         self.tabBar.tintColor = .mainBlue
         self.tabBar.unselectedItemTintColor = .tabBarGrey
         self.tabBar.backgroundColor = .white
         self.tabBar.isTranslucent = true
-        
     }
     
     func addViewControllers() {
-        let mainTab = createViewController(title: "내 질문", imageName: "headphones", viewController: home)
+        let homeTab = createViewController(title: "내 질문", imageName: "headphones", viewController: home)
         let myPageTab = createViewController(title: "내 정보", imageName: "person.fill", viewController: myPage)
-        self.navigationController?.navigationBar.isHidden = true
-        self.viewControllers = [mainTab, myPageTab]
+        self.viewControllers = [homeTab, myPageTab]
     }
-    
-    func createViewController(title: String, imageName: String, viewController: UIViewController) -> UINavigationController {
+        
+    func createViewController(title: String, imageName: String, viewController: UIViewController) -> UIViewController {
         let nav = UINavigationController(rootViewController: viewController)
         let image = UIImage(systemName:imageName)
         nav.tabBarItem.image = image
@@ -70,6 +68,7 @@ final class TabBarViewController: UITabBarController {
     @objc
     func randomTapAddTarget() {
         let vc = RandomViewController()
+        let nav = UINavigationController(rootViewController: vc)
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
