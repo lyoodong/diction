@@ -24,11 +24,13 @@ class BaseCollectionView: UICollectionView {
     private func baseCollectionViewFlowLayout() -> UICollectionViewFlowLayout {
         let width = UIScreen.main.bounds.width - Constant.spacing * 5
         let height = width * 0.4
+        let inset = UIEdgeInsets(top: Constant.spacing * 2, left: 0, bottom: 0, right: 0)
         let layout = UICollectionViewFlowLayout()
     
         layout.itemSize = CGSize(width: width, height: height)
         layout.minimumLineSpacing = Constant.spacing * 2
         layout.minimumInteritemSpacing =  Constant.spacing * 2
+        layout.sectionInset = inset
         
         return layout
     }

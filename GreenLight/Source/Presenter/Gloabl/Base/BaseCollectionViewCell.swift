@@ -17,19 +17,16 @@ class BaseCollectionViewCell: UICollectionViewCell {
         $0.font = UIFont.boldSystemFont(ofSize: 24)
     }
     
-    lazy var levelStatusImageView = UIImageView().then {
-        let image = UIImage(systemName: "star")
-        $0.image = image
+    let levelStatusImageView = UIImageView().then {
+        $0.image = UIImage(named:"GreenLight")
     }
-    
-    lazy var levelStatusLabel = UILabel().then {
+        lazy var levelStatusLabel = UILabel().then {
         $0.text = "연습 필요"
         $0.textColor = .black
         $0.font = UIFont.boldSystemFont(ofSize: 12)
     }
     
     lazy var levelStatusStackView = UIStackView().then {
-        $0.backgroundColor = .tabBarGrey
         $0.spacing = 4
         $0.layer.cornerRadius = 6
         $0.addArrangedSubview(levelStatusImageView)
@@ -96,6 +93,11 @@ class BaseCollectionViewCell: UICollectionViewCell {
         cellTitleLabel.snp.makeConstraints {
             $0.top.equalTo(Constant.spacing * 3)
             $0.leading.equalTo(Constant.spacing * 3)
+        }
+        
+        levelStatusImageView.snp.makeConstraints {
+            $0.height.equalTo(Constant.spacing * 3)
+            $0.width.equalTo(Constant.spacing * 7)
         }
     
         levelStatusStackView.snp.makeConstraints {
