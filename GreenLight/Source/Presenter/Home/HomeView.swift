@@ -8,12 +8,14 @@
 import UIKit
 import SnapKit
 
-class HomeView: BaseView {
+final class HomeView: BaseView {
+    
+    lazy var navigationItem = UINavigationItem()
     
     lazy var homeCollectionView = BaseCollectionView()
     
     lazy var sortButton = UIButton().then {
-        $0.setTitle("Pull-Down 메뉴 버튼", for: .normal)
+        $0.setTitle("정렬 v", for: .normal)
     }
     
     override func viewSet() {
@@ -21,7 +23,7 @@ class HomeView: BaseView {
         addSubView()
     }
     
-    func addSubView() {
+    private func addSubView() {
         [sortButton, homeCollectionView].forEach(addSubview)
     }
 

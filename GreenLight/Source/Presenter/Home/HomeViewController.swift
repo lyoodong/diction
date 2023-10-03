@@ -7,9 +7,9 @@
 
 import UIKit
 
-class HomeViewController: BaseViewController {
+final class HomeViewController: BaseViewController {
     
-    let homeView = HomeView()
+    private let homeView = HomeView()
     
     override func loadView() {
         view = homeView
@@ -18,50 +18,51 @@ class HomeViewController: BaseViewController {
     override func viewSet() {
         setNavigationItem()
         setCollectionView()
+        addTarget()
     }
     
-    override func constraints() {
+    func addTarget() {
+        homeView.sortButton.addTarget(self, action: #selector(sortButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc
+    func sortButtonTapped() {
+        let vc = CustomSortViewController()
+        vc.modalPresentationStyle = .pageSheet
         
+        present(vc, animated: true)
     }
-    
 }
 
 // MARK: - setNavigationItem
+
 extension HomeViewController {
     
-    func setNavigationItem() {
-    
-        navigationItem.title = "나의 질문"
-        navigationItem.largeTitleDisplayMode = .automatic
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.barStyle = .black
+    private func setNavigationItem() {
+        
+        self.navigationItem.title = "나의 질문"
+        self.navigationItem.largeTitleDisplayMode = .always
+        self.navigationController?.navigationBar.barStyle = .black
         
         let logoImage = UIImage(systemName: "star.fill")
         let logoBarButton = UIBarButtonItem(image: logoImage, style: .plain, target: self, action: nil)
+        logoBarButton.tintColor = .white
         navigationItem.leftBarButtonItem = logoBarButton
         
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: nil)
+        addButton.tintColor = .white
         navigationItem.rightBarButtonItem = addButton
         
-//        let searchBarController = BaseSearchController()
-//        searchBarController.searchBar.delegate = self
-//        searchBarController.searchBar.searchTextField.backgroundColor = .white
-//        searchBarController.searchBar.searchTextField.placeholder = " 질문을 검색해 보세요"
-//        navigationItem.searchController = searchBarController
+        self.navigationItem.title = "나의 질문"
+        self.navigationItem.largeTitleDisplayMode = .always
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationBar.barStyle = .black
+
     }
     
 }
 
-// MARK: - UISearchBarDelegate
-extension HomeViewController: UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
-    }
-    
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        
-    }
-}
+// MARK: - UICollectionViewDelegate, UICollectionViewDataSource
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -82,7 +83,12 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         return cell
     }
-
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = QuestionViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
 
 
