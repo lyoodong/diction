@@ -21,9 +21,14 @@
   - 종료(2023.10.26)
 
 ## 📑 개인일지 
-| 날짜 | 제목 | 한 줄 평 | 링크 |
-|----|----|----|----|
-|2022.09.27| Xcode Update | 실시간 STT 테스트 | [📄](https://www.notion.so/lyoodong/0927-cc4fe2a7580b4c30aec5b7bbf088f8e0#d890860f310f4212b167a0adff4a78b8) |
+| 날짜 | 제목 | 링크 |
+|----|----|----|
+|2022.09.27| 실시간 STT 테스트 | [📄](https://www.notion.so/lyoodong/0927-cc4fe2a7580b4c30aec5b7bbf088f8e0#d890860f310f4212b167a0adff4a78b8) |
+|2022.10.02| 1차 디자인 피드백 | [📄](https://www.notion.so/lyoodong/1002-9f6ab740a49040089487127a6fd0512a) |
+|2022.10.03| 네비게이션 바 레이아웃 및 음성 일시 정지 | [📄](https://www.notion.so/lyoodong/1003-c771cb7d71b54092b1fec8062e50bb77) |
+
+https://www.notion.so/lyoodong/1003-c771cb7d71b54092b1fec8062e50bb77
+
 
 ## 📒 커밋 메시지 형식
 
