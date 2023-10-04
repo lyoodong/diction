@@ -28,7 +28,8 @@ final class HomeViewController: BaseViewController {
     @objc
     func sortButtonTapped() {
         let vc = CustomSortViewController()
-        vc.modalPresentationStyle = .pageSheet
+        vc.modalPresentationStyle = .overFullScreen
+        vc.modalTransitionStyle = .crossDissolve
         
         present(vc, animated: true)
     }
