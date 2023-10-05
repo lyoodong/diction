@@ -12,16 +12,17 @@ import Speech
 class DetailViewController: BaseViewController {
     
     private let audioSession = AVAudioSession.sharedInstance()
+    
     private let audioEngine = AVAudioEngine()
-    private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
+    private var recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
     private var recognitionTask: SFSpeechRecognitionTask?
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "ko_KR"))
+    
     private var audioPlayer: AVAudioPlayer?
     private var recorder = AVAudioRecorder()
-    private var isAudioPlaying = false
     
-    private var isRecording = false
-    private var previousText = ""
+    var isFirst: Bool = true
+    private var previousText: String = ""
     
     
     let detailView = DetailView()
@@ -33,10 +34,12 @@ class DetailViewController: BaseViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         checkMicPermission()
+        
     }
     
     override func viewSet() {
         addTarget()
+        recognitionRequest.shouldReportPartialResults = true
     }
     
     func addTarget() {
@@ -64,84 +67,146 @@ class DetailViewController: BaseViewController {
     @objc
     func recordButtonTapped() {
         checkSpeechRecognitionPermission()
-    
-        if isRecording {
-            stopRecording()
-            print("녹음 중지")
-        } else {
+        
+        if isFirst {
+            isFirst.toggle()
             startRecording()
             print("녹음 시작")
+        } else {
+            if audioEngine.isRunning {
+                stopRecording()
+                print("녹음 일시 중지")
+            } else {
+                startRecording()
+                print("녹음 재개")
+            }
         }
-        
-        isRecording.toggle()
     }
+    
     
     @objc
     func saveButtonTapped() {
-        stopRecording()
-        print("녹음 시작")
+        
     }
     
     func stopRecording() {
         audioEngine.stop()
-        recognitionRequest?.endAudio()
+        audioEngine.inputNode.removeTap(onBus: 0)
+        recognitionRequest.endAudio()
+        recognitionTask?.cancel()
+        previousText = detailView.resultTextView.text
     }
-
     
-    func startRecording() {
+    enum audioError:Error {
+        case sessionUnavailable
+        case engineUnavailable
+    }
     
+    enum startType {
+        case firstStart
+        case resumeStart
+    }
+    
+    func startRecording()   {
+        
         do {
-            try audioSession.setCategory(.record, mode: .measurement, options: .duckOthers)
-            try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
-            
-            recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
-            
-            guard let recognitionRequest = recognitionRequest else {
-                print("recognitionRequest 초기화 실패")
-                return
+            try setSession()
+            try setAudioEngine(completion: { [weak self] result in
+                self?.detailView.resultTextView.text = " " + (self?.previousText ?? "") + result
+            })
+        } catch {
+            switch error {
+            case audioError.sessionUnavailable:
+                print("audioError.sessionUnavailable")
+            case audioError.engineUnavailable:
+                print("audioError.engineUnavailable")
+            default:
+                print("알 수 없는 에러 발생")
             }
-            
-            recognitionRequest.shouldReportPartialResults = true
-            
+        }
+        
+    }
+    
+    
+    
+    func setSession() throws {
+        do {
+            try audioSession.setCategory(.record, mode: .default, options: .duckOthers)
+            try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
+        } catch {
+            throw audioError.sessionUnavailable
+        }
+        
+    }
+    
+    func setAudioEngine(completion: @escaping (String) -> Void) throws {
+        
+        do {
             let inputNode = audioEngine.inputNode
             
-            guard let speechRecognizer = speechRecognizer else {
-                print("speechRecognizer 초기화 실패")
-                return
+            let recordingFormat = inputNode.outputFormat(forBus: 0)
+            inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { buffer, _ in
+                self.recognitionRequest.append(buffer)
             }
             
-            recognitionTask = speechRecognizer.recognitionTask(with: recognitionRequest) { [weak self] response, error in
+            recognitionTask = speechRecognizer?.recognitionTask(with: recognitionRequest) { [weak self] response, error in
                 if let error = error {
                     print("음성 인식 오류: \(error.localizedDescription)")
+                    self?.audioEngine.reset()
                     return
                 }
                 
                 if let response = response {
-                    let bestTranscription = response.bestTranscription.formattedString
-                    self?.detailView.resultTextView.text = bestTranscription
-                    
+                    let bestTranscription = response.bestTranscription
+                    let recoginitionResult = bestTranscription.formattedString
+                    completion(recoginitionResult)
                 }
-                
-                if response?.isFinal == true {
-                    self?.audioEngine.stop()
-                    inputNode.removeTap(onBus: 0)
-                    self?.recognitionRequest = nil
-                    self?.recognitionTask = nil
-                }
-            }
-            
-            let recordingFormat = inputNode.outputFormat(forBus: 0)
-            inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { buffer, _ in
-                self.recognitionRequest?.append(buffer)
             }
             
             audioEngine.prepare()
             try audioEngine.start()
             
+            
         } catch {
-            printContent("startRecording 실패")
+            throw audioError.engineUnavailable
         }
     }
+    
+    //    func startRecording() {
+    //
+    //        do {
+    //            try audioSession.setCategory(.record, mode: .default, options: .duckOthers)
+    //            try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
+    //
+    //            let inputNode = audioEngine.inputNode
+    //
+    //            let recordingFormat = inputNode.outputFormat(forBus: 0)
+    //            inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { buffer, _ in
+    //                self.recognitionRequest.append(buffer)
+    //            }
+    //
+    //            recognitionTask = speechRecognizer?.recognitionTask(with: recognitionRequest) { [weak self] response, error in
+    //                if let error = error {
+    //                    print("음성 인식 오류: \(error.localizedDescription)")
+    //                    self?.audioEngine.reset()
+    //                    return
+    //                }
+    //
+    //                if let response = response {
+    //                    let bestTranscription = response.bestTranscription
+    //                    self?.detailView.resultTextView.text = bestTranscription.formattedString
+    //                }
+    //            }
+    //
+    //            audioEngine.prepare()
+    //            try audioEngine.start()
+    //
+    //
+    //        } catch {
+    //            printContent("startRecording 실패")
+    //        }
+    //    }
+    
     
     // 마이크 권한 체크
     func checkMicPermission() {
@@ -234,14 +299,6 @@ class DetailViewController: BaseViewController {
     }
 }
 
-extension DetailViewController:  AVAudioRecorderDelegate {
-    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
-        if flag {
-            
-        } else {
-            
-        }
-    }
-}
-
-
+//func pauseRecording() {
+//    audioEngine.pause()
+//}
