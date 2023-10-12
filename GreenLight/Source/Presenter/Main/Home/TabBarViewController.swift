@@ -18,10 +18,10 @@ final class TabBarViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewSet()
+        setView()
     }
     
-    func viewSet(){
+    func setView(){
         setTabBar()
         addViewControllers()
     }

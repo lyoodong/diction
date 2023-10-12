@@ -11,17 +11,25 @@ import RealmSwift
 class QuestionModel: Object {
     @Persisted(primaryKey: true) var questionID: ObjectId
     @Persisted var questionTitle: String
-    @Persisted var familiarityDegree: String
+    @Persisted var familiarityDegree: Int
     @Persisted var creationDate: Date
-    @Persisted var limitTime: Date
-    @Persisted var forlders = List<FolderModel>()
+    @Persisted var limitTimeMinutes: Int
+    @Persisted var limitTimeSeconds: Int
+    @Persisted var questionMemoText: String
+    @Persisted var folders: List<FolderModel>
     @Persisted var answers = List<AnswerModel>()
     
-    convenience init(questionTitle: String, familiarityDegree: String, creationDate: Date, limitTime: Date) {
+    var limitTimeToString: String {
+        return "\(limitTimeMinutes)분 \(limitTimeSeconds)초"
+    }
+    
+    convenience init(questionTitle: String, familiarityDegree: Int, creationDate: Date, limitTimeMinutes: Int, limitTimeSeconds: Int, folders: List<FolderModel>) {
         self.init()
         self.questionTitle = questionTitle
         self.familiarityDegree = familiarityDegree
         self.creationDate = creationDate
-        self.limitTime = limitTime
+        self.limitTimeMinutes = limitTimeMinutes
+        self.limitTimeSeconds = limitTimeSeconds
+        self.folders = folders
     }
 }

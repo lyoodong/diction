@@ -9,15 +9,29 @@ import Foundation
 import RealmSwift
 
 class AnswerModel: Object {
-    @Persisted(primaryKey: true) var answerID: ObjectId
-    @Persisted var answerRecord: String
+    @Persisted(primaryKey: true) var answerID: String
     @Persisted var creationDate: Date
-    @Persisted var answeringTime: Date
+    @Persisted var answeringTime: TimeInterval
+    @Persisted var recordText: String
+    @Persisted var recordUrl: String
+    @Persisted var questionID: ObjectId
+    var answeringTimeToString: String {
+        let answeringTime = Int(self.answeringTime)
+        let minutes = answeringTime / 60
+        let second = answeringTime % 60
+        
+        return "\(minutes)분 \(second)초"
+    }
     
-    convenience init( answerRecord: String, creationDate: Date, answeringTime: Date) {
+    
+    convenience init(answerID:String, recordText: String, creationDate: Date, answeringTime: TimeInterval, recordUrl: String, questionID: ObjectId) {
         self.init()
-        self.answerRecord = answerRecord
+        self.answerID = answerID
+        self.recordText = recordText
         self.creationDate = creationDate
         self.answeringTime = answeringTime
+        self.recordUrl = recordUrl
+        self.questionID = questionID
     }
 }
+

@@ -9,7 +9,9 @@ import Foundation
 import RealmSwift
 
 protocol RealmCRUD {
-    func read<T: Object>(object:T.Type, readtype: ReadType, bykeyPath: String?) -> Results<T>
-    func write<T: Object>(object:T, writetype: WriteType)
+    func read<T: Object>(object: T.Type) -> Results<T>
+    func readSorted<T: Object>(object: T.Type, bykeyPath: String?, ascending:Bool) -> Results<T>
+    func write<T: Object>(object: T)
+    func update<T: Object>(object: T)
     func delete<T: Object>(object:T)
 }

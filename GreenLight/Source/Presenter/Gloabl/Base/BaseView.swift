@@ -11,19 +11,19 @@ class BaseView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        viewSet()
-        constraints()
+        configure()
+        layouts()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func viewSet() {
+    func configure() {
         self.backgroundColor = .bgGrey
     }
     
-    func constraints() {
+    func layouts() {
         
     }
 }

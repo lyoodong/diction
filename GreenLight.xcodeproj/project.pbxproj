@@ -7,14 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE5CDA022AD2E198008596EB /* Ext+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5CDA012AD2E198008596EB /* Ext+Date.swift */; };
+		BE5CDA042AD4363B008596EB /* Ext+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5CDA032AD4363B008596EB /* Ext+String.swift */; };
+		BE5CDA092AD56497008596EB /* AllQuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5CDA082AD56497008596EB /* AllQuestionCell.swift */; };
+		BE5CDA0D2AD63F69008596EB /* Ext+CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5CDA0C2AD63F69008596EB /* Ext+CALayer.swift */; };
+		BE5CDA102AD67124008596EB /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = BE5CDA0F2AD67124008596EB /* Lottie */; };
+		BE5CDA162AD682F6008596EB /* micWaves.json in Resources */ = {isa = PBXBuildFile; fileRef = BE5CDA152AD682F6008596EB /* micWaves.json */; };
+		BE5CDA182AD68305008596EB /* mic.json in Resources */ = {isa = PBXBuildFile; fileRef = BE5CDA172AD68305008596EB /* mic.json */; };
+		BE5CDA1A2AD68B5E008596EB /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5CDA192AD68B5E008596EB /* Observable.swift */; };
+		BE5CDA1C2AD68B70008596EB /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5CDA1B2AD68B70008596EB /* DetailViewModel.swift */; };
+		BE5CDA1F2AD6B610008596EB /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = BE5CDA1E2AD6B610008596EB /* SkeletonView */; };
 		BEA9E23E2AC948BB00D747DD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = BEA9E23D2AC948BB00D747DD /* SnapKit */; };
 		BEAAB7C12AC950790019E295 /* RandomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAB7C02AC950790019E295 /* RandomViewController.swift */; };
 		BEAAB7C42AC956290019E295 /* BaseSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAB7C32AC956290019E295 /* BaseSearchController.swift */; };
 		BEAAB7C62AC957EE0019E295 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAB7C52AC957EE0019E295 /* HomeView.swift */; };
 		BEAAB7C92AC96BC20019E295 /* BaseColletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAB7C82AC96BC20019E295 /* BaseColletionView.swift */; };
 		BEAAB7CC2AC96D330019E295 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAB7CB2AC96D330019E295 /* Constant.swift */; };
-		BEB8BAF22ACC04EA001F02C9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB8BAF12ACC04EA001F02C9 /* DetailViewController.swift */; };
-		BEB8BAF42ACC04F7001F02C9 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB8BAF32ACC04F7001F02C9 /* DetailView.swift */; };
+		BEB8BAF22ACC04EA001F02C9 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB8BAF12ACC04EA001F02C9 /* RecordViewController.swift */; };
+		BEB8BAF42ACC04F7001F02C9 /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB8BAF32ACC04F7001F02C9 /* RecordView.swift */; };
+		BEB8BB1E2ACE7BEE001F02C9 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB8BB1D2ACE7BEE001F02C9 /* DetailView.swift */; };
+		BEB8BB202ACE7BF3001F02C9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB8BB1F2ACE7BF3001F02C9 /* DetailViewController.swift */; };
+		BEB8BB222ACE8019001F02C9 /* CustomLevelStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB8BB212ACE8019001F02C9 /* CustomLevelStackView.swift */; };
+		BEB8BB242ACE9074001F02C9 /* CustomPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB8BB232ACE9074001F02C9 /* CustomPlayerView.swift */; };
+		BEB8BB262ACFDC11001F02C9 /* DetailReplyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB8BB252ACFDC11001F02C9 /* DetailReplyView.swift */; };
+		BEB8BB282ACFDC17001F02C9 /* DetailReplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB8BB272ACFDC17001F02C9 /* DetailReplyViewController.swift */; };
+		BEB8BB2A2ACFDC79001F02C9 /* Ext+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB8BB292ACFDC79001F02C9 /* Ext+UIImage.swift */; };
+		BEB8BB2C2ACFDFFC001F02C9 /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB8BB2B2ACFDFFC001F02C9 /* CustomTextView.swift */; };
+		BEB8BB2E2ACFEF79001F02C9 /* ReplyListCollectioViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB8BB2D2ACFEF79001F02C9 /* ReplyListCollectioViewCell.swift */; };
+		BEB8BB302ACFF172001F02C9 /* CollectionViewLayouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB8BB2F2ACFF172001F02C9 /* CollectionViewLayouts.swift */; };
+		BEB8BB332AD25C47001F02C9 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BEB8BB322AD25C47001F02C9 /* IQKeyboardManagerSwift */; };
+		BEB8BB3B2AD26A90001F02C9 /* EditFolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB8BB3A2AD26A90001F02C9 /* EditFolderView.swift */; };
+		BEB8BB3D2AD26AB0001F02C9 /* EditFolderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB8BB3C2AD26AB0001F02C9 /* EditFolderViewController.swift */; };
+		BEB8BB3F2AD26ACA001F02C9 /* EditQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB8BB3E2AD26ACA001F02C9 /* EditQuestionViewController.swift */; };
+		BEB8BB412AD26AD0001F02C9 /* EditQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB8BB402AD26AD0001F02C9 /* EditQuestionView.swift */; };
+		BEB8BB472AD26DC1001F02C9 /* SkyFloatingLabelTextField in Frameworks */ = {isa = PBXBuildFile; productRef = BEB8BB462AD26DC1001F02C9 /* SkyFloatingLabelTextField */; };
+		BEB8BB492AD2724D001F02C9 /* CustomTextFileds.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB8BB482AD2724D001F02C9 /* CustomTextFileds.swift */; };
 		BEC118332AC822AC0087BDD2 /* SampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC118322AC822AC0087BDD2 /* SampleVC.swift */; };
 		BEC118392AC945E90087BDD2 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC118382AC945E90087BDD2 /* TabBarViewController.swift */; };
 		BEC1183B2AC946050087BDD2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC1183A2AC946050087BDD2 /* HomeViewController.swift */; };
@@ -53,13 +80,36 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE5CDA012AD2E198008596EB /* Ext+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+Date.swift"; sourceTree = "<group>"; };
+		BE5CDA032AD4363B008596EB /* Ext+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+String.swift"; sourceTree = "<group>"; };
+		BE5CDA082AD56497008596EB /* AllQuestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllQuestionCell.swift; sourceTree = "<group>"; };
+		BE5CDA0C2AD63F69008596EB /* Ext+CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+CALayer.swift"; sourceTree = "<group>"; };
+		BE5CDA152AD682F6008596EB /* micWaves.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = micWaves.json; sourceTree = "<group>"; };
+		BE5CDA172AD68305008596EB /* mic.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mic.json; sourceTree = "<group>"; };
+		BE5CDA192AD68B5E008596EB /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		BE5CDA1B2AD68B70008596EB /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		BEAAB7C02AC950790019E295 /* RandomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomViewController.swift; sourceTree = "<group>"; };
 		BEAAB7C32AC956290019E295 /* BaseSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSearchController.swift; sourceTree = "<group>"; };
 		BEAAB7C52AC957EE0019E295 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		BEAAB7C82AC96BC20019E295 /* BaseColletionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseColletionView.swift; sourceTree = "<group>"; };
 		BEAAB7CB2AC96D330019E295 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
-		BEB8BAF12ACC04EA001F02C9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		BEB8BAF32ACC04F7001F02C9 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		BEB8BAF12ACC04EA001F02C9 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
+		BEB8BAF32ACC04F7001F02C9 /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
+		BEB8BB1D2ACE7BEE001F02C9 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		BEB8BB1F2ACE7BF3001F02C9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		BEB8BB212ACE8019001F02C9 /* CustomLevelStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLevelStackView.swift; sourceTree = "<group>"; };
+		BEB8BB232ACE9074001F02C9 /* CustomPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPlayerView.swift; sourceTree = "<group>"; };
+		BEB8BB252ACFDC11001F02C9 /* DetailReplyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailReplyView.swift; sourceTree = "<group>"; };
+		BEB8BB272ACFDC17001F02C9 /* DetailReplyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailReplyViewController.swift; sourceTree = "<group>"; };
+		BEB8BB292ACFDC79001F02C9 /* Ext+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+UIImage.swift"; sourceTree = "<group>"; };
+		BEB8BB2B2ACFDFFC001F02C9 /* CustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
+		BEB8BB2D2ACFEF79001F02C9 /* ReplyListCollectioViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyListCollectioViewCell.swift; sourceTree = "<group>"; };
+		BEB8BB2F2ACFF172001F02C9 /* CollectionViewLayouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewLayouts.swift; sourceTree = "<group>"; };
+		BEB8BB3A2AD26A90001F02C9 /* EditFolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFolderView.swift; sourceTree = "<group>"; };
+		BEB8BB3C2AD26AB0001F02C9 /* EditFolderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFolderViewController.swift; sourceTree = "<group>"; };
+		BEB8BB3E2AD26ACA001F02C9 /* EditQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditQuestionViewController.swift; sourceTree = "<group>"; };
+		BEB8BB402AD26AD0001F02C9 /* EditQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditQuestionView.swift; sourceTree = "<group>"; };
+		BEB8BB482AD2724D001F02C9 /* CustomTextFileds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFileds.swift; sourceTree = "<group>"; };
 		BEC118322AC822AC0087BDD2 /* SampleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SampleVC.swift; path = Gloabl/Protocol/SampleVC.swift; sourceTree = "<group>"; };
 		BEC118382AC945E90087BDD2 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		BEC1183A2AC946050087BDD2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -100,10 +150,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEB8BB332AD25C47001F02C9 /* IQKeyboardManagerSwift in Frameworks */,
 				BEE96DAD2AC187CC00CDD722 /* RealmSwift in Frameworks */,
+				BE5CDA102AD67124008596EB /* Lottie in Frameworks */,
 				BEE96DA82AC1878E00CDD722 /* Tabman in Frameworks */,
+				BE5CDA1F2AD6B610008596EB /* SkeletonView in Frameworks */,
 				BEE96DA52AC1874E00CDD722 /* Hero in Frameworks */,
 				BEA9E23E2AC948BB00D747DD /* SnapKit in Frameworks */,
+				BEB8BB472AD26DC1001F02C9 /* SkyFloatingLabelTextField in Frameworks */,
 				BEE96DA22AC1871800CDD722 /* Then in Frameworks */,
 				BEE96DAB2AC187CC00CDD722 /* Realm in Frameworks */,
 			);
@@ -112,6 +166,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE5CDA002AD2E18A008596EB /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		BEAAB7CA2AC96D290019E295 /* Constant */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,18 +181,78 @@
 			path = Constant;
 			sourceTree = "<group>";
 		};
-		BEC118342AC93CD50087BDD2 /* Home */ = {
+		BEB8BB342AD26796001F02C9 /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				BEC118382AC945E90087BDD2 /* TabBarViewController.swift */,
 				BEC1183A2AC946050087BDD2 /* HomeViewController.swift */,
 				BEAAB7C52AC957EE0019E295 /* HomeView.swift */,
-				BEF117712ACAE40800EEAFDA /* QuestionViewController.swift */,
-				BEF1176F2ACAE40200EEAFDA /* QuestionView.swift */,
-				BEB8BAF12ACC04EA001F02C9 /* DetailViewController.swift */,
-				BEB8BAF32ACC04F7001F02C9 /* DetailView.swift */,
+				BE5CDA082AD56497008596EB /* AllQuestionCell.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		BEB8BB352AD26799001F02C9 /* Question */ = {
+			isa = PBXGroup;
+			children = (
+				BEF117712ACAE40800EEAFDA /* QuestionViewController.swift */,
+				BEF1176F2ACAE40200EEAFDA /* QuestionView.swift */,
+			);
+			path = Question;
+			sourceTree = "<group>";
+		};
+		BEB8BB362AD2679A001F02C9 /* DetailReply */ = {
+			isa = PBXGroup;
+			children = (
+				BEB8BB272ACFDC17001F02C9 /* DetailReplyViewController.swift */,
+				BEB8BB2D2ACFEF79001F02C9 /* ReplyListCollectioViewCell.swift */,
+				BEB8BB252ACFDC11001F02C9 /* DetailReplyView.swift */,
+			);
+			path = DetailReply;
+			sourceTree = "<group>";
+		};
+		BEB8BB372AD2679B001F02C9 /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				BEB8BAF12ACC04EA001F02C9 /* RecordViewController.swift */,
+				BEB8BAF32ACC04F7001F02C9 /* RecordView.swift */,
+			);
+			path = Record;
+			sourceTree = "<group>";
+		};
+		BEB8BB382AD2679B001F02C9 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				BEB8BB1F2ACE7BF3001F02C9 /* DetailViewController.swift */,
+				BEB8BB1D2ACE7BEE001F02C9 /* DetailView.swift */,
+				BE5CDA192AD68B5E008596EB /* Observable.swift */,
+				BE5CDA1B2AD68B70008596EB /* DetailViewModel.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		BEB8BB392AD26A6B001F02C9 /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				BEB8BB3A2AD26A90001F02C9 /* EditFolderView.swift */,
+				BEB8BB3C2AD26AB0001F02C9 /* EditFolderViewController.swift */,
+				BEB8BB402AD26AD0001F02C9 /* EditQuestionView.swift */,
+				BEB8BB3E2AD26ACA001F02C9 /* EditQuestionViewController.swift */,
+			);
+			path = Edit;
+			sourceTree = "<group>";
+		};
+		BEC118342AC93CD50087BDD2 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				BEB8BB392AD26A6B001F02C9 /* Edit */,
+				BEB8BB342AD26796001F02C9 /* Home */,
+				BEB8BB352AD26799001F02C9 /* Question */,
+				BEB8BB362AD2679A001F02C9 /* DetailReply */,
+				BEB8BB372AD2679B001F02C9 /* Record */,
+				BEB8BB382AD2679B001F02C9 /* Detail */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		BEC118352AC93CE00087BDD2 /* Random */ = {
@@ -210,6 +331,10 @@
 			children = (
 				BEE251D92ACB0D5F00F74837 /* CustomSortView.swift */,
 				BEE251DB2ACB117700F74837 /* CustomSortViewController.swift */,
+				BEB8BB212ACE8019001F02C9 /* CustomLevelStackView.swift */,
+				BEB8BB232ACE9074001F02C9 /* CustomPlayerView.swift */,
+				BEB8BB2B2ACFDFFC001F02C9 /* CustomTextView.swift */,
+				BEB8BB482AD2724D001F02C9 /* CustomTextFileds.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -227,6 +352,8 @@
 		BEE96DAF2AC18E6C00CDD722 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				BE5CDA152AD682F6008596EB /* micWaves.json */,
+				BE5CDA172AD68305008596EB /* mic.json */,
 				BED3626D2ABC258000143C55 /* Assets.xcassets */,
 			);
 			path = Resource;
@@ -248,7 +375,7 @@
 				BEE96DB42AC18F2000CDD722 /* Gloabl */,
 				BEC118362AC93CE50087BDD2 /* MyPage */,
 				BEC118352AC93CE00087BDD2 /* Random */,
-				BEC118342AC93CD50087BDD2 /* Home */,
+				BEC118342AC93CD50087BDD2 /* Main */,
 				BED362682ABC257F00143C55 /* TestViewController.swift */,
 				BEC118322AC822AC0087BDD2 /* SampleVC.swift */,
 			);
@@ -266,9 +393,9 @@
 		BEE96DB32AC18ECC00CDD722 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BED31A282AC198B8007E8B2B /* FolderModel.swift */,
 				BED31A242AC19895007E8B2B /* QuestionModel.swift */,
 				BED31A262AC198A9007E8B2B /* AnswerModel.swift */,
-				BED31A282AC198B8007E8B2B /* FolderModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -276,6 +403,7 @@
 		BEE96DB42AC18F2000CDD722 /* Gloabl */ = {
 			isa = PBXGroup;
 			children = (
+				BE5CDA002AD2E18A008596EB /* Helper */,
 				BEE251D82ACB0D4700F74837 /* Custom */,
 				BEAAB7CA2AC96D290019E295 /* Constant */,
 				BED31A2E2AC1AE39007E8B2B /* Enum */,
@@ -298,10 +426,14 @@
 		BEE96DB62AC18F2900CDD722 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				BE5CDA012AD2E198008596EB /* Ext+Date.swift */,
 				BEE96DB92AC18F9C00CDD722 /* Ext+UIColor.swift */,
 				BEE96DBB2AC18FA100CDD722 /* Ext+UIFont.swift */,
 				BEE96DBF2AC18FF800CDD722 /* Ext+UIViewController.swift */,
 				BEE96DC12AC18FFF00CDD722 /* Ext+UIView.swift */,
+				BEB8BB292ACFDC79001F02C9 /* Ext+UIImage.swift */,
+				BE5CDA032AD4363B008596EB /* Ext+String.swift */,
+				BE5CDA0C2AD63F69008596EB /* Ext+CALayer.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -314,6 +446,7 @@
 				BED31A222AC191E7007E8B2B /* BaseCollectionViewCell.swift */,
 				BEAAB7C32AC956290019E295 /* BaseSearchController.swift */,
 				BEAAB7C82AC96BC20019E295 /* BaseColletionView.swift */,
+				BEB8BB2F2ACFF172001F02C9 /* CollectionViewLayouts.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -341,6 +474,10 @@
 				BEE96DAA2AC187CC00CDD722 /* Realm */,
 				BEE96DAC2AC187CC00CDD722 /* RealmSwift */,
 				BEA9E23D2AC948BB00D747DD /* SnapKit */,
+				BEB8BB322AD25C47001F02C9 /* IQKeyboardManagerSwift */,
+				BEB8BB462AD26DC1001F02C9 /* SkyFloatingLabelTextField */,
+				BE5CDA0F2AD67124008596EB /* Lottie */,
+				BE5CDA1E2AD6B610008596EB /* SkeletonView */,
 			);
 			productName = GreenLight;
 			productReference = BED362612ABC257F00143C55 /* GreenLight.app */;
@@ -376,6 +513,10 @@
 				BEE96DA62AC1878E00CDD722 /* XCRemoteSwiftPackageReference "Tabman" */,
 				BEE96DA92AC187CC00CDD722 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				BEA9E23C2AC948BB00D747DD /* XCRemoteSwiftPackageReference "SnapKit" */,
+				BEB8BB312AD25C47001F02C9 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				BEB8BB452AD26DC1001F02C9 /* XCRemoteSwiftPackageReference "SkyFloatingLabelTextField" */,
+				BE5CDA0E2AD67124008596EB /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				BE5CDA1D2AD6B610008596EB /* XCRemoteSwiftPackageReference "SkeletonView" */,
 			);
 			productRefGroup = BED362622ABC257F00143C55 /* Products */;
 			projectDirPath = "";
@@ -391,7 +532,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE5CDA162AD682F6008596EB /* micWaves.json in Resources */,
 				BEE251D72ACB0B1800F74837 /* Assets.xcassets in Resources */,
+				BE5CDA182AD68305008596EB /* mic.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,36 +546,57 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEC1183D2AC946250087BDD2 /* MyPageViewController.swift in Sources */,
-				BEB8BAF42ACC04F7001F02C9 /* DetailView.swift in Sources */,
+				BEB8BAF42ACC04F7001F02C9 /* RecordView.swift in Sources */,
 				BEAAB7C62AC957EE0019E295 /* HomeView.swift in Sources */,
 				BEE251DA2ACB0D5F00F74837 /* CustomSortView.swift in Sources */,
+				BEB8BB242ACE9074001F02C9 /* CustomPlayerView.swift in Sources */,
 				BEAAB7C12AC950790019E295 /* RandomViewController.swift in Sources */,
+				BEB8BB3F2AD26ACA001F02C9 /* EditQuestionViewController.swift in Sources */,
+				BE5CDA1C2AD68B70008596EB /* DetailViewModel.swift in Sources */,
 				BEF117702ACAE40200EEAFDA /* QuestionView.swift in Sources */,
+				BEB8BB222ACE8019001F02C9 /* CustomLevelStackView.swift in Sources */,
 				BEE96DC22AC18FFF00CDD722 /* Ext+UIView.swift in Sources */,
 				BED31A1F2AC191C8007E8B2B /* BaseView.swift in Sources */,
 				BED362692ABC257F00143C55 /* TestViewController.swift in Sources */,
+				BE5CDA0D2AD63F69008596EB /* Ext+CALayer.swift in Sources */,
 				BEE96DBE2AC18FDB00CDD722 /* Protocol+IDF.swift in Sources */,
 				BED3627E2ABC3B9800143C55 /* NewQuestionViewController.swift in Sources */,
 				BEC118392AC945E90087BDD2 /* TabBarViewController.swift in Sources */,
 				BED31A322AC1AE94007E8B2B /* CRUDManager.swift in Sources */,
 				BEAAB7C92AC96BC20019E295 /* BaseColletionView.swift in Sources */,
 				BED31A2D2AC1ACB4007E8B2B /* Protocol+RealmCRUD.swift in Sources */,
+				BE5CDA042AD4363B008596EB /* Ext+String.swift in Sources */,
 				BED31A232AC191E7007E8B2B /* BaseCollectionViewCell.swift in Sources */,
 				BEF117722ACAE40800EEAFDA /* QuestionViewController.swift in Sources */,
 				BED31A212AC191D7007E8B2B /* BaseViewController.swift in Sources */,
 				BED31A252AC19895007E8B2B /* QuestionModel.swift in Sources */,
+				BE5CDA1A2AD68B5E008596EB /* Observable.swift in Sources */,
 				BED362652ABC257F00143C55 /* AppDelegate.swift in Sources */,
+				BEB8BB2E2ACFEF79001F02C9 /* ReplyListCollectioViewCell.swift in Sources */,
 				BED31A272AC198A9007E8B2B /* AnswerModel.swift in Sources */,
 				BEAAB7CC2AC96D330019E295 /* Constant.swift in Sources */,
 				BEE96DC02AC18FF800CDD722 /* Ext+UIViewController.swift in Sources */,
+				BEB8BB3D2AD26AB0001F02C9 /* EditFolderViewController.swift in Sources */,
 				BED362672ABC257F00143C55 /* SceneDelegate.swift in Sources */,
 				BEC1183B2AC946050087BDD2 /* HomeViewController.swift in Sources */,
 				BEE96DBC2AC18FA100CDD722 /* Ext+UIFont.swift in Sources */,
+				BEB8BB302ACFF172001F02C9 /* CollectionViewLayouts.swift in Sources */,
+				BEB8BB412AD26AD0001F02C9 /* EditQuestionView.swift in Sources */,
+				BEB8BB262ACFDC11001F02C9 /* DetailReplyView.swift in Sources */,
 				BEE251DC2ACB117700F74837 /* CustomSortViewController.swift in Sources */,
+				BEB8BB282ACFDC17001F02C9 /* DetailReplyViewController.swift in Sources */,
+				BE5CDA022AD2E198008596EB /* Ext+Date.swift in Sources */,
+				BEB8BB3B2AD26A90001F02C9 /* EditFolderView.swift in Sources */,
+				BEB8BB492AD2724D001F02C9 /* CustomTextFileds.swift in Sources */,
 				BED31A292AC198B8007E8B2B /* FolderModel.swift in Sources */,
-				BEB8BAF22ACC04EA001F02C9 /* DetailViewController.swift in Sources */,
+				BEB8BB202ACE7BF3001F02C9 /* DetailViewController.swift in Sources */,
+				BEB8BAF22ACC04EA001F02C9 /* RecordViewController.swift in Sources */,
+				BE5CDA092AD56497008596EB /* AllQuestionCell.swift in Sources */,
 				BED3627C2ABC357400143C55 /* MyViewController.swift in Sources */,
+				BEB8BB2A2ACFDC79001F02C9 /* Ext+UIImage.swift in Sources */,
 				BEE96DBA2AC18F9C00CDD722 /* Ext+UIColor.swift in Sources */,
+				BEB8BB1E2ACE7BEE001F02C9 /* DetailView.swift in Sources */,
+				BEB8BB2C2ACFDFFC001F02C9 /* CustomTextView.swift in Sources */,
 				BEC118332AC822AC0087BDD2 /* SampleVC.swift in Sources */,
 				BED362792ABC2A4000143C55 /* SampleViewController.swift in Sources */,
 				BED362802ABC50BC00143C55 /* DetailQuestionViewController.swift in Sources */,
@@ -651,12 +815,44 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		BE5CDA0E2AD67124008596EB /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+		BE5CDA1D2AD6B610008596EB /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Juanpe/SkeletonView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		BEA9E23C2AC948BB00D747DD /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 5.0.0;
+			};
+		};
+		BEB8BB312AD25C47001F02C9 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+		BEB8BB452AD26DC1001F02C9 /* XCRemoteSwiftPackageReference "SkyFloatingLabelTextField" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Skyscanner/SkyFloatingLabelTextField";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
 			};
 		};
 		BEE96DA02AC1871800CDD722 /* XCRemoteSwiftPackageReference "Then" */ = {
@@ -694,10 +890,30 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		BE5CDA0F2AD67124008596EB /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BE5CDA0E2AD67124008596EB /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+		BE5CDA1E2AD6B610008596EB /* SkeletonView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BE5CDA1D2AD6B610008596EB /* XCRemoteSwiftPackageReference "SkeletonView" */;
+			productName = SkeletonView;
+		};
 		BEA9E23D2AC948BB00D747DD /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BEA9E23C2AC948BB00D747DD /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		BEB8BB322AD25C47001F02C9 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BEB8BB312AD25C47001F02C9 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+		BEB8BB462AD26DC1001F02C9 /* SkyFloatingLabelTextField */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BEB8BB452AD26DC1001F02C9 /* XCRemoteSwiftPackageReference "SkyFloatingLabelTextField" */;
+			productName = SkyFloatingLabelTextField;
 		};
 		BEE96DA12AC1871800CDD722 /* Then */ = {
 			isa = XCSwiftPackageProductDependency;

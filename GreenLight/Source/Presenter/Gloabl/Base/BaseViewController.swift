@@ -11,15 +11,15 @@ class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewSet()
-        constraints()
+        configure()
+        layouts()
     }
 
-    func viewSet() {
+    func configure() {
 
     }
 
-    func constraints() {
+    func layouts() {
         
     }
 

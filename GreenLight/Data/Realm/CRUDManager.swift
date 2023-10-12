@@ -8,52 +8,59 @@
 import Foundation
 import RealmSwift
 
-class CRUDManager {
+class CRUDManager: RealmCRUD{
     
+    static let shared = CRUDManager()
+    private init() { }
+
     var realm = try! Realm()
-
-    func read<T: Object>(object: T.Type, readtype: ReadType, bykeyPath: String?) -> Results<T> {
-        
-        if readtype == .read {
-            return realm.objects(object)
-        } else if readtype == .sort {
-            return realm.objects(object).sorted(byKeyPath: bykeyPath!, ascending: true)
-        } else {
-            return realm.objects(object).filter("error")
+    
+    func read<T: Object>(object: T.Type) -> Results<T> {
+        return realm.objects(object)
+    }
+    
+    func readSorted<T: Object>(object: T.Type, bykeyPath: String?, ascending:Bool) -> Results<T> {
+        return realm.objects(object).sorted(byKeyPath: bykeyPath!, ascending: ascending)
+    }
+    
+    func write<T: Object>(object: T)  {
+        do {
+            try realm.write {
+                realm.add(object)
+            }
+        } catch {
+            print("write에러 발생")
         }
     }
     
-    func write<T: Object>(object: T, writetype: WriteType )  {
-
-        switch writetype {
-        case .add:
-            do {
-                try realm.write {
-                    realm.add(object)
-                }
-            } catch {
-                print(error)
+    func update<T: Object>(object: T)  {
+        do {
+            try realm.write {
+                realm.add(object, update: .modified)
             }
-        case .update:
-            do {
-                try realm.write {
-                    realm.add(object, update: .modified)
-                }
-            } catch {
-                print(error)
-            }
-            
+        } catch {
+            print("update에러 발생")
         }
     }
+    
     
     func delete<T: Object>(object: T)  {
-        try! realm.write {
-            realm.delete(object)
-            
+        do {
+            try realm.write {
+                realm.delete(object)
+            }
+        } catch {
+            print("delete에러 발생")
         }
+    }
+    
+    func filterByObjcID<T: Object>(object: T.Type, key: String, objectID: Any) -> Results<T> {
+        return realm.objects(object).filter("\(key) == %@", objectID)
     }
 
     func realmFileLocation() {
         print("=====Realm 경로: ", realm.configuration.fileURL!)
     }
+    
+//    https://velog.io/@hope1053/iOS-Realm-3-Sort-Filter
 }

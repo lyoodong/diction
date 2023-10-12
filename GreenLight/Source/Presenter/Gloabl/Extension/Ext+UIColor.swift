@@ -14,6 +14,8 @@ extension UIColor {
     static let bgGrey = UIColor(hexString: "#F8F8FA")
     static let tabBarGrey = UIColor(hexString: "#D5D9E0")
     static let mainGreen = UIColor(hexString: "#6FCF97")
+    static let textDarkGrey = UIColor(hexString: "#7A828F")
+    
 }
  
 extension UIColor {

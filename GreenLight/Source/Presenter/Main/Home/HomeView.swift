@@ -12,14 +12,16 @@ final class HomeView: BaseView {
     
     lazy var navigationItem = UINavigationItem()
     
-    lazy var homeCollectionView = BaseCollectionView()
+    lazy var homeCollectionView = BaseCollectionView(collectionViewLayout: CollectionViewLayouts.baseCollectionViewFlowLayout())
     
     lazy var sortButton = UIButton().then {
-        $0.setTitle("정렬 v", for: .normal)
+        $0.setTitle("정렬", for: .normal)
+        $0.setTitleColor(.gray, for: .normal)
+        $0.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .regular)
     }
     
-    override func viewSet() {
-        self.backgroundColor = .mainGreen
+    override func configure() {
+        self.backgroundColor = .bgGrey
         addSubView()
     }
     
@@ -27,11 +29,11 @@ final class HomeView: BaseView {
         [sortButton, homeCollectionView].forEach(addSubview)
     }
 
-    override func constraints() {
+    override func layouts() {
         
         sortButton.snp.makeConstraints {
             $0.top.equalTo(self.safeAreaLayoutGuide)
-            $0.trailing.equalTo(self.safeAreaLayoutGuide).inset(Constant.spacing)
+            $0.trailing.equalTo(self.safeAreaLayoutGuide).inset(Constant.spacing * 3)
             
         }
         homeCollectionView.snp.makeConstraints {

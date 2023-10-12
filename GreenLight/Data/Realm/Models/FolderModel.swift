@@ -12,13 +12,8 @@ class FolderModel: Object {
     @Persisted(primaryKey: true) var folderID: ObjectId
     @Persisted var folderTitle: String
     @Persisted var interviewDate: Date
+    @Persisted var createdDate = Date()
     @Persisted var questions = List<QuestionModel>()
-    
-//    var questionArray: [String] {
-//        return questions.map{$0}
-//    }
-
-//    let ofQuestion = LinkingObjects(fromType: QuestionModel.self, property: "folderID")
     
     convenience init(folderTitle: String, interviewDate: Date) {
         self.init()

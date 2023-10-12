@@ -51,12 +51,12 @@ class SampleVC: BaseViewController {
         checkMicPermission()
     }
     
-    override func viewSet() {
+    override func configure() {
         [resultTextView, recordingButton, playButton].forEach { view.addSubview($0) }
 
     }
     
-    override func constraints() {
+    override func layouts() {
         resultTextView.snp.makeConstraints { make in
             make.horizontalEdges.equalTo(view)
             make.top.equalTo(view)

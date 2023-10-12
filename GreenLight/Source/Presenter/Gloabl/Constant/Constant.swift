@@ -9,4 +9,11 @@ import Foundation
 
 struct Constant {
     static let spacing: CGFloat = 8
+    
+    enum Image: String {
+        case redLight = "RedLight"
+        case folding = "arrow.up.left.and.arrow.down.right.circle"
+        case mic = "mic.fill"
+    }
+    
 }

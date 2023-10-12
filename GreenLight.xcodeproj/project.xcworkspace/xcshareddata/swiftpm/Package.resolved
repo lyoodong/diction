@@ -10,6 +10,24 @@
       }
     },
     {
+      "identity" : "iqkeyboardmanager",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/hackiftekhar/IQKeyboardManager",
+      "state" : {
+        "revision" : "abdf4e49e2178f6fb46fd71f8d87866140feda7c",
+        "version" : "6.5.15"
+      }
+    },
+    {
+      "identity" : "lottie-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/airbnb/lottie-ios",
+      "state" : {
+        "revision" : "45517c3cfec9469bbdd4f86e32393c28ae9df0bc",
+        "version" : "4.3.3"
+      }
+    },
+    {
       "identity" : "pageboy",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/uias/Pageboy",
@@ -34,6 +52,24 @@
       "state" : {
         "revision" : "8ee4c1ce5006ca706b9450771fa7e9b5b1510785",
         "version" : "10.42.3"
+      }
+    },
+    {
+      "identity" : "skeletonview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Juanpe/SkeletonView",
+      "state" : {
+        "revision" : "739a4f5d78731bebc48811c75fa9e1f4c4cef23e",
+        "version" : "1.30.4"
+      }
+    },
+    {
+      "identity" : "skyfloatinglabeltextfield",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Skyscanner/SkyFloatingLabelTextField",
+      "state" : {
+        "revision" : "a0750ebbc7311f3b3debf99c5e59338e854afa59",
+        "version" : "4.0.0"
       }
     },
     {
