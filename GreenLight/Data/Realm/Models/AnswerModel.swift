@@ -19,7 +19,6 @@ class AnswerModel: Object {
         let answeringTime = Int(self.answeringTime)
         let minutes = answeringTime / 60
         let second = answeringTime % 60
-        
         return "\(minutes)분 \(second)초"
     }
     

@@ -8,13 +8,13 @@
 import UIKit
 
 class CollectionViewLayouts {
-
+    
     static func baseCollectionViewFlowLayout() -> UICollectionViewFlowLayout {
         let width = UIScreen.main.bounds.width - Constant.spacing * 5
         let height = width * 0.4
         let inset = UIEdgeInsets(top: Constant.spacing * 2, left: 0, bottom: 0, right: 0)
         let layout = UICollectionViewFlowLayout()
-    
+        
         layout.itemSize = CGSize(width: width, height: height)
         layout.minimumLineSpacing = Constant.spacing * 2
         layout.minimumInteritemSpacing =  Constant.spacing * 2
@@ -28,7 +28,7 @@ class CollectionViewLayouts {
         let height = width * 0.27
         let inset = UIEdgeInsets(top: Constant.spacing * 2, left: 0, bottom: 0, right: 0)
         let layout = UICollectionViewFlowLayout()
-    
+        
         layout.itemSize = CGSize(width: width, height: height)
         layout.minimumLineSpacing = Constant.spacing * 2
         layout.minimumInteritemSpacing =  Constant.spacing * 2
@@ -36,5 +36,20 @@ class CollectionViewLayouts {
         
         return layout
     }
+    
+    static func randomCollectionViewFlowLayout() -> UICollectionViewFlowLayout {
+        let width = UIScreen.main.bounds.width - Constant.spacing * 6
+        let height = width * 0.4
+        let inset = UIEdgeInsets(top: Constant.spacing * 2, left: Constant.spacing * 2, bottom: 0, right: Constant.spacing * 2)
+        let layout = UICollectionViewFlowLayout()
+        
+        layout.itemSize = CGSize(width: width / 2, height: height)
+        layout.minimumLineSpacing = Constant.spacing * 2
+        layout.minimumInteritemSpacing =  Constant.spacing * 2
+        layout.sectionInset = inset
+        
+        return layout
+    }
+    
     
 }

@@ -8,6 +8,7 @@
 import UIKit
 
 final class QuestionView: BaseView {
+    
     lazy var questionCollectionView = BaseCollectionView(collectionViewLayout: CollectionViewLayouts.baseCollectionViewFlowLayout())
     
     lazy var sortButton = UIButton().then {
@@ -17,20 +18,19 @@ final class QuestionView: BaseView {
     }
     
     override func configure() {
-        self.backgroundColor = .bgGrey
-        addSubView()
-    }
-    
-    private func addSubView() {
-        [sortButton, questionCollectionView].forEach(addSubview)
+        super.configure()
     }
 
     override func layouts() {
+        
+        addSubview(sortButton)
         
         sortButton.snp.makeConstraints {
             $0.top.equalTo(self.safeAreaLayoutGuide)
             $0.trailing.equalTo(self.safeAreaLayoutGuide).inset(Constant.spacing * 3)
         }
+        
+        addSubview(questionCollectionView)
         
         questionCollectionView.snp.makeConstraints {
             $0.top.equalTo(sortButton.snp.bottom)

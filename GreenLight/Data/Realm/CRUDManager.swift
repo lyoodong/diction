@@ -10,10 +10,15 @@ import RealmSwift
 
 class CRUDManager: RealmCRUD{
     
+    let realm = try! Realm()
+//
+//    init(realm: Realm) {
+//        self.realm = realm
+//    }
+    
     static let shared = CRUDManager()
+    
     private init() { }
-
-    var realm = try! Realm()
     
     func read<T: Object>(object: T.Type) -> Results<T> {
         return realm.objects(object)
@@ -57,10 +62,10 @@ class CRUDManager: RealmCRUD{
     func filterByObjcID<T: Object>(object: T.Type, key: String, objectID: Any) -> Results<T> {
         return realm.objects(object).filter("\(key) == %@", objectID)
     }
-
+    
     func realmFileLocation() {
         print("=====Realm 경로: ", realm.configuration.fileURL!)
     }
     
-//    https://velog.io/@hope1053/iOS-Realm-3-Sort-Filter
+    //    https://velog.io/@hope1053/iOS-Realm-3-Sort-Filter
 }

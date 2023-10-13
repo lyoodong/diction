@@ -20,6 +20,7 @@ class CustomSortViewController: BaseViewController {
     var delegate: passTextData?
     let repo = CRUDManager.shared
     var folderID = ObjectId()
+//    var sortState: Observable<HomeViewModel.SortState>?
     
     enum targetModelType {
         case folder
@@ -67,6 +68,9 @@ extension CustomSortViewController {
     
     @objc
     func sortByLevelButtonTapped() {
+        
+//        sortState?.value = .familiarSet
+        
         if targetModel == .folder {
             let folders = repo.read(object: FolderModel.self)
             delegate?.passData(selectedObjects: folders)
@@ -83,6 +87,9 @@ extension CustomSortViewController {
     
     @objc
     func sortByNewButtonTapped() {
+        
+//        sortState?.value = .newSet
+        
         if targetModel == .folder {
             let folders = repo.readSorted(object: FolderModel.self, bykeyPath: "interviewDate", ascending: true)
             delegate?.passData(selectedObjects: folders)
@@ -99,6 +106,9 @@ extension CustomSortViewController {
     
     @objc
     func sortByOldButtonTapped() {
+        
+//        sortState?.value = .oldSet
+        
         if targetModel == .folder {
             let folders = repo.readSorted(object: FolderModel.self, bykeyPath: "interviewDate", ascending: false)
             delegate?.passData(selectedObjects: folders)

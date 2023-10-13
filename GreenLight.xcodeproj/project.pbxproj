@@ -7,17 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE2436F92AD7E86B00FF2F21 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = BE2436F82AD7E86B00FF2F21 /* Then */; };
+		BE2437012AD7E8B800FF2F21 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = BE2437002AD7E8B800FF2F21 /* SnapKit */; };
+		BE2437042AD7E8C800FF2F21 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BE2437032AD7E8C800FF2F21 /* IQKeyboardManagerSwift */; };
+		BE2437072AD7E8D500FF2F21 /* SkyFloatingLabelTextField in Frameworks */ = {isa = PBXBuildFile; productRef = BE2437062AD7E8D500FF2F21 /* SkyFloatingLabelTextField */; };
+		BE24370A2AD7E8DF00FF2F21 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = BE2437092AD7E8DF00FF2F21 /* Lottie */; };
+		BE24370B2AD7EA0D00FF2F21 /* micWaves.json in Resources */ = {isa = PBXBuildFile; fileRef = BE5CDA152AD682F6008596EB /* micWaves.json */; };
+		BE24370C2AD7EA0D00FF2F21 /* mic.json in Resources */ = {isa = PBXBuildFile; fileRef = BE5CDA172AD68305008596EB /* mic.json */; };
+		BE2437102AD7EBCF00FF2F21 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = BE24370F2AD7EBCF00FF2F21 /* Realm */; };
+		BE2437122AD7EBCF00FF2F21 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BE2437112AD7EBCF00FF2F21 /* RealmSwift */; };
+		BE2437132AD7ECAD00FF2F21 /* Ext+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5CDA032AD4363B008596EB /* Ext+String.swift */; };
+		BE2437152AD7EEBE00FF2F21 /* QuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2437142AD7EEBE00FF2F21 /* QuestionViewModel.swift */; };
+		BE2437172AD8077400FF2F21 /* DetailReplyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2437162AD8077400FF2F21 /* DetailReplyViewModel.swift */; };
+		BE2437192AD8089A00FF2F21 /* Ext+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2437182AD8089A00FF2F21 /* Ext+String.swift */; };
+		BE24371B2AD8166400FF2F21 /* RecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE24371A2AD8166400FF2F21 /* RecordViewModel.swift */; };
+		BE24371D2AD9739A00FF2F21 /* RandomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE24371C2AD9739A00FF2F21 /* RandomView.swift */; };
+		BE24371F2AD973A000FF2F21 /* RandomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE24371E2AD973A000FF2F21 /* RandomViewModel.swift */; };
+		BE2437212AD9749800FF2F21 /* RandomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2437202AD9749800FF2F21 /* RandomCollectionViewCell.swift */; };
 		BE5CDA022AD2E198008596EB /* Ext+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5CDA012AD2E198008596EB /* Ext+Date.swift */; };
-		BE5CDA042AD4363B008596EB /* Ext+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5CDA032AD4363B008596EB /* Ext+String.swift */; };
 		BE5CDA092AD56497008596EB /* AllQuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5CDA082AD56497008596EB /* AllQuestionCell.swift */; };
 		BE5CDA0D2AD63F69008596EB /* Ext+CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5CDA0C2AD63F69008596EB /* Ext+CALayer.swift */; };
-		BE5CDA102AD67124008596EB /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = BE5CDA0F2AD67124008596EB /* Lottie */; };
-		BE5CDA162AD682F6008596EB /* micWaves.json in Resources */ = {isa = PBXBuildFile; fileRef = BE5CDA152AD682F6008596EB /* micWaves.json */; };
-		BE5CDA182AD68305008596EB /* mic.json in Resources */ = {isa = PBXBuildFile; fileRef = BE5CDA172AD68305008596EB /* mic.json */; };
-		BE5CDA1A2AD68B5E008596EB /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5CDA192AD68B5E008596EB /* Observable.swift */; };
 		BE5CDA1C2AD68B70008596EB /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5CDA1B2AD68B70008596EB /* DetailViewModel.swift */; };
-		BE5CDA1F2AD6B610008596EB /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = BE5CDA1E2AD6B610008596EB /* SkeletonView */; };
-		BEA9E23E2AC948BB00D747DD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = BEA9E23D2AC948BB00D747DD /* SnapKit */; };
+		BE5CDA472AD7CE9A008596EB /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5CDA462AD7CE9A008596EB /* HomeViewModel.swift */; };
+		BE5CDA492AD7D21D008596EB /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5CDA482AD7D21D008596EB /* Observable.swift */; };
+		BE5CDA4C2AD7DDC3008596EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BED3626D2ABC258000143C55 /* Assets.xcassets */; };
 		BEAAB7C12AC950790019E295 /* RandomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAB7C02AC950790019E295 /* RandomViewController.swift */; };
 		BEAAB7C42AC956290019E295 /* BaseSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAB7C32AC956290019E295 /* BaseSearchController.swift */; };
 		BEAAB7C62AC957EE0019E295 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAB7C52AC957EE0019E295 /* HomeView.swift */; };
@@ -33,14 +46,12 @@
 		BEB8BB282ACFDC17001F02C9 /* DetailReplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB8BB272ACFDC17001F02C9 /* DetailReplyViewController.swift */; };
 		BEB8BB2A2ACFDC79001F02C9 /* Ext+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB8BB292ACFDC79001F02C9 /* Ext+UIImage.swift */; };
 		BEB8BB2C2ACFDFFC001F02C9 /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB8BB2B2ACFDFFC001F02C9 /* CustomTextView.swift */; };
-		BEB8BB2E2ACFEF79001F02C9 /* ReplyListCollectioViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB8BB2D2ACFEF79001F02C9 /* ReplyListCollectioViewCell.swift */; };
+		BEB8BB2E2ACFEF79001F02C9 /* DetailReplyCollectioViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB8BB2D2ACFEF79001F02C9 /* DetailReplyCollectioViewCell.swift */; };
 		BEB8BB302ACFF172001F02C9 /* CollectionViewLayouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB8BB2F2ACFF172001F02C9 /* CollectionViewLayouts.swift */; };
-		BEB8BB332AD25C47001F02C9 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BEB8BB322AD25C47001F02C9 /* IQKeyboardManagerSwift */; };
 		BEB8BB3B2AD26A90001F02C9 /* EditFolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB8BB3A2AD26A90001F02C9 /* EditFolderView.swift */; };
 		BEB8BB3D2AD26AB0001F02C9 /* EditFolderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB8BB3C2AD26AB0001F02C9 /* EditFolderViewController.swift */; };
 		BEB8BB3F2AD26ACA001F02C9 /* EditQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB8BB3E2AD26ACA001F02C9 /* EditQuestionViewController.swift */; };
 		BEB8BB412AD26AD0001F02C9 /* EditQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB8BB402AD26AD0001F02C9 /* EditQuestionView.swift */; };
-		BEB8BB472AD26DC1001F02C9 /* SkyFloatingLabelTextField in Frameworks */ = {isa = PBXBuildFile; productRef = BEB8BB462AD26DC1001F02C9 /* SkyFloatingLabelTextField */; };
 		BEB8BB492AD2724D001F02C9 /* CustomTextFileds.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB8BB482AD2724D001F02C9 /* CustomTextFileds.swift */; };
 		BEC118332AC822AC0087BDD2 /* SampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC118322AC822AC0087BDD2 /* SampleVC.swift */; };
 		BEC118392AC945E90087BDD2 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC118382AC945E90087BDD2 /* TabBarViewController.swift */; };
@@ -62,14 +73,8 @@
 		BED3627C2ABC357400143C55 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED3627B2ABC357400143C55 /* MyViewController.swift */; };
 		BED3627E2ABC3B9800143C55 /* NewQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED3627D2ABC3B9800143C55 /* NewQuestionViewController.swift */; };
 		BED362802ABC50BC00143C55 /* DetailQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED3627F2ABC50BC00143C55 /* DetailQuestionViewController.swift */; };
-		BEE251D72ACB0B1800F74837 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BED3626D2ABC258000143C55 /* Assets.xcassets */; };
 		BEE251DA2ACB0D5F00F74837 /* CustomSortView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE251D92ACB0D5F00F74837 /* CustomSortView.swift */; };
 		BEE251DC2ACB117700F74837 /* CustomSortViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE251DB2ACB117700F74837 /* CustomSortViewController.swift */; };
-		BEE96DA22AC1871800CDD722 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = BEE96DA12AC1871800CDD722 /* Then */; };
-		BEE96DA52AC1874E00CDD722 /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = BEE96DA42AC1874E00CDD722 /* Hero */; };
-		BEE96DA82AC1878E00CDD722 /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = BEE96DA72AC1878E00CDD722 /* Tabman */; };
-		BEE96DAB2AC187CC00CDD722 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = BEE96DAA2AC187CC00CDD722 /* Realm */; };
-		BEE96DAD2AC187CC00CDD722 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BEE96DAC2AC187CC00CDD722 /* RealmSwift */; };
 		BEE96DBA2AC18F9C00CDD722 /* Ext+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE96DB92AC18F9C00CDD722 /* Ext+UIColor.swift */; };
 		BEE96DBC2AC18FA100CDD722 /* Ext+UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE96DBB2AC18FA100CDD722 /* Ext+UIFont.swift */; };
 		BEE96DBE2AC18FDB00CDD722 /* Protocol+IDF.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE96DBD2AC18FDB00CDD722 /* Protocol+IDF.swift */; };
@@ -80,14 +85,22 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE2437142AD7EEBE00FF2F21 /* QuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewModel.swift; sourceTree = "<group>"; };
+		BE2437162AD8077400FF2F21 /* DetailReplyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailReplyViewModel.swift; sourceTree = "<group>"; };
+		BE2437182AD8089A00FF2F21 /* Ext+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Ext+String.swift"; sourceTree = "<group>"; };
+		BE24371A2AD8166400FF2F21 /* RecordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewModel.swift; sourceTree = "<group>"; };
+		BE24371C2AD9739A00FF2F21 /* RandomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomView.swift; sourceTree = "<group>"; };
+		BE24371E2AD973A000FF2F21 /* RandomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomViewModel.swift; sourceTree = "<group>"; };
+		BE2437202AD9749800FF2F21 /* RandomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomCollectionViewCell.swift; sourceTree = "<group>"; };
 		BE5CDA012AD2E198008596EB /* Ext+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+Date.swift"; sourceTree = "<group>"; };
 		BE5CDA032AD4363B008596EB /* Ext+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+String.swift"; sourceTree = "<group>"; };
 		BE5CDA082AD56497008596EB /* AllQuestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllQuestionCell.swift; sourceTree = "<group>"; };
 		BE5CDA0C2AD63F69008596EB /* Ext+CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+CALayer.swift"; sourceTree = "<group>"; };
 		BE5CDA152AD682F6008596EB /* micWaves.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = micWaves.json; sourceTree = "<group>"; };
 		BE5CDA172AD68305008596EB /* mic.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mic.json; sourceTree = "<group>"; };
-		BE5CDA192AD68B5E008596EB /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		BE5CDA1B2AD68B70008596EB /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		BE5CDA462AD7CE9A008596EB /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		BE5CDA482AD7D21D008596EB /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		BEAAB7C02AC950790019E295 /* RandomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomViewController.swift; sourceTree = "<group>"; };
 		BEAAB7C32AC956290019E295 /* BaseSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSearchController.swift; sourceTree = "<group>"; };
 		BEAAB7C52AC957EE0019E295 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -103,7 +116,7 @@
 		BEB8BB272ACFDC17001F02C9 /* DetailReplyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailReplyViewController.swift; sourceTree = "<group>"; };
 		BEB8BB292ACFDC79001F02C9 /* Ext+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+UIImage.swift"; sourceTree = "<group>"; };
 		BEB8BB2B2ACFDFFC001F02C9 /* CustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
-		BEB8BB2D2ACFEF79001F02C9 /* ReplyListCollectioViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyListCollectioViewCell.swift; sourceTree = "<group>"; };
+		BEB8BB2D2ACFEF79001F02C9 /* DetailReplyCollectioViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailReplyCollectioViewCell.swift; sourceTree = "<group>"; };
 		BEB8BB2F2ACFF172001F02C9 /* CollectionViewLayouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewLayouts.swift; sourceTree = "<group>"; };
 		BEB8BB3A2AD26A90001F02C9 /* EditFolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFolderView.swift; sourceTree = "<group>"; };
 		BEB8BB3C2AD26AB0001F02C9 /* EditFolderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFolderViewController.swift; sourceTree = "<group>"; };
@@ -150,16 +163,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEB8BB332AD25C47001F02C9 /* IQKeyboardManagerSwift in Frameworks */,
-				BEE96DAD2AC187CC00CDD722 /* RealmSwift in Frameworks */,
-				BE5CDA102AD67124008596EB /* Lottie in Frameworks */,
-				BEE96DA82AC1878E00CDD722 /* Tabman in Frameworks */,
-				BE5CDA1F2AD6B610008596EB /* SkeletonView in Frameworks */,
-				BEE96DA52AC1874E00CDD722 /* Hero in Frameworks */,
-				BEA9E23E2AC948BB00D747DD /* SnapKit in Frameworks */,
-				BEB8BB472AD26DC1001F02C9 /* SkyFloatingLabelTextField in Frameworks */,
-				BEE96DA22AC1871800CDD722 /* Then in Frameworks */,
-				BEE96DAB2AC187CC00CDD722 /* Realm in Frameworks */,
+				BE2437102AD7EBCF00FF2F21 /* Realm in Frameworks */,
+				BE2437042AD7E8C800FF2F21 /* IQKeyboardManagerSwift in Frameworks */,
+				BE2437122AD7EBCF00FF2F21 /* RealmSwift in Frameworks */,
+				BE2437012AD7E8B800FF2F21 /* SnapKit in Frameworks */,
+				BE2437072AD7E8D500FF2F21 /* SkyFloatingLabelTextField in Frameworks */,
+				BE2436F92AD7E86B00FF2F21 /* Then in Frameworks */,
+				BE24370A2AD7E8DF00FF2F21 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,7 +194,9 @@
 		BEB8BB342AD26796001F02C9 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				BE5CDA482AD7D21D008596EB /* Observable.swift */,
 				BEC118382AC945E90087BDD2 /* TabBarViewController.swift */,
+				BE5CDA462AD7CE9A008596EB /* HomeViewModel.swift */,
 				BEC1183A2AC946050087BDD2 /* HomeViewController.swift */,
 				BEAAB7C52AC957EE0019E295 /* HomeView.swift */,
 				BE5CDA082AD56497008596EB /* AllQuestionCell.swift */,
@@ -196,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				BEF117712ACAE40800EEAFDA /* QuestionViewController.swift */,
+				BE2437142AD7EEBE00FF2F21 /* QuestionViewModel.swift */,
 				BEF1176F2ACAE40200EEAFDA /* QuestionView.swift */,
 			);
 			path = Question;
@@ -204,9 +217,10 @@
 		BEB8BB362AD2679A001F02C9 /* DetailReply */ = {
 			isa = PBXGroup;
 			children = (
+				BEB8BB2D2ACFEF79001F02C9 /* DetailReplyCollectioViewCell.swift */,
 				BEB8BB272ACFDC17001F02C9 /* DetailReplyViewController.swift */,
-				BEB8BB2D2ACFEF79001F02C9 /* ReplyListCollectioViewCell.swift */,
 				BEB8BB252ACFDC11001F02C9 /* DetailReplyView.swift */,
+				BE2437162AD8077400FF2F21 /* DetailReplyViewModel.swift */,
 			);
 			path = DetailReply;
 			sourceTree = "<group>";
@@ -215,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				BEB8BAF12ACC04EA001F02C9 /* RecordViewController.swift */,
+				BE24371A2AD8166400FF2F21 /* RecordViewModel.swift */,
 				BEB8BAF32ACC04F7001F02C9 /* RecordView.swift */,
 			);
 			path = Record;
@@ -224,9 +239,8 @@
 			isa = PBXGroup;
 			children = (
 				BEB8BB1F2ACE7BF3001F02C9 /* DetailViewController.swift */,
-				BEB8BB1D2ACE7BEE001F02C9 /* DetailView.swift */,
-				BE5CDA192AD68B5E008596EB /* Observable.swift */,
 				BE5CDA1B2AD68B70008596EB /* DetailViewModel.swift */,
+				BEB8BB1D2ACE7BEE001F02C9 /* DetailView.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -259,6 +273,9 @@
 			isa = PBXGroup;
 			children = (
 				BEAAB7C02AC950790019E295 /* RandomViewController.swift */,
+				BE24371C2AD9739A00FF2F21 /* RandomView.swift */,
+				BE24371E2AD973A000FF2F21 /* RandomViewModel.swift */,
+				BE2437202AD9749800FF2F21 /* RandomCollectionViewCell.swift */,
 			);
 			path = Random;
 			sourceTree = "<group>";
@@ -434,6 +451,7 @@
 				BEB8BB292ACFDC79001F02C9 /* Ext+UIImage.swift */,
 				BE5CDA032AD4363B008596EB /* Ext+String.swift */,
 				BE5CDA0C2AD63F69008596EB /* Ext+CALayer.swift */,
+				BE2437182AD8089A00FF2F21 /* Ext+String.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -468,16 +486,13 @@
 			);
 			name = GreenLight;
 			packageProductDependencies = (
-				BEE96DA12AC1871800CDD722 /* Then */,
-				BEE96DA42AC1874E00CDD722 /* Hero */,
-				BEE96DA72AC1878E00CDD722 /* Tabman */,
-				BEE96DAA2AC187CC00CDD722 /* Realm */,
-				BEE96DAC2AC187CC00CDD722 /* RealmSwift */,
-				BEA9E23D2AC948BB00D747DD /* SnapKit */,
-				BEB8BB322AD25C47001F02C9 /* IQKeyboardManagerSwift */,
-				BEB8BB462AD26DC1001F02C9 /* SkyFloatingLabelTextField */,
-				BE5CDA0F2AD67124008596EB /* Lottie */,
-				BE5CDA1E2AD6B610008596EB /* SkeletonView */,
+				BE2436F82AD7E86B00FF2F21 /* Then */,
+				BE2437002AD7E8B800FF2F21 /* SnapKit */,
+				BE2437032AD7E8C800FF2F21 /* IQKeyboardManagerSwift */,
+				BE2437062AD7E8D500FF2F21 /* SkyFloatingLabelTextField */,
+				BE2437092AD7E8DF00FF2F21 /* Lottie */,
+				BE24370F2AD7EBCF00FF2F21 /* Realm */,
+				BE2437112AD7EBCF00FF2F21 /* RealmSwift */,
 			);
 			productName = GreenLight;
 			productReference = BED362612ABC257F00143C55 /* GreenLight.app */;
@@ -508,15 +523,12 @@
 			);
 			mainGroup = BED362582ABC257F00143C55;
 			packageReferences = (
-				BEE96DA02AC1871800CDD722 /* XCRemoteSwiftPackageReference "Then" */,
-				BEE96DA32AC1874E00CDD722 /* XCRemoteSwiftPackageReference "Hero" */,
-				BEE96DA62AC1878E00CDD722 /* XCRemoteSwiftPackageReference "Tabman" */,
-				BEE96DA92AC187CC00CDD722 /* XCRemoteSwiftPackageReference "realm-swift" */,
-				BEA9E23C2AC948BB00D747DD /* XCRemoteSwiftPackageReference "SnapKit" */,
-				BEB8BB312AD25C47001F02C9 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
-				BEB8BB452AD26DC1001F02C9 /* XCRemoteSwiftPackageReference "SkyFloatingLabelTextField" */,
-				BE5CDA0E2AD67124008596EB /* XCRemoteSwiftPackageReference "lottie-ios" */,
-				BE5CDA1D2AD6B610008596EB /* XCRemoteSwiftPackageReference "SkeletonView" */,
+				BE2436F72AD7E86B00FF2F21 /* XCRemoteSwiftPackageReference "Then" */,
+				BE2436FF2AD7E8B800FF2F21 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				BE2437022AD7E8C800FF2F21 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				BE2437052AD7E8D500FF2F21 /* XCRemoteSwiftPackageReference "SkyFloatingLabelTextField" */,
+				BE2437082AD7E8DF00FF2F21 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				BE24370E2AD7EBCF00FF2F21 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = BED362622ABC257F00143C55 /* Products */;
 			projectDirPath = "";
@@ -532,9 +544,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE5CDA162AD682F6008596EB /* micWaves.json in Resources */,
-				BEE251D72ACB0B1800F74837 /* Assets.xcassets in Resources */,
-				BE5CDA182AD68305008596EB /* mic.json in Resources */,
+				BE24370B2AD7EA0D00FF2F21 /* micWaves.json in Resources */,
+				BE24370C2AD7EA0D00FF2F21 /* mic.json in Resources */,
+				BE5CDA4C2AD7DDC3008596EB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,6 +557,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE24371D2AD9739A00FF2F21 /* RandomView.swift in Sources */,
+				BE2437132AD7ECAD00FF2F21 /* Ext+String.swift in Sources */,
 				BEC1183D2AC946250087BDD2 /* MyPageViewController.swift in Sources */,
 				BEB8BAF42ACC04F7001F02C9 /* RecordView.swift in Sources */,
 				BEAAB7C62AC957EE0019E295 /* HomeView.swift in Sources */,
@@ -554,26 +568,31 @@
 				BEB8BB3F2AD26ACA001F02C9 /* EditQuestionViewController.swift in Sources */,
 				BE5CDA1C2AD68B70008596EB /* DetailViewModel.swift in Sources */,
 				BEF117702ACAE40200EEAFDA /* QuestionView.swift in Sources */,
+				BE2437192AD8089A00FF2F21 /* Ext+String.swift in Sources */,
 				BEB8BB222ACE8019001F02C9 /* CustomLevelStackView.swift in Sources */,
 				BEE96DC22AC18FFF00CDD722 /* Ext+UIView.swift in Sources */,
 				BED31A1F2AC191C8007E8B2B /* BaseView.swift in Sources */,
 				BED362692ABC257F00143C55 /* TestViewController.swift in Sources */,
 				BE5CDA0D2AD63F69008596EB /* Ext+CALayer.swift in Sources */,
 				BEE96DBE2AC18FDB00CDD722 /* Protocol+IDF.swift in Sources */,
+				BE2437172AD8077400FF2F21 /* DetailReplyViewModel.swift in Sources */,
+				BE5CDA472AD7CE9A008596EB /* HomeViewModel.swift in Sources */,
 				BED3627E2ABC3B9800143C55 /* NewQuestionViewController.swift in Sources */,
 				BEC118392AC945E90087BDD2 /* TabBarViewController.swift in Sources */,
 				BED31A322AC1AE94007E8B2B /* CRUDManager.swift in Sources */,
 				BEAAB7C92AC96BC20019E295 /* BaseColletionView.swift in Sources */,
 				BED31A2D2AC1ACB4007E8B2B /* Protocol+RealmCRUD.swift in Sources */,
-				BE5CDA042AD4363B008596EB /* Ext+String.swift in Sources */,
 				BED31A232AC191E7007E8B2B /* BaseCollectionViewCell.swift in Sources */,
+				BE5CDA492AD7D21D008596EB /* Observable.swift in Sources */,
 				BEF117722ACAE40800EEAFDA /* QuestionViewController.swift in Sources */,
 				BED31A212AC191D7007E8B2B /* BaseViewController.swift in Sources */,
+				BE2437212AD9749800FF2F21 /* RandomCollectionViewCell.swift in Sources */,
+				BE24371F2AD973A000FF2F21 /* RandomViewModel.swift in Sources */,
 				BED31A252AC19895007E8B2B /* QuestionModel.swift in Sources */,
-				BE5CDA1A2AD68B5E008596EB /* Observable.swift in Sources */,
 				BED362652ABC257F00143C55 /* AppDelegate.swift in Sources */,
-				BEB8BB2E2ACFEF79001F02C9 /* ReplyListCollectioViewCell.swift in Sources */,
+				BEB8BB2E2ACFEF79001F02C9 /* DetailReplyCollectioViewCell.swift in Sources */,
 				BED31A272AC198A9007E8B2B /* AnswerModel.swift in Sources */,
+				BE2437152AD7EEBE00FF2F21 /* QuestionViewModel.swift in Sources */,
 				BEAAB7CC2AC96D330019E295 /* Constant.swift in Sources */,
 				BEE96DC02AC18FF800CDD722 /* Ext+UIViewController.swift in Sources */,
 				BEB8BB3D2AD26AB0001F02C9 /* EditFolderViewController.swift in Sources */,
@@ -590,6 +609,7 @@
 				BEB8BB492AD2724D001F02C9 /* CustomTextFileds.swift in Sources */,
 				BED31A292AC198B8007E8B2B /* FolderModel.swift in Sources */,
 				BEB8BB202ACE7BF3001F02C9 /* DetailViewController.swift in Sources */,
+				BE24371B2AD8166400FF2F21 /* RecordViewModel.swift in Sources */,
 				BEB8BAF22ACC04EA001F02C9 /* RecordViewController.swift in Sources */,
 				BE5CDA092AD56497008596EB /* AllQuestionCell.swift in Sources */,
 				BED3627C2ABC357400143C55 /* MyViewController.swift in Sources */,
@@ -669,7 +689,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -723,7 +743,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -815,47 +835,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		BE5CDA0E2AD67124008596EB /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/airbnb/lottie-ios";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.0.0;
-			};
-		};
-		BE5CDA1D2AD6B610008596EB /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Juanpe/SkeletonView";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
-		BEA9E23C2AC948BB00D747DD /* XCRemoteSwiftPackageReference "SnapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
-		BEB8BB312AD25C47001F02C9 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.0.0;
-			};
-		};
-		BEB8BB452AD26DC1001F02C9 /* XCRemoteSwiftPackageReference "SkyFloatingLabelTextField" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Skyscanner/SkyFloatingLabelTextField";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.0.0;
-			};
-		};
-		BEE96DA02AC1871800CDD722 /* XCRemoteSwiftPackageReference "Then" */ = {
+		BE2436F72AD7E86B00FF2F21 /* XCRemoteSwiftPackageReference "Then" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/devxoul/Then";
 			requirement = {
@@ -863,81 +843,82 @@
 				minimumVersion = 3.0.0;
 			};
 		};
-		BEE96DA32AC1874E00CDD722 /* XCRemoteSwiftPackageReference "Hero" */ = {
+		BE2436FF2AD7E8B800FF2F21 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/HeroTransitions/Hero";
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				minimumVersion = 5.0.0;
 			};
 		};
-		BEE96DA62AC1878E00CDD722 /* XCRemoteSwiftPackageReference "Tabman" */ = {
+		BE2437022AD7E8C800FF2F21 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/uias/Tabman";
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
+				minimumVersion = 6.0.0;
 			};
 		};
-		BEE96DA92AC187CC00CDD722 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+		BE2437052AD7E8D500FF2F21 /* XCRemoteSwiftPackageReference "SkyFloatingLabelTextField" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Skyscanner/SkyFloatingLabelTextField";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+		BE2437082AD7E8DF00FF2F21 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+		BE24370E2AD7EBCF00FF2F21 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
 			requirement = {
 				kind = exactVersion;
-				version = 10.42.3;
+				version = 10.43.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		BE5CDA0F2AD67124008596EB /* Lottie */ = {
+		BE2436F82AD7E86B00FF2F21 /* Then */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = BE5CDA0E2AD67124008596EB /* XCRemoteSwiftPackageReference "lottie-ios" */;
-			productName = Lottie;
-		};
-		BE5CDA1E2AD6B610008596EB /* SkeletonView */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BE5CDA1D2AD6B610008596EB /* XCRemoteSwiftPackageReference "SkeletonView" */;
-			productName = SkeletonView;
-		};
-		BEA9E23D2AC948BB00D747DD /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BEA9E23C2AC948BB00D747DD /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
-		};
-		BEB8BB322AD25C47001F02C9 /* IQKeyboardManagerSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BEB8BB312AD25C47001F02C9 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
-			productName = IQKeyboardManagerSwift;
-		};
-		BEB8BB462AD26DC1001F02C9 /* SkyFloatingLabelTextField */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BEB8BB452AD26DC1001F02C9 /* XCRemoteSwiftPackageReference "SkyFloatingLabelTextField" */;
-			productName = SkyFloatingLabelTextField;
-		};
-		BEE96DA12AC1871800CDD722 /* Then */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BEE96DA02AC1871800CDD722 /* XCRemoteSwiftPackageReference "Then" */;
+			package = BE2436F72AD7E86B00FF2F21 /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
 		};
-		BEE96DA42AC1874E00CDD722 /* Hero */ = {
+		BE2437002AD7E8B800FF2F21 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = BEE96DA32AC1874E00CDD722 /* XCRemoteSwiftPackageReference "Hero" */;
-			productName = Hero;
+			package = BE2436FF2AD7E8B800FF2F21 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
-		BEE96DA72AC1878E00CDD722 /* Tabman */ = {
+		BE2437032AD7E8C800FF2F21 /* IQKeyboardManagerSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = BEE96DA62AC1878E00CDD722 /* XCRemoteSwiftPackageReference "Tabman" */;
-			productName = Tabman;
+			package = BE2437022AD7E8C800FF2F21 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
-		BEE96DAA2AC187CC00CDD722 /* Realm */ = {
+		BE2437062AD7E8D500FF2F21 /* SkyFloatingLabelTextField */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = BEE96DA92AC187CC00CDD722 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			package = BE2437052AD7E8D500FF2F21 /* XCRemoteSwiftPackageReference "SkyFloatingLabelTextField" */;
+			productName = SkyFloatingLabelTextField;
+		};
+		BE2437092AD7E8DF00FF2F21 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BE2437082AD7E8DF00FF2F21 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+		BE24370F2AD7EBCF00FF2F21 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BE24370E2AD7EBCF00FF2F21 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = Realm;
 		};
-		BEE96DAC2AC187CC00CDD722 /* RealmSwift */ = {
+		BE2437112AD7EBCF00FF2F21 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = BEE96DA92AC187CC00CDD722 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			package = BE24370E2AD7EBCF00FF2F21 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */

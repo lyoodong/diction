@@ -26,6 +26,19 @@ extension UIView {
         layer.shadowRadius = 10
         layer.shadowOffset = CGSize(width: 0, height: 1)
     }
+    
+    func returnLightImage(familiarityDegree:Int) -> UIImage? {
+        switch familiarityDegree {
+        case 0..<5:
+            return UIImage(named: "RedLight")
+        case 5..<7:
+            return UIImage(named: "YellowLight")
+        case 7...9 :
+            return UIImage(named: "GreenLight")
+        default:
+            return UIImage(named: "RedLight")
+        }
+    }
 }
 
 

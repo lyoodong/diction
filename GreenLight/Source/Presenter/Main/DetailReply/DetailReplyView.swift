@@ -11,26 +11,23 @@ import SnapKit
 class DetailReplyView: BaseView {
     
     lazy var interviewDateLabel = UILabel().then {
-        $0.text = "면접일 2023.09.20 목 | "
         $0.textColor = .textDarkGrey
         $0.font = UIFont.boldSystemFont(ofSize: 12)
     }
     
     lazy var limitTimeLabel = UILabel().then {
-        $0.text = "2분"
         $0.textColor = .textDarkGrey
         $0.font = UIFont.boldSystemFont(ofSize: 12)
     }
     
     lazy var replyContainerStackView = UIStackView().then {
-        $0.backgroundColor = .clear
         $0.spacing = 4
+        $0.backgroundColor = .clear
         $0.addArrangedSubview(interviewDateLabel)
         $0.addArrangedSubview(limitTimeLabel)
     }
     
     lazy var customLevelStackView = CustomLevelStackView()
-    
     lazy var customTextView = CustomTextView(title: "메모")
     
     lazy var addButton = UIButton().then {
@@ -43,10 +40,10 @@ class DetailReplyView: BaseView {
     
     lazy var lastReplyTitleLabel = UILabel().then {
         $0.text = "지난 응답 리스트"
-        $0.font = UIFont.boldSystemFont(ofSize: 27)
+        $0.font = UIFont.boldSystemFont(ofSize: 26)
     }
     
-    lazy var replyListCollectioView = BaseCollectionView(collectionViewLayout: CollectionViewLayouts.replyCollectionViewFlowLayout())
+    lazy var replyListCollectionView = BaseCollectionView(collectionViewLayout: CollectionViewLayouts.replyCollectionViewFlowLayout())
     
     
     override func configure() {
@@ -96,9 +93,9 @@ class DetailReplyView: BaseView {
             $0.leading.equalTo(Constant.spacing * 3)
         }
         
-        addSubview(replyListCollectioView)
+        addSubview(replyListCollectionView)
         
-        replyListCollectioView.snp.makeConstraints {
+        replyListCollectionView.snp.makeConstraints {
             $0.top.equalTo(lastReplyTitleLabel.snp.bottom).offset(Constant.spacing * 2)
             $0.horizontalEdges.equalToSuperview()
             $0.bottom.equalTo(self.safeAreaLayoutGuide)

@@ -99,9 +99,7 @@ extension EditQuestionViewController: UIPickerViewDelegate, UIPickerViewDataSour
             selectedSeconds = row
         }
         
-        editQuestionView.limitTimeTextFields.text = "\(selectedMinutes)분, \(selectedSeconds)초"
-        
-        print("\(selectedMinutes)분, \(selectedSeconds)초")
+        editQuestionView.limitTimeTextFields.text = String(format: "%02d분%02d초", selectedMinutes, selectedSeconds)
     }
     
 }

@@ -7,22 +7,12 @@
 
 import UIKit
 import RealmSwift
-import SkeletonView
 
 final class HomeViewController: BaseViewController {
     
     private let homeView = HomeView()
+    private let vm = HomeViewModel()
     
-    let repo = CRUDManager.shared
-    
-    var folders: Results<FolderModel>!
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        folders = repo.read(object: FolderModel.self)
-        homeView.homeCollectionView.reloadData()
-    }
-
     override func loadView() {
         view = homeView
     }
@@ -31,7 +21,98 @@ final class HomeViewController: BaseViewController {
         setNavigationItem()
         setCollectionView()
         addTarget()
+        vm.setRealm()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        vm.setRealm()
+        homeView.homeCollectionView.reloadData()
+    }
+}
+
+// MARK: - setNavigationItem
+
+extension HomeViewController {
+    
+    private func setNavigationItem() {
+        
+        let logoImage = UIImage(systemName: "waveform.circle.fill")
+        let logoBarButton = UIBarButtonItem(image: logoImage, style: .plain, target: self, action: nil)
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
+        logoBarButton.tintColor = .mainBlue
+        addButton.tintColor = .mainBlue
+    
+        navigationItem.title = "My Feed."
+        navigationItem.largeTitleDisplayMode = .always
+        navigationItem.backButtonTitle = ""
+        navigationItem.leftBarButtonItem = logoBarButton
+        navigationItem.rightBarButtonItem = addButton
+        navigationController?.navigationBar.largeTitleTextAttributes = [.font: UIFont.boldSystemFont(ofSize: 24)]
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
+}
+
+// MARK: - UICollectionViewDelegate, UICollectionViewDataSource
+
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func setCollectionView() {
+        homeView.homeCollectionView.delegate = self
+        homeView.homeCollectionView.dataSource = self
+        homeView.homeCollectionView.register(BaseCollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return vm.fetchFolderCnt()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? BaseCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        
+        cell.setHomeCollectioviewCell(folders: vm.fetchFolders(), indexPath: indexPath)
+        cell.editButton.addTarget(self, action: #selector(editButtonTapped), for: .touchUpInside)
+    
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if let cell = collectionView.cellForItem(at: indexPath) {
+            clickAnimation(view: cell) {
+                let vc = QuestionViewController()
+                vc.vm.folderID = self.vm.fetchSelectedFolderID(row: indexPath.row)
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
+    }
+    
+    @objc
+    func editButtonTapped(sender: UIButton) {
+        setEditButtonMenu(sender: sender)
+    }
+    
+    func setEditButtonMenu(sender:UIButton) {
+        let favorite = UIAction(title: "수정하기", handler: { _ in print("수정하기") })
+        let cancel = UIAction(title: "삭제하기", attributes: .destructive, handler: { _ in print("삭제") })
+        
+        let menu = UIMenu(title: "폴더를 수정해주세요.", image: nil, identifier: nil, options: .displayInline, children: [favorite, cancel])
+        sender.menu = menu
+        sender.changesSelectionAsPrimaryAction = false
+        sender.showsMenuAsPrimaryAction = true
+    }
+}
+
+extension HomeViewController: passTextData {
+    func passData<T>(selectedObjects: T) {
+//        self.folders = selectedObjects as? Results<FolderModel>
+    }
+}
+
+// MARK: - addTarget
+extension HomeViewController {
     
     func addTarget() {
         homeView.sortButton.addTarget(self, action: #selector(sortButtonTapped), for: .touchUpInside)
@@ -51,115 +132,11 @@ final class HomeViewController: BaseViewController {
         vc.targetModel = .folder
         present(vc, animated: true)
     }
-}
-
-// MARK: - setNavigationItem
-
-extension HomeViewController {
-    
-    private func setNavigationItem() {
-    
-        self.navigationItem.title = "My Feed."
-        self.navigationItem.largeTitleDisplayMode = .always
-        self.navigationItem.backButtonTitle = ""
-        navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor.black]
-        navigationController?.navigationBar.largeTitleTextAttributes = [.font: UIFont.boldSystemFont(ofSize: 26)]
-        
-        let logoImage = UIImage(systemName: "waveform.circle.fill")
-        let logoBarButton = UIBarButtonItem(image: logoImage, style: .plain, target: self, action: nil)
-        logoBarButton.tintColor = .mainBlue
-        navigationItem.leftBarButtonItem = logoBarButton
-        
-        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
-        addButton.tintColor = .mainBlue
-        navigationItem.rightBarButtonItem = addButton
-    
-        self.navigationItem.largeTitleDisplayMode = .always
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-
-    }
-}
-
-// MARK: - UICollectionViewDelegate, UICollectionViewDataSource
-
-extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    
-    func setCollectionView() {
-        homeView.homeCollectionView.delegate = self
-        homeView.homeCollectionView.dataSource = self
-        homeView.homeCollectionView.register(BaseCollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let count = folders.count
-        
-        return count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? BaseCollectionViewCell else {
-            return UICollectionViewCell()
-        }
-        
-        let row = indexPath.row
-        cell.editButton.addTarget(self, action: #selector(editButtonTapped), for: .touchUpInside)
-        cell.cellTitleLabel.text = folders[row].folderTitle
-        cell.interviewDateLabel.text = folders[row].interviewDate.dateFormatter + "  | "
-        cell.interviewDateCntButton.setTitle("  " + folders[row].interviewDate.cntDday + "  ", for: .normal)
-        cell.questionCntLabel.text = "\(folders[row].questions.count)개의 질문"
-        cell.addShadow()
-        
-        if let firstFolder = folders.first {
-            let questionsList = firstFolder.questions
-            let familiarityDegrees = questionsList.map { $0.familiarityDegree }
-            
-            if !familiarityDegrees.isEmpty {
-                let averageFamiliarity = familiarityDegrees.reduce(0, +) / familiarityDegrees.count
-                cell.customLevelStackView.levelStatusImageView.image = returnLightImage(familiarityDegree: averageFamiliarity)
-            } else {
-                print("폴더에 질문이 없습니다.")
-            }
-        } else {
-            print("폴더가 없습니다.")
-        }
-    
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        if let cell = collectionView.cellForItem(at: indexPath) {
-            clickAnimation(view: cell) {
-                let vc = QuestionViewController()
-                vc.folderID = self.folders[indexPath.row].folderID
-                self.navigationController?.pushViewController(vc, animated: true)
-            }
-        }
-    }
-    
-    @objc
-    func editButtonTapped(sender: UIButton) {
-        let favorite = UIAction(title: "수정하기", handler: { _ in print("수정하기") })
-        let cancel = UIAction(title: "삭제하기", attributes: .destructive, handler: { _ in print("삭제") })
-        
-        let menu = UIMenu(title: "폴더를 수정해주세요.", image: nil, identifier: nil, options: .displayInline, children: [favorite, cancel])
-        sender.menu = menu
-        sender.changesSelectionAsPrimaryAction = false
-        sender.showsMenuAsPrimaryAction = true
-    }
     
     @objc
     func addButtonTapped() {
         let vc = EditFolderViewController()
         self.navigationController?.pushViewController(vc, animated: true)
-    }
-}
-
-extension HomeViewController: passTextData {
-    func passData<T>(selectedObjects: T) {
-        self.folders = selectedObjects as? Results<FolderModel>
-        homeView.homeCollectionView.reloadData()
     }
 }
 

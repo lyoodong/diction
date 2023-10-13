@@ -12,21 +12,21 @@ import SnapKit
 final class TabBarViewController: UITabBarController {
     
     private let home = HomeViewController()
-    private let myPage = MyPageViewController()
     private let random = RandomViewController()
+    private let myPage = MyPageViewController()
     private let feedbackGenerator = UIImpactFeedbackGenerator(style: .medium)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setView()
-    }
-    
-    func setView(){
         setTabBar()
         addViewControllers()
     }
+}
+
+//MARK: - tabBar 설정 및 뷰 추가
+extension TabBarViewController {
     
-    func setTabBar() {
+    private func setTabBar() {
         self.tabBar.roundCorners(cornerRadius: 18, maskedCorners: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
         self.tabBar.tintColor = .mainBlue
         self.tabBar.unselectedItemTintColor = .tabBarGrey
@@ -35,14 +35,14 @@ final class TabBarViewController: UITabBarController {
         self.delegate = self
     }
     
-    func addViewControllers() {
+    private func addViewControllers() {
         let homeTab = createViewController(title: "내 질문", imageName: "headphones", viewController: home)
-        let randomTab = createViewController(title: "랜덤 면접", imageName: "dice", viewController: myPage)
+        let randomTab = createViewController(title: "랜덤 면접", imageName: "dice", viewController: random)
         let myPageTab = createViewController(title: "내 정보", imageName: "person.fill", viewController: myPage)
         self.viewControllers = [homeTab, randomTab, myPageTab]
     }
     
-    func createViewController(title: String, imageName: String, viewController: UIViewController) -> UIViewController {
+    private func createViewController(title: String, imageName: String, viewController: UIViewController) -> UIViewController {
         let nav = UINavigationController(rootViewController: viewController)
         let image = UIImage(systemName:imageName)
         nav.tabBarItem.image = image
@@ -50,8 +50,10 @@ final class TabBarViewController: UITabBarController {
         
         return nav
     }
+
 }
 
+//MARK: - feedbackGenerator 생성
 extension TabBarViewController: UITabBarControllerDelegate {
     
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {

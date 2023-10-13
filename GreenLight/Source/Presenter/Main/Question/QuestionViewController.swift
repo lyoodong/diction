@@ -11,16 +11,12 @@ import RealmSwift
 final class QuestionViewController: BaseViewController {
     
     let questionView = QuestionView()
-    let repo = CRUDManager.shared
-    var questions: Results<QuestionModel>!
-    var selectedFolder: Results<FolderModel>!
-    var folderID: ObjectId = ObjectId()
+    let vm = QuestionViewModel()
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        selectedFolder = repo.filterByObjcID(object: FolderModel.self, key: "folderID", objectID: folderID)
-        questions = selectedFolder.first?.questions.sorted(byKeyPath: "creationDate", ascending: true)
-        
+        vm.setRealm()
+        vm.setRealm()
         questionView.questionCollectionView.reloadData()
     }
     
@@ -29,15 +25,10 @@ final class QuestionViewController: BaseViewController {
     }
     
     override func configure() {
-        selectedFolder = repo.filterByObjcID(object: FolderModel.self, key: "folderID", objectID: folderID)
-        questions = selectedFolder.first?.questions.sorted(byKeyPath: "creationDate", ascending: true)
+        vm.setRealm()
         setNavigationItem()
         setCollectionView()
         addTarget()
-    }
-    
-    override func layouts() {
-        
     }
     
     func addTarget() {
@@ -55,7 +46,7 @@ final class QuestionViewController: BaseViewController {
             sheet.prefersGrabberVisible = true
         }
         vc.delegate = self
-        vc.folderID = self.folderID
+        vc.folderID = vm.folderID
         vc.targetModel = .question
         present(vc, animated: true)
     }
@@ -64,36 +55,33 @@ final class QuestionViewController: BaseViewController {
 // MARK: - setNavigationItem
 extension QuestionViewController {
     func setNavigationItem() {
-    
-        navigationItem.title = selectedFolder.first?.folderTitle
-        navigationItem.largeTitleDisplayMode = .always
-        navigationItem.backButtonTitle = ""
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.tintColor = .black
-
-        
         
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
         addButton.tintColor = .black
-        navigationItem.rightBarButtonItem = addButton
         
         let searchBarController = BaseSearchController()
         searchBarController.searchBar.delegate = self
         searchBarController.searchBar.barStyle = .default
         searchBarController.searchBar.showsCancelButton = true
-        searchBarController.searchBar.setShowsCancelButton(true, animated: true)
+        searchBarController.searchBar.searchTextField.placeholder = " 질문을 검색해 보세요"
         if let cancelButton = searchBarController.searchBar.value(forKey: "cancelButton") as? UIButton {
             cancelButton.setTitle("취소", for: .normal)
         }
-        
-        searchBarController.searchBar.searchTextField.placeholder = " 질문을 검색해 보세요"
+
+        navigationItem.title = vm.fetchNavigationTitle()
+        navigationItem.rightBarButtonItem = addButton
         navigationItem.searchController = searchBarController
+        navigationItem.largeTitleDisplayMode = .always
+        navigationItem.backButtonTitle = ""
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.tintColor = .black
+        navigationController?.navigationBar.largeTitleTextAttributes = [.font: UIFont.boldSystemFont(ofSize: 24)]
     }
     
     @objc
     func addButtonTapped() {
         let vc = EditQuestionViewController()
-        vc.folderID = folderID
+        vc.folderID = vm.folderID
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -103,19 +91,14 @@ extension QuestionViewController {
 extension QuestionViewController: UISearchBarDelegate {
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        
-        questions = selectedFolder.first?.questions.sorted(byKeyPath: "creationDate", ascending: true)
+        vm.setRealm()
         questionView.questionCollectionView.reloadData()
     
     }
-    
+
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let searchText = searchBar.searchTextField.text {
-            let result = questions.where {
-                $0.questionTitle.contains(searchText)
-            }
-            print(result.count)
-            questions = result
+            vm.filteredQuestionsBySearchText(searchText: searchText)
         }
         questionView.questionCollectionView.reloadData()
         
@@ -123,19 +106,14 @@ extension QuestionViewController: UISearchBarDelegate {
 
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        questions = selectedFolder.first?.questions.sorted(byKeyPath: "creationDate", ascending: true)
+        vm.setRealm()
         
         if searchText.isEmpty {
-            questions = selectedFolder.first?.questions.sorted(byKeyPath: "creationDate", ascending: true)
-            questionView.questionCollectionView.reloadData()
+            vm.fetchQuestions()
+        } else {
+             vm.filteredQuestionsBySearchText(searchText: searchText)
         }
-         else {
-            let result = questions.where {
-                $0.questionTitle.contains(searchText)
-            }
-            questions = result
-            questionView.questionCollectionView.reloadData()
-        }
+        questionView.questionCollectionView.reloadData()
     }
 }
 
@@ -148,7 +126,7 @@ extension QuestionViewController: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return questions.count
+        return vm.fetchQuestionCnt()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -156,21 +134,8 @@ extension QuestionViewController: UICollectionViewDelegate, UICollectionViewData
             return UICollectionViewCell()
         }
         
-        let row = indexPath.row
-
-        cell.interviewDateCntButton.isHidden = true
-        cell.questionCntLabel.text = "2분 30초"
-        cell.editButton.isHidden = true
-        cell.cellTitleLabel.text = questions[row].questionTitle
-        cell.questionCntLabel.text = questions[row].limitTimeToString
-        cell.interviewDateLabel.text = questions[row].creationDate.dateFormatter + " 생성"
-        
-        let familiarityDegree:Int = questions[row].familiarityDegree
-        if let lightImage = returnLightImage(familiarityDegree: familiarityDegree) {
-            cell.customLevelStackView.levelStatusImageView.image = lightImage
-        }
-        
-        cell.addShadow()
+        cell.setQuestionCollectionViewCell(questions: vm.questions, indexPath: indexPath)
+    
         return cell
     }
     
@@ -180,8 +145,8 @@ extension QuestionViewController: UICollectionViewDelegate, UICollectionViewData
             clickAnimation(view: cell) {
                 let row = indexPath.row
                 let vc = DetailReplyViewController()
-                
-                vc.questionID = self.questions[row].questionID
+
+                vc.vm.questionID = self.vm.questions[row].questionID
                 self.navigationController?.pushViewController(vc, animated: true)
             }
         }
@@ -191,7 +156,7 @@ extension QuestionViewController: UICollectionViewDelegate, UICollectionViewData
 extension QuestionViewController: passTextData {
     
     func passData<T>(selectedObjects: T) {
-        self.questions = selectedObjects as? Results<QuestionModel>
-        self.questionView.questionCollectionView.reloadData()
+//        self.questions = selectedObjects as? Results<QuestionModel>
+//        self.questionView.questionCollectionView.reloadData()
     }
 }

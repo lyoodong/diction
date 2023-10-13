@@ -28,7 +28,7 @@ class RecordView: BaseView {
     lazy var replyContainerStackView = UIStackView().then {
         $0.backgroundColor = .clear
         $0.spacing = 4
-        $0.addArrangedSubview(interviewDateLabel)
+//        $0.addArrangedSubview(interviewDateLabel)
         $0.addArrangedSubview(limitTimeLabel)
     }
     

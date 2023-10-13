@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 import Then
+import RealmSwift
 
 class BaseCollectionViewCell: UICollectionViewCell {
     
@@ -64,7 +65,8 @@ class BaseCollectionViewCell: UICollectionViewCell {
     func viewSet() {
         self.backgroundColor = .mainWhite
         self.layer.cornerRadius = 12
-        addSubView()
+        self.addSubView()
+        self.addSubView()
     }
     
     func addSubView() {
@@ -95,6 +97,27 @@ class BaseCollectionViewCell: UICollectionViewCell {
             $0.top.equalTo(Constant.spacing * 3)
             $0.trailing.equalTo(-Constant.spacing * 3)
             $0.size.equalTo(24)
+        }
+    }
+    
+    func setHomeCollectioviewCell(folders: Results<FolderModel>, indexPath:IndexPath ) {
+        cellTitleLabel.text = folders[indexPath.row].folderTitle
+        interviewDateLabel.text = folders[indexPath.row].interviewDate.dateFormatter + "  | "
+        interviewDateCntButton.setTitle("  " + folders[indexPath.row].interviewDate.cntDday + "  ", for: .normal)
+        questionCntLabel.text = "\(folders[indexPath.row].questions.count)개의 질문"
+    }
+    
+    func setQuestionCollectionViewCell(questions: Results<QuestionModel>, indexPath: IndexPath) {
+        
+        interviewDateCntButton.isHidden = true
+        editButton.isHidden = true
+        cellTitleLabel.text = questions[indexPath.row].questionTitle
+        questionCntLabel.text = questions[indexPath.row].limitTimeToString
+        interviewDateLabel.text = questions[indexPath.row].creationDate.dateFormatter + " 생성"
+        
+        let familiarityDegree:Int = questions[indexPath.row].familiarityDegree
+        if let lightImage = returnLightImage(familiarityDegree: familiarityDegree) {
+            customLevelStackView.levelStatusImageView.image = lightImage
         }
     }
 }

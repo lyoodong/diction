@@ -28,14 +28,14 @@ extension Date {
     
     var dateFormatter: String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy.MM.dd.E"
+        dateFormatter.dateFormat = "yyyy.MM월 dd일 E"
         
         return dateFormatter.string(from: self)
     }
     
     var detailDateFormatter: String{
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy.MM.dd.E HH:mm:ss"
+        dateFormatter.dateFormat = "yyyy.MM월 dd일 E HH:mm:ss"
         
         return dateFormatter.string(from: self)
     }

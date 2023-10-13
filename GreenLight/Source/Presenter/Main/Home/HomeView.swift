@@ -10,8 +10,6 @@ import SnapKit
 
 final class HomeView: BaseView {
     
-    lazy var navigationItem = UINavigationItem()
-    
     lazy var homeCollectionView = BaseCollectionView(collectionViewLayout: CollectionViewLayouts.baseCollectionViewFlowLayout())
     
     lazy var sortButton = UIButton().then {
@@ -21,25 +19,24 @@ final class HomeView: BaseView {
     }
     
     override func configure() {
-        self.backgroundColor = .bgGrey
-        addSubView()
-    }
-    
-    private func addSubView() {
-        [sortButton, homeCollectionView].forEach(addSubview)
+        super.configure()
     }
 
     override func layouts() {
         
+        addSubview(sortButton)
+    
         sortButton.snp.makeConstraints {
             $0.top.equalTo(self.safeAreaLayoutGuide)
             $0.trailing.equalTo(self.safeAreaLayoutGuide).inset(Constant.spacing * 3)
-            
         }
+        
+        addSubview(homeCollectionView)
+
         homeCollectionView.snp.makeConstraints {
             $0.top.equalTo(sortButton.snp.bottom)
-            $0.leading.equalTo(self.safeAreaLayoutGuide)
-            $0.trailing.equalTo(self.safeAreaLayoutGuide)
+            $0.leading.equalTo(self.safeAreaLayoutGuide).offset(Constant.spacing * 2)
+            $0.trailing.equalTo(self.safeAreaLayoutGuide).inset(Constant.spacing * 2)
             $0.bottom.equalToSuperview()
         }
     }

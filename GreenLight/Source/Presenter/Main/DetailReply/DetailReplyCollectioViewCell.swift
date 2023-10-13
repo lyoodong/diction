@@ -8,62 +8,58 @@
 import UIKit
 import SnapKit
 import Then
+import RealmSwift
 
-class ReplyListCollectioViewCell: UICollectionViewCell {
+class DetailReplyCollectioViewCell: UICollectionViewCell {
     
     lazy var micButton = UIButton().then {
         $0.setImage(UIImage(resource: .mic), for: .normal)
         $0.tintColor = .black
     }
 
-    
     lazy var cellTitleLabel = UILabel().then {
-        $0.text = "새싹 5기 면접 질문"
         $0.textColor = .black
         $0.font = UIFont.boldSystemFont(ofSize: 16)
     }
     
     lazy var replyTextLabel = UILabel().then {
-        $0.text = "안녕하세요. 저는 조혜원입니다."
         $0.textColor = .black
         $0.font = UIFont.boldSystemFont(ofSize: 14)
     }
 
     lazy var createdDateLabel = UILabel().then {
-        $0.text = "2023.09.20 목 |"
         $0.textColor = .tabBarGrey
         $0.font = UIFont.boldSystemFont(ofSize: 12)
     }
     
     lazy var timeLabel = UILabel().then {
-        $0.text = "00:13 초"
         $0.textColor = .tabBarGrey
         $0.font = UIFont.boldSystemFont(ofSize: 12)
     }
     
     lazy var interviewStackView = UIStackView().then {
-        $0.backgroundColor = .white
         $0.spacing = 4
+        $0.backgroundColor = .white
         $0.addArrangedSubview(createdDateLabel)
         $0.addArrangedSubview(timeLabel)
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        viewSet()
-        constraints()
+        setView()
+        layouts()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func viewSet() {
-        self.backgroundColor = .mainWhite
-        self.layer.cornerRadius = 12
+    func setView() {
+        backgroundColor = .mainWhite
+        layer.cornerRadius = 12
     }
     
-    func constraints() {
+    func layouts() {
         
         addSubview(cellTitleLabel)
         
@@ -98,4 +94,10 @@ class ReplyListCollectioViewCell: UICollectionViewCell {
  
     }
     
+    func setDetailReplyCollectioViewCell(answers: Results<AnswerModel>, indexPath: IndexPath ) {
+        cellTitleLabel.text = answers[indexPath.row].creationDate.detailDateFormatter + "  녹음"
+        replyTextLabel.text = answers[indexPath.row].recordText + "···"
+        timeLabel.text = answers[indexPath.row].answeringTimeToString
+        addShadow()
+    }
 }
