@@ -10,12 +10,12 @@ import UIKit
 extension UIColor {
     
     static let mainWhite = UIColor(hexString: "#FFFFFF")
-    static let mainBlue = UIColor(hexString: "#6078FA")
+    static let mainBlue = UIColor(hexString: "#3182F6")
     static let bgGrey = UIColor(hexString: "#F8F8FA")
     static let tabBarGrey = UIColor(hexString: "#D5D9E0")
     static let mainGreen = UIColor(hexString: "#6FCF97")
     static let textDarkGrey = UIColor(hexString: "#7A828F")
-    
+    static let errorRed = UIColor(hexString: "#C13617")
 }
  
 extension UIColor {

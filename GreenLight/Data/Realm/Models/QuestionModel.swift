@@ -18,6 +18,7 @@ class QuestionModel: Object {
     @Persisted var questionMemoText: String
     @Persisted var folders: List<FolderModel>
     @Persisted var answers = List<AnswerModel>()
+
     
     var limitTimeToString: String {
         return "\(limitTimeMinutes)분 \(limitTimeSeconds)초"

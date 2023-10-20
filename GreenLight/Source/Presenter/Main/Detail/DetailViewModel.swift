@@ -39,6 +39,10 @@ class  DetailViewModel {
         return answer.first?.creationDate.detailDateFormatter ?? ""
     }
     
+    func fetchCreationDateSimple() -> String {
+        return answer.first?.creationDate.dateFormatter ?? ""
+    }
+    
     func formatTime(seconds: TimeInterval) -> String {
         let minutes = Int(seconds / 60)
         let seconds = Int(seconds.truncatingRemainder(dividingBy: 60))
@@ -53,8 +57,6 @@ class  DetailViewModel {
         } catch {
             print("AVAudioSession 설정 중 오류 발생: \(error)")
         }
-        
-        print(URL(string: fetchRecordUrl()))
 
         if let audioUrl = URL(string: fetchRecordUrl()) {
             do {

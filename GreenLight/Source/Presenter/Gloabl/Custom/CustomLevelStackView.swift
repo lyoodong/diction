@@ -13,7 +13,6 @@ class CustomLevelStackView: UIStackView {
         $0.image = UIImage(named: "RedLight")
     }
     lazy var levelStatusLabel = UILabel().then {
-        $0.text = "연습 필요"
         $0.textColor = .black
         $0.font = UIFont.boldSystemFont(ofSize: 12)
     }
@@ -38,7 +37,7 @@ class CustomLevelStackView: UIStackView {
         
         levelStatusImageView.snp.makeConstraints {
             $0.height.equalTo(Constant.spacing * 3)
-            $0.width.equalTo(Constant.spacing * 7)
+            $0.width.equalTo(Constant.spacing * 9)
         }
         
         self.addArrangedSubview(levelStatusLabel)

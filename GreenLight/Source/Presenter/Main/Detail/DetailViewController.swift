@@ -30,9 +30,14 @@ class DetailViewController: BaseViewController {
 extension DetailViewController {
     
     private func setViewData() {
-        detailview.interviewDateLabel.text = vm.fetchAnsweringTime()
+//        detailview.interviewDateLabel.text = vm.fetchAnsweringTime()
         detailview.resultTextView.text = vm.fetchRecordText()
         detailview.customPlayerView.totalTimeLabel.text = vm.formatTime(seconds: vm.audioPlayer.duration)
+        
+        detailview.customPlayerView.dateLabel.text = vm.fetchCreationDateSimple()
+        
+        detailview.customLevelStackView.isHidden = true
+        detailview.interviewDateLabel.isHidden = true
     }
     
     private func setNavigationItem() {
@@ -41,6 +46,14 @@ extension DetailViewController {
         navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor.black]
         navigationController?.navigationBar.largeTitleTextAttributes = [.font: UIFont.boldSystemFont(ofSize: 24)]
         navigationItem.largeTitleDisplayMode = .always
+        navigationItem.backAction = UIAction(handler: { _ in
+            guard let viewControllerStack = self.navigationController?.viewControllers else { return }
+                for viewController in viewControllerStack {
+                    if let vc = viewController as? DetailReplyViewController {
+                        self.navigationController?.popToViewController(vc, animated: true)
+                    }
+                }
+        })
         navigationController?.navigationBar.prefersLargeTitles = true
         tabBarController?.tabBar.isHidden = false
     }

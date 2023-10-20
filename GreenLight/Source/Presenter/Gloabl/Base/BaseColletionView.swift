@@ -12,8 +12,9 @@ class BaseCollectionView: UICollectionView {
     
     init(collectionViewLayout: UICollectionViewLayout) {
         super.init(frame: .zero, collectionViewLayout: collectionViewLayout)
-        self.roundCorners(cornerRadius: 18, maskedCorners: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
         self.backgroundColor = .bgGrey
+        self.layer.cornerRadius = 18
+        self.showsVerticalScrollIndicator = false
     }
     
     required init?(coder: NSCoder) {

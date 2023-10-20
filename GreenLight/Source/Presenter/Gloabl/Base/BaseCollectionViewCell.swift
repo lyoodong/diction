@@ -27,6 +27,7 @@ class BaseCollectionViewCell: UICollectionViewCell {
     lazy var customLevelStackView = CustomLevelStackView()
     
     lazy var interviewDateLabel = UILabel().then {
+        $0.backgroundColor = .clear
         $0.textColor = .textDarkGrey
         $0.font = UIFont.boldSystemFont(ofSize: 12)
     }
@@ -37,7 +38,7 @@ class BaseCollectionViewCell: UICollectionViewCell {
     }
     
     lazy var interviewStackView = UIStackView().then {
-        $0.backgroundColor = .white
+        $0.backgroundColor = .clear
         $0.spacing = 6
         $0.addArrangedSubview(interviewDateCntButton)
         $0.addArrangedSubview(interviewDateLabel)
@@ -65,8 +66,8 @@ class BaseCollectionViewCell: UICollectionViewCell {
     func viewSet() {
         self.backgroundColor = .mainWhite
         self.layer.cornerRadius = 12
-        self.addSubView()
-        self.addSubView()
+        self.addShadow()
+        addSubView()
     }
     
     func addSubView() {
@@ -81,7 +82,7 @@ class BaseCollectionViewCell: UICollectionViewCell {
         
         customLevelStackView.snp.makeConstraints {
             $0.top.equalTo(cellTitleLabel.snp.bottom).offset(Constant.spacing)
-            $0.leading.equalTo(Constant.spacing * 3)
+            $0.leading.equalTo(Constant.spacing * 2.5)
         }
         
         interviewDateCntButton.snp.makeConstraints {
@@ -89,7 +90,7 @@ class BaseCollectionViewCell: UICollectionViewCell {
         }
         
         interviewStackView.snp.makeConstraints {
-            $0.top.equalTo(customLevelStackView.snp.bottom).offset(Constant.spacing * 3)
+            $0.top.equalTo(customLevelStackView.snp.bottom).offset(Constant.spacing * 2)
             $0.leading.equalTo(Constant.spacing * 3)
         }
         
@@ -101,10 +102,15 @@ class BaseCollectionViewCell: UICollectionViewCell {
     }
     
     func setHomeCollectioviewCell(folders: Results<FolderModel>, indexPath:IndexPath ) {
-        cellTitleLabel.text = folders[indexPath.row].folderTitle
-        interviewDateLabel.text = folders[indexPath.row].interviewDate.dateFormatter + "  | "
-        interviewDateCntButton.setTitle("  " + folders[indexPath.row].interviewDate.cntDday + "  ", for: .normal)
-        questionCntLabel.text = "\(folders[indexPath.row].questions.count)개의 질문"
+        
+        let folder = folders[indexPath.row]
+
+        cellTitleLabel.text = folder.folderTitle
+        interviewDateLabel.text = folder.interviewDate.dateFormatter + "  | "
+        interviewDateCntButton.setTitle("  " + folder.interviewDate.cntDday + "  ", for: .normal)
+        questionCntLabel.text = "\(folder.questions.count)개의 질문"
+    
+        customLevelStackView.levelStatusImageView.image = calculateAveregeDegree(questions: folder.questions)
     }
     
     func setQuestionCollectionViewCell(questions: Results<QuestionModel>, indexPath: IndexPath) {
@@ -113,12 +119,32 @@ class BaseCollectionViewCell: UICollectionViewCell {
         editButton.isHidden = true
         cellTitleLabel.text = questions[indexPath.row].questionTitle
         questionCntLabel.text = questions[indexPath.row].limitTimeToString
-        interviewDateLabel.text = questions[indexPath.row].creationDate.dateFormatter + " 생성"
+        interviewDateLabel.text = questions[indexPath.row].creationDate.dateFormatter + "  | "
         
         let familiarityDegree:Int = questions[indexPath.row].familiarityDegree
         if let lightImage = returnLightImage(familiarityDegree: familiarityDegree) {
             customLevelStackView.levelStatusImageView.image = lightImage
         }
+    }
+    
+    func calculateAveregeDegree(questions: List<QuestionModel>) -> UIImage {
+        var sum = 0
+        for item in questions {
+            sum += item.familiarityDegree
+        }
+        
+        var result = 3
+        if questions.count == 0 {
+
+        } else {
+            result = sum / questions.count
+        }
+        let lightImage = returnLightImage(familiarityDegree: result)
+
+        guard let lightImage = lightImage else {
+            return returnLightImage(familiarityDegree: 3)!
+        }
+        return lightImage
     }
 }
 

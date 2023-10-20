@@ -18,6 +18,7 @@ class AllQuestionCell: UICollectionViewCell {
     
     lazy var interviewDateLabel = UILabel().then {
         $0.textColor = .textDarkGrey
+        $0.backgroundColor = .clear
         $0.font = UIFont.boldSystemFont(ofSize: 12)
     }
     

@@ -21,6 +21,7 @@ class DetailReplyViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         vm.setRealm()
+        setViewData()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -39,6 +40,9 @@ class DetailReplyViewController: BaseViewController {
 
 extension DetailReplyViewController {
     private func setNavigationItem() {
+        let addButton = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(eidtButtonTapped))
+        
+        navigationItem.rightBarButtonItem = addButton
         navigationItem.title = vm.question.first?.questionTitle
         navigationItem.backButtonTitle = ""
         navigationItem.largeTitleDisplayMode = .always
@@ -72,7 +76,7 @@ extension DetailReplyViewController: UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if let cell = collectionView.cellForItem(at: indexPath) {
-            clickAnimation(view: cell) {
+            cellClickAnimation(view: cell) {
                 let vc = DetailViewController()
                 let row = indexPath.row
                 vc.vm.answerID = self.vm.answers[row].answerID
@@ -89,10 +93,22 @@ extension DetailReplyViewController {
     }
     
     @objc
-    func addButtonTapped() {
-        let vc = RecordViewController()
-        vc.vm.questionID = vm.questionID
-        navigationController?.pushViewController(vc, animated: true)
+    func addButtonTapped(sender: UIButton) {
+        
+        buttonClickAnimation(view: sender, ogBackgourdColor: .mainBlue!) {
+            let vc = RecordViewController()
+            vc.vm.questionID = self.vm.questionID
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
+    @objc
+    func eidtButtonTapped() {
+        let vc = EditQuestionViewController()
+        vc.vm.questionID.value = vm.questionID
+        vc.isEdited = true
+        vc.vm.updateFolderData()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

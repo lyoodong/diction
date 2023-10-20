@@ -12,11 +12,12 @@ final class QuestionViewController: BaseViewController {
     
     let questionView = QuestionView()
     let vm = QuestionViewModel()
+    let sortVm = DependencyContainer.shared.customSortViewModel
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         vm.setRealm()
-        vm.setRealm()
+        vm.checkQuestionIsEmpty()
         questionView.questionCollectionView.reloadData()
     }
     
@@ -29,6 +30,28 @@ final class QuestionViewController: BaseViewController {
         setNavigationItem()
         setCollectionView()
         addTarget()
+    }
+    
+    override func bind() {
+        
+        sortVm.sortByLevel.bind { [weak self] _ in
+            self?.vm.fetchQuestionsByLevel()
+            self?.questionView.questionCollectionView.reloadData()
+        }
+        
+        sortVm.sortByNew.bind { [weak self] _ in
+            self?.vm.fetchQuestionsbyNew()
+            self?.questionView.questionCollectionView.reloadData()
+        }
+        
+        sortVm.sortByOld.bind { [weak self] _ in
+            self?.vm.fetchQuestionsByOld()
+            self?.questionView.questionCollectionView.reloadData()
+        }
+        
+        vm.questionsIsEmpty.bind { [weak self] value in
+            self?.questionView.emptyText.isHidden = !value
+        }
     }
     
     func addTarget() {
@@ -57,8 +80,6 @@ extension QuestionViewController {
     func setNavigationItem() {
         
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
-        addButton.tintColor = .black
-        
         let searchBarController = BaseSearchController()
         searchBarController.searchBar.delegate = self
         searchBarController.searchBar.barStyle = .default
@@ -66,22 +87,22 @@ extension QuestionViewController {
         searchBarController.searchBar.searchTextField.placeholder = " 질문을 검색해 보세요"
         if let cancelButton = searchBarController.searchBar.value(forKey: "cancelButton") as? UIButton {
             cancelButton.setTitle("취소", for: .normal)
+            cancelButton.setTitleColor(.black, for: .normal)
         }
-
         navigationItem.title = vm.fetchNavigationTitle()
         navigationItem.rightBarButtonItem = addButton
         navigationItem.searchController = searchBarController
         navigationItem.largeTitleDisplayMode = .always
         navigationItem.backButtonTitle = ""
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.tintColor = .black
+        navigationController?.navigationBar.tintColor = .mainBlue
         navigationController?.navigationBar.largeTitleTextAttributes = [.font: UIFont.boldSystemFont(ofSize: 24)]
     }
     
     @objc
     func addButtonTapped() {
         let vc = EditQuestionViewController()
-        vc.folderID = vm.folderID
+//        vc.folderID = vm.folderID
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -142,7 +163,7 @@ extension QuestionViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if let cell = collectionView.cellForItem(at: indexPath) {
-            clickAnimation(view: cell) {
+            cellClickAnimation(view: cell) {
                 let row = indexPath.row
                 let vc = DetailReplyViewController()
 

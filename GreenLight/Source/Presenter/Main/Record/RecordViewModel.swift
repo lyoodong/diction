@@ -29,7 +29,6 @@ class RecordViewModel {
     var audioFile: AVAudioFile?
     var audioFileURL: URL!
     var audioPlayer = AVAudioPlayer()
-    var timer = Timer()
     var speechRecognition: SFSpeechRecognitionResult?
     
     func setRealm() {
@@ -38,6 +37,14 @@ class RecordViewModel {
     
     func fetchlimitTime() -> String {
         return question.first?.limitTimeToString ?? ""
+    }
+    
+    func fetchLevelDgree() -> Int {
+        if let degree = question.first?.familiarityDegree {
+            return degree
+        }
+        
+        return 3
     }
     
     func fetchQuestionTitle() -> String {
@@ -100,29 +107,33 @@ class RecordViewModel {
                         let bestTranscription = response.bestTranscription
                         let recoginitionResult = bestTranscription.formattedString
                         completion(recoginitionResult)
+                    
                         if response.isFinal {
                             
-                            let metaData = response.speechRecognitionMetadata
-                            
-                            if let speakingRate = metaData?.speakingRate {
-                                print("=====음성속도 통계", speakingRate)
-                            }
-                            if let averagePauseDuration = metaData?.averagePauseDuration {
+                            DispatchQueue.global().async {
+                                let metaData = response.speechRecognitionMetadata
+                                
+                                if let speakingRate = metaData?.speakingRate {
+                                    print("=====음성속도 통계", speakingRate)
+                                }
+                                if let averagePauseDuration = metaData?.averagePauseDuration {
 
-                                print("=====평균 일시정지 시간 통계", averagePauseDuration)
-                            }
-                            
-                            if let speechDuration = metaData?.speechDuration {
-                                print("=====전체 시간 중 말한 시간 통계", speechDuration)
+                                    print("=====평균 일시정지 시간 통계", averagePauseDuration)
+                                }
+                                
+                                if let speechDuration = metaData?.speechDuration {
+                                    print("=====전체 시간 중 말한 시간 통계", speechDuration)
+                                }
+
+                                if let voiceAnalytics = metaData?.voiceAnalytics {
+    
+                                    print("=====음질 통계", voiceAnalytics.voicing)
+                                    print("=====음높이 통계", voiceAnalytics.pitch)
+                                    print("=====음 불안정성 통계", voiceAnalytics.jitter)
+                                    print("=====음성의 진동 빈도 변동을 시각화한 그래프 또는 숫자 통계", voiceAnalytics.shimmer)
+                                }
                             }
 
-                            if let voiceAnalytics = metaData?.voiceAnalytics {
-                                print("=====음성 분석 통계", voiceAnalytics)
-                                print("=====음질 통계", voiceAnalytics.voicing)
-                                print("=====음높이 통계", voiceAnalytics.pitch)
-                                print("=====음 불안정성 통계", voiceAnalytics.jitter)
-                                print("=====음성의 진동 빈도 변동을 시각화한 그래프 또는 숫자 통계", voiceAnalytics.shimmer)
-                            }
                         }
                     }
                     
@@ -202,8 +213,8 @@ class RecordViewModel {
     
     func stopRecognition() {
         fetchSpeechRecognitionStatics()
-        recognitionRequest.endAudio()
         recognitionTask?.finish()
+        recognitionRequest.endAudio()
         audioEngine.stop()
         audioEngine.inputNode.removeTap(onBus: 0)
     }
@@ -213,9 +224,8 @@ class RecordViewModel {
         
         let settings: [String: Any] = [
                 AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
-                AVSampleRateKey: 12000,
+                AVSampleRateKey: 44100,
                 AVNumberOfChannelsKey: 1,
-                AVEncoderBitRateKey: 32000,
                 AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
             ]
 

@@ -19,7 +19,6 @@ class CustomTextFields: BaseView {
     
     override func layouts() {
         addSubview(textFields)
-
         textFields.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }

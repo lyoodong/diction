@@ -13,14 +13,15 @@ class DetailView: BaseView {
     
     lazy var interviewDateLabel = UILabel().then {
         $0.text = "면접일 2023.09.20 목 | "
+        $0.backgroundColor = .clear
         $0.textColor = .textDarkGrey
-        $0.font = UIFont.boldSystemFont(ofSize: 12)
+        $0.font = UIFont.systemFont(ofSize: 16, weight: .regular)
     }
     
     lazy var limitTimeLabel = UILabel().then {
         $0.text = "2분"
         $0.textColor = .textDarkGrey
-        $0.font = UIFont.boldSystemFont(ofSize: 12)
+        $0.font = UIFont.boldSystemFont(ofSize: 14)
     }
     
     lazy var replyContainerStackView = UIStackView().then {
@@ -36,13 +37,14 @@ class DetailView: BaseView {
         $0.font = UIFont.boldSystemFont(ofSize: 12)
     }
     
-    lazy var resultTextView = UITextView().then {
+    lazy var resultTextView:UITextView = UITextView().then {
         let range = NSMakeRange($0.text.count - 1, 0)
         $0.scrollRangeToVisible(range)
         $0.textContainerInset = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
         $0.font = UIFont.systemFont(ofSize: 14, weight: .light)
         $0.layer.cornerRadius = 10
         $0.backgroundColor = .white
+        $0.font = UIFont.systemFont(ofSize: 16, weight: .medium)
     }
     
     lazy var customLevelStackView = CustomLevelStackView()
@@ -64,6 +66,7 @@ class DetailView: BaseView {
     override func layouts() {
         
         let width = UIScreen.main.bounds.width - 32
+        let guide =  self.safeAreaLayoutGuide
         
         self.addSubview(replyContainerStackView)
         
@@ -82,7 +85,7 @@ class DetailView: BaseView {
         self.addSubview(recordedReplyLabel)
         
         recordedReplyLabel.snp.makeConstraints {
-            $0.top.equalTo(customLevelStackView.snp.bottom).offset(Constant.spacing * 2)
+            $0.top.equalTo(guide).offset(Constant.spacing * 2)
             $0.leading.equalTo(Constant.spacing * 3)
         }
         

@@ -17,6 +17,12 @@ final class QuestionView: BaseView {
         $0.setTitleColor(.gray, for: .normal)
     }
     
+    lazy var emptyText: UILabel = UILabel().then {
+        $0.text = "질문을 생성해주세요!"
+        $0.textColor = .textDarkGrey
+        $0.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+    }
+    
     override func configure() {
         super.configure()
     }
@@ -37,6 +43,12 @@ final class QuestionView: BaseView {
             $0.leading.equalTo(self.safeAreaLayoutGuide)
             $0.trailing.equalTo(self.safeAreaLayoutGuide)
             $0.bottom.equalToSuperview()
+        }
+        
+        addSubview(emptyText)
+        
+        emptyText.snp.makeConstraints {
+            $0.center.equalToSuperview()
         }
     }
 }

@@ -14,10 +14,29 @@ class FolderModel: Object {
     @Persisted var interviewDate: Date
     @Persisted var createdDate = Date()
     @Persisted var questions = List<QuestionModel>()
+    @Persisted var averageLevel: Int
+
+    var calculateAverageLevel: Int {
+        var sum = 0
+        for item in questions {
+            sum += item.familiarityDegree
+        }
+        
+        var result = 3
+        if questions.count == 0 {
+
+        } else {
+            result = sum / questions.count
+        }
+        
+        return result
+    }
+    
     
     convenience init(folderTitle: String, interviewDate: Date) {
         self.init()
         self.folderTitle = folderTitle
         self.interviewDate = interviewDate
+        self.averageLevel = self.calculateAverageLevel
     }
 }

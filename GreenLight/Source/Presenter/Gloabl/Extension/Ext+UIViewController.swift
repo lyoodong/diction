@@ -12,7 +12,7 @@ extension UIViewController: ReturnIDF {
         return String(describing: self)
     }
     
-    func clickAnimation(view: UIView, completion: @escaping () -> Void) {
+    func cellClickAnimation(view: UIView, completion: @escaping () -> Void) {
         UIView.animate(withDuration: 0.15, animations: {
             view.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
             view.backgroundColor = .systemGray6
@@ -21,6 +21,23 @@ extension UIViewController: ReturnIDF {
             UIView.animate(withDuration: 0.05) {
                 view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
                 view.backgroundColor = .white
+          }
+        })
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
+            completion()
+        }
+    }
+    
+    func buttonClickAnimation(view: UIView,ogBackgourdColor: UIColor , completion: @escaping () -> Void) {
+        UIView.animate(withDuration: 0.15, animations: {
+            view.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+            view.backgroundColor = .systemGray6
+        },
+        completion: { _ in
+            UIView.animate(withDuration: 0.05) {
+                view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+                view.backgroundColor = ogBackgourdColor
           }
         })
         
@@ -41,5 +58,11 @@ extension UIViewController: ReturnIDF {
             return UIImage(named: "RedLight")
         }
     }
-   
+    
+    func showOneWayAlert(title: String) {
+        let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+        let action = UIAlertAction(title: "확인", style: .default)
+        alert.addAction(action)
+        present(alert, animated: true)
+    }
 }

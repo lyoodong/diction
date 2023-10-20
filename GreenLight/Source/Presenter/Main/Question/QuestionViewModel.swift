@@ -14,10 +14,20 @@ class QuestionViewModel {
     var folderID: ObjectId = ObjectId()
     var selectedFolder: Results<FolderModel>!
     var questions: Results<QuestionModel>!
+    var questionsIsEmpty = Observable(false)
+    
     
     func setRealm() {
         selectedFolder = repo.filterByObjcID(object: FolderModel.self, key: "folderID", objectID: folderID)
         questions = selectedFolder.first?.questions.sorted(byKeyPath: "creationDate", ascending: true)
+    }
+    
+    func checkQuestionIsEmpty() {
+        if questions.isEmpty {
+            questionsIsEmpty.value = true
+        } else {
+            questionsIsEmpty.value = false
+        }
     }
     
     func fetchQuestionCnt() -> Int {
@@ -26,6 +36,18 @@ class QuestionViewModel {
     
     func fetchQuestions() {
         questions = selectedFolder.first?.questions.sorted(byKeyPath: "creationDate", ascending: true)
+    }
+    
+    func fetchQuestionsByLevel() {
+        questions = selectedFolder.first?.questions.sorted(byKeyPath: "familiarityDegree", ascending: false)
+    }
+    
+    func fetchQuestionsbyNew() {
+        questions = selectedFolder.first?.questions.sorted(byKeyPath: "creationDate", ascending: true)
+    }
+    
+    func fetchQuestionsByOld() {
+        questions = selectedFolder.first?.questions.sorted(byKeyPath: "creationDate", ascending: false)
     }
     
     func fetchNavigationTitle() -> String {

@@ -12,6 +12,7 @@ class DetailReplyView: BaseView {
     
     lazy var interviewDateLabel = UILabel().then {
         $0.textColor = .textDarkGrey
+        $0.backgroundColor = .clear
         $0.font = UIFont.boldSystemFont(ofSize: 12)
     }
     
@@ -32,7 +33,7 @@ class DetailReplyView: BaseView {
     
     lazy var addButton = UIButton().then {
         $0.backgroundColor = .mainBlue
-        $0.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .regular)
+        $0.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         $0.setTitle("새로운 응답하기", for: .normal)
         $0.layer.cornerRadius = 10
         $0.addShadow()
@@ -63,7 +64,7 @@ class DetailReplyView: BaseView {
         
         customLevelStackView.snp.makeConstraints {
             $0.top.equalTo(replyContainerStackView.snp.bottom).offset(Constant.spacing)
-            $0.leading.equalTo(Constant.spacing * 3)
+            $0.leading.equalTo(Constant.spacing * 2)
         }
         
         let width = UIScreen.main.bounds.width - 48

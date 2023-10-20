@@ -11,9 +11,10 @@ import Speech
 import RealmSwift
 
 class RecordViewController: BaseViewController {
-        
+    
     let recordView = RecordView()
     let vm = RecordViewModel()
+    var previousText = ""
     
     var isPaused: Bool = false
     
@@ -32,7 +33,7 @@ class RecordViewController: BaseViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
     }
-
+    
     override func configure() {
         vm.setRealm()
         vm.setSession()
@@ -43,7 +44,12 @@ class RecordViewController: BaseViewController {
     
     
     func setViewData() {
-        recordView.limitTimeLabel.text = "제한 시간 " + vm.fetchlimitTime()
+        
+        let today = Date()
+        
+        recordView.limitTimeLabel.text = today.dateFormatter + " 생성"
+        let degree = vm.fetchLevelDgree()
+        recordView.customLevelStackView.levelStatusImageView.image = returnLightImage(familiarityDegree: degree)
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {_ in
             self.recordView.timeLabel.text = self.vm.updateCurrentTime()
         }
@@ -56,7 +62,9 @@ extension RecordViewController {
         navigationItem.title = vm.fetchQuestionTitle()
         navigationItem.largeTitleDisplayMode = .always
         navigationItem.backButtonTitle = ""
+        navigationItem.hidesBackButton = true
         navigationController?.navigationBar.prefersLargeTitles = true
+        tabBarController?.tabBar.isHidden = true
     }
 }
 
@@ -74,9 +82,10 @@ extension RecordViewController {
         
         let alert = UIAlertController(title: "저장하지 않겠습니까?", message: nil, preferredStyle: .alert)
         let confirm = UIAlertAction(title: "취소", style: .cancel)
-        let cancel = UIAlertAction(title: "삭제", style: .destructive) { _ in
-            self.vm.audioEngine.reset()
-            self.navigationController?.popViewController(animated: true)
+        let cancel = UIAlertAction(title: "삭제", style: .destructive) { [weak self]_ in
+            self?.vm.audioEngine.reset()
+            self?.tabBarController?.tabBar.isHidden = false
+            self?.navigationController?.popViewController(animated: true)
         }
         
         alert.addAction(confirm)
@@ -95,7 +104,7 @@ extension RecordViewController {
             vm.startRecording()
             startRecognition()
             updateRecordAnimationView(isPlay: true)
-
+            
         } else {
             if vm.audioEngine.isRunning {
                 isPaused = true
@@ -117,13 +126,13 @@ extension RecordViewController {
         } else {
             recordView.recordAnimationView.stop()
         }
-        
     }
     @objc
     func saveButtonTapped() {
         guard let recordedText = recordView.resultTextView.text else {
             return
         }
+        
         let objtID = vm.saveRecordingData(recordedText: recordedText)
         
         if isPaused {
@@ -133,25 +142,44 @@ extension RecordViewController {
         } else {
             vm.stopRecognition()
             vm.stopRecording()
-            
         }
-    
+        
         let vc = DetailViewController()
-        vc.vm.answerID = objtID
+        
         vc.vm.audioUrl = vm.audioRecorder.url
+        vc.vm.answerID = objtID
+        tabBarController?.tabBar.isHidden = false
         navigationController?.pushViewController(vc, animated: true)
     }
-}
+} 
 
 //MARK: - Speech Recognize
 
 extension RecordViewController {
-    
-    func startRecognition()   {
+    func startRecognition() {
         vm.fetchRecognition(convertedText: { resultText in
-            self.recordView.resultTextView.text = resultText
+            let diff = resultText.difference(from: self.previousText)
+            if !diff.isEmpty {
+                let attributedString = NSMutableAttributedString(string: resultText)
+                for change in diff {
+                    switch change {
+                    case .insert(let offset, let element, _):
+                        let range = NSRange(location: offset, length: element.utf16.count)
+                        attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.mainBlue, range: range)
+                    default:
+                        break
+                    }
+                }
+                
+                self.recordView.resultTextView.attributedText = self.setLineAndLetterSpacing(attributedString)
+                self.recordView.resultTextView.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+            }
+            
+            self.previousText = resultText
         })
     }
+
+
 }
 
 //MARK: - Recording
@@ -159,7 +187,7 @@ extension RecordViewController {
 
 //MARK: - Check Permission
 extension RecordViewController {
-
+    
     func requestDeniedPermission() {
         let alert = UIAlertController(
             title: "마이크 권한 요청",
@@ -195,4 +223,4 @@ extension RecordViewController {
     }
 }
 
-                
+

@@ -9,16 +9,11 @@ import Foundation
 import RealmSwift
 
 class CRUDManager: RealmCRUD{
+
+    static let shared = CRUDManager()
+    private init() { }
     
     let realm = try! Realm()
-//
-//    init(realm: Realm) {
-//        self.realm = realm
-//    }
-    
-    static let shared = CRUDManager()
-    
-    private init() { }
     
     func read<T: Object>(object: T.Type) -> Results<T> {
         return realm.objects(object)

@@ -13,6 +13,7 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         configure()
         layouts()
+        bind()
     }
 
     func configure() {
@@ -22,6 +23,9 @@ class BaseViewController: UIViewController {
     func layouts() {
         
     }
-
+    
+    func bind() {
+        
+    }
 }
 

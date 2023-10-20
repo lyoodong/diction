@@ -11,11 +11,25 @@ import RealmSwift
 class HomeViewModel {
     
     private let repo = CRUDManager.shared
-    private var folders: Results<FolderModel>!
+    var folders: Results<FolderModel>!
+    var foldersIsEmpty = Observable(false)
+    
+    init() {
+        setRealm()
+        checkFolderIsEmpty()
+    }
 
     
     func setRealm() {
-        folders = repo.read(object: FolderModel.self)
+        folders = repo.read(object: FolderModel.self).sorted(byKeyPath: "interviewDate", ascending: true)
+    }
+    
+    func checkFolderIsEmpty() {
+        if folders.isEmpty {
+            foldersIsEmpty.value = true
+        } else {
+            foldersIsEmpty.value = false
+        }
     }
     
     func fetchFolderCnt() -> Int {
@@ -23,19 +37,61 @@ class HomeViewModel {
     }
     
     func fetchFolders() -> Results<FolderModel> {
-        
-        folders = repo.read(object: FolderModel.self)
         return folders
+    }
+    
+    func fetchFoldersByLevel() {
+        folders = repo.read(object: FolderModel.self).sorted(byKeyPath: "averageLevel", ascending: false)
+    }
+    
+    func fetchFoldersbyNew()  {
+        folders = repo.read(object: FolderModel.self).sorted(byKeyPath: "interviewDate", ascending: true)
+    }
+    
+    func fetchFoldersByOld()  {
+        folders = repo.read(object: FolderModel.self).sorted(byKeyPath: "interviewDate", ascending: false)
+    }
+    
+    func fetchSelectedFolderID(row: Int) -> ObjectId {
+        return folders[row].folderID
+    }
+    
+    func deleteSelectedFolder(indexPath: IndexPath) {
+        let realm = try! Realm()
+    
+        try! realm.write {
+            let deleteFolder = realm.objects(FolderModel.self).where {
+                $0.folderID == fetchSelectedFolderID(row: indexPath.row)
+            }
+            
+            realm.delete(deleteFolder)
+        }
         
-        //    var sortState = Observable<SortState?>(nil)
-        //
-        //    enum SortState {
-        //        case defaultSet
-        //        case newSet
-        //        case oldSet
-        //        case familiarSet
-        //    }
-        
+        try! realm.write {
+            let result = realm.objects(QuestionModel.self).where {
+                $0.folders.count == 0
+            }
+            
+            for item in result {
+                realm.delete(item)
+            }
+        }
+    }
+    
+}
+
+
+
+
+//    var sortState = Observable<SortState?>(nil)
+//
+//    enum SortState {
+//        case defaultSet
+//        case newSet
+//        case oldSet
+//        case familiarSet
+//    }
+
 //        switch type {
 //        case .defaultSet:
 //            folders = repo.read(object: FolderModel.self)
@@ -50,10 +106,3 @@ class HomeViewModel {
 //            folders = repo.readSorted(object: FolderModel.self, bykeyPath: "interviewDate", ascending: false)
 //            return folders
 //        }
-    }
-    
-    func fetchSelectedFolderID(row: Int) -> ObjectId {
-        return folders[row].folderID
-    }
-    
-}
