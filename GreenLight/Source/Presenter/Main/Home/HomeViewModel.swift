@@ -45,11 +45,11 @@ class HomeViewModel {
     }
     
     func fetchFoldersbyNew()  {
-        folders = repo.read(object: FolderModel.self).sorted(byKeyPath: "interviewDate", ascending: true)
+        folders = repo.read(object: FolderModel.self).sorted(byKeyPath: "interviewDate", ascending: false)
     }
     
     func fetchFoldersByOld()  {
-        folders = repo.read(object: FolderModel.self).sorted(byKeyPath: "interviewDate", ascending: false)
+        folders = repo.read(object: FolderModel.self).sorted(byKeyPath: "interviewDate", ascending: true)
     }
     
     func fetchSelectedFolderID(row: Int) -> ObjectId {
