@@ -31,6 +31,16 @@ final class HomeViewController: BaseViewController {
         setNavigationItem()
         setCollectionView()
         addTarget()
+        let button = UIButton(type: .roundedRect)
+        button.frame = CGRect(x: 100, y: 200, width: 100, height: 30)
+        button.setTitle("Crash", for: [])
+        button.addTarget(self, action: #selector(self.crashButtonTapped(_:)), for: .touchUpInside)
+        view.addSubview(button)
+    }
+
+    
+    @IBAction func crashButtonTapped(_ sender: AnyObject) {
+        fatalError()
     }
 
     override func bind() {
@@ -72,7 +82,7 @@ extension HomeViewController {
         let logoBarButton = UIBarButtonItem(image: logoImage, style: .plain, target: self, action: nil)
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
         
-        navigationItem.title = "나의 질문 모음집"
+        navigationItem.title = "전체 보드"
         navigationItem.largeTitleDisplayMode = .always
         navigationItem.backButtonTitle = ""
         navigationItem.leftBarButtonItem = logoBarButton

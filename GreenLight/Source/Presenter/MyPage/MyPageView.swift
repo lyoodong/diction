@@ -22,6 +22,7 @@ class MyPageView: BaseView {
         $0.backgroundColor = .white
         $0.estimatedSectionHeaderHeight = 0
         $0.separatorStyle = .none
+        $0.isScrollEnabled = false
     }
     override func configure() {
         self.backgroundColor = .white

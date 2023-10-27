@@ -91,6 +91,7 @@ class CustomPlayerView: BaseView {
         currentTimeLabel.snp.makeConstraints {
             $0.top.equalTo(slider.snp.bottom).offset(Constant.spacing / 2)
             $0.leading.equalTo(slider.snp.leading)
+            $0.height.equalTo(12)
         }
         
         addSubview(totalTimeLabel)
@@ -98,6 +99,7 @@ class CustomPlayerView: BaseView {
         totalTimeLabel.snp.makeConstraints {
             $0.top.equalTo(slider.snp.bottom).offset(Constant.spacing / 2)
             $0.trailing.equalTo(slider.snp.trailing)
+            $0.height.equalTo(12)
         }
         
         let stackView = UIStackView(arrangedSubviews: [backwardButton, pauseButton, forwardButton])

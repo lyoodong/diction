@@ -65,4 +65,15 @@ extension UIViewController: ReturnIDF {
         alert.addAction(action)
         present(alert, animated: true)
     }
+    
+    func showTwoWayAlert(title: String, completion: @escaping () -> Void) {
+        let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+        let action = UIAlertAction(title: "확인", style: .default) { _ in
+            completion()
+        }
+        let cancel = UIAlertAction(title: "취소", style: .cancel)
+        alert.addAction(action)
+        alert.addAction(cancel)
+        present(alert, animated: true)
+    }
 }

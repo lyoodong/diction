@@ -109,7 +109,6 @@ class BaseCollectionViewCell: UICollectionViewCell {
         interviewDateLabel.text = folder.interviewDate.dateFormatter + "  | "
         interviewDateCntButton.setTitle("  " + folder.interviewDate.cntDday + "  ", for: .normal)
         questionCntLabel.text = "\(folder.questions.count)개의 질문"
-    
         customLevelStackView.levelStatusImageView.image = calculateAveregeDegree(questions: folder.questions)
     }
     
@@ -126,7 +125,7 @@ class BaseCollectionViewCell: UICollectionViewCell {
             customLevelStackView.levelStatusImageView.image = lightImage
         }
     }
-    
+
     func calculateAveregeDegree(questions: List<QuestionModel>) -> UIImage {
         var sum = 0
         for item in questions {

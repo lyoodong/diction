@@ -113,7 +113,7 @@ class EditQuestionView: BaseView {
         
         buttonStackView.snp.makeConstraints {
             $0.centerY.equalTo(questionLevelTitle)
-            $0.leading.equalTo(questionLevelTitle.snp.trailing).offset(Constant.spacing * 2)
+            $0.leading.equalTo(questionLevelTitle.snp.trailing).offset(Constant.spacing)
         }
         
         addSubview(limitTimeTextFields)

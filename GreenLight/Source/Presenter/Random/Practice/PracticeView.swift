@@ -71,7 +71,6 @@ class PracticeView: BaseView {
         $0.clipsToBounds = false
         $0.addShadow()
     }
-    
 
     lazy var backButton: UIButton = UIButton().then {
         let image = UIImage(systemName: "chevron.backward")

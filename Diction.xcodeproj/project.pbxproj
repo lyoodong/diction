@@ -37,7 +37,11 @@
 		BE5CDA472AD7CE9A008596EB /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5CDA462AD7CE9A008596EB /* HomeViewModel.swift */; };
 		BE5CDA492AD7D21D008596EB /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5CDA482AD7D21D008596EB /* Observable.swift */; };
 		BE5CDA4C2AD7DDC3008596EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BED3626D2ABC258000143C55 /* Assets.xcassets */; };
+		BE66C7E72AEBB0A400357A71 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = BE66C7E62AEBB0A400357A71 /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		BE66C7E92AEBB0A400357A71 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = BE66C7E82AEBB0A400357A71 /* FirebaseCrashlytics */; };
+		BE9560382AEBB5CF003BFB69 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE9560372AEBB5CF003BFB69 /* GoogleService-Info.plist */; };
 		BEA4F4322AE256E60001B937 /* savefolder.json in Resources */ = {isa = PBXBuildFile; fileRef = BEA4F4312AE256E60001B937 /* savefolder.json */; };
+		BEA4F4392AE369170001B937 /* camerOnOff.json in Resources */ = {isa = PBXBuildFile; fileRef = BEA4F4382AE369170001B937 /* camerOnOff.json */; };
 		BEAAB7C12AC950790019E295 /* RandomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAB7C02AC950790019E295 /* RandomViewController.swift */; };
 		BEAAB7C42AC956290019E295 /* BaseSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAB7C32AC956290019E295 /* BaseSearchController.swift */; };
 		BEAAB7C62AC957EE0019E295 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAAB7C52AC957EE0019E295 /* HomeView.swift */; };
@@ -136,7 +140,12 @@
 		BE5CDA1B2AD68B70008596EB /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		BE5CDA462AD7CE9A008596EB /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		BE5CDA482AD7D21D008596EB /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		BE9560372AEBB5CF003BFB69 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BEA4F4312AE256E60001B937 /* savefolder.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = savefolder.json; path = ../../../Downloads/savefolder.json; sourceTree = "<group>"; };
+		BEA4F4342AE368F80001B937 /* micCircle.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = micCircle.json; sourceTree = "<group>"; };
+		BEA4F4352AE368F80001B937 /* blueMic.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = blueMic.json; sourceTree = "<group>"; };
+		BEA4F4362AE368F80001B937 /* savefolder.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = savefolder.json; sourceTree = "<group>"; };
+		BEA4F4382AE369170001B937 /* camerOnOff.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = camerOnOff.json; path = ../../../../../Downloads/camerOnOff.json; sourceTree = "<group>"; };
 		BEAAB7C02AC950790019E295 /* RandomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomViewController.swift; sourceTree = "<group>"; };
 		BEAAB7C32AC956290019E295 /* BaseSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSearchController.swift; sourceTree = "<group>"; };
 		BEAAB7C52AC957EE0019E295 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -227,7 +236,9 @@
 				BE2437012AD7E8B800FF2F21 /* SnapKit in Frameworks */,
 				BE2437072AD7E8D500FF2F21 /* SkyFloatingLabelTextField in Frameworks */,
 				BE2436F92AD7E86B00FF2F21 /* Then in Frameworks */,
+				BE66C7E92AEBB0A400357A71 /* FirebaseCrashlytics in Frameworks */,
 				BE24370A2AD7E8DF00FF2F21 /* Lottie in Frameworks */,
+				BE66C7E72AEBB0A400357A71 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +313,25 @@
 				BEE251DB2ACB117700F74837 /* CustomSortViewController.swift */,
 			);
 			path = Sorting;
+			sourceTree = "<group>";
+		};
+		BEA4F4332AE368F10001B937 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				BEA4F4372AE368F90001B937 /* Lotties */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		BEA4F4372AE368F90001B937 /* Lotties */ = {
+			isa = PBXGroup;
+			children = (
+				BEA4F4342AE368F80001B937 /* micCircle.json */,
+				BEA4F4352AE368F80001B937 /* blueMic.json */,
+				BEA4F4362AE368F80001B937 /* savefolder.json */,
+				BEA4F4382AE369170001B937 /* camerOnOff.json */,
+			);
+			path = Lotties;
 			sourceTree = "<group>";
 		};
 		BEAAB7CA2AC96D290019E295 /* Constant */ = {
@@ -477,6 +507,7 @@
 		BED362632ABC257F00143C55 /* GreenLight */ = {
 			isa = PBXGroup;
 			children = (
+				BE9560372AEBB5CF003BFB69 /* GoogleService-Info.plist */,
 				BEE96DAF2AC18E6C00CDD722 /* Resource */,
 				BEE96DAE2AC18E6400CDD722 /* Source */,
 				BEE96DB22AC18EC500CDD722 /* Data */,
@@ -521,6 +552,7 @@
 		BEE96DAF2AC18E6C00CDD722 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				BEA4F4332AE368F10001B937 /* JSON */,
 				BE2437222ADA507F00FF2F21 /* pie_chart.png */,
 				BED3626D2ABC258000143C55 /* Assets.xcassets */,
 				BEAC63B22AE004F7000268ED /* micCircle.json */,
@@ -668,6 +700,8 @@
 				BE2437092AD7E8DF00FF2F21 /* Lottie */,
 				BE24370F2AD7EBCF00FF2F21 /* Realm */,
 				BE2437112AD7EBCF00FF2F21 /* RealmSwift */,
+				BE66C7E62AEBB0A400357A71 /* FirebaseAnalyticsWithoutAdIdSupport */,
+				BE66C7E82AEBB0A400357A71 /* FirebaseCrashlytics */,
 			);
 			productName = GreenLight;
 			productReference = BED362612ABC257F00143C55 /* GreenLight.app */;
@@ -704,6 +738,7 @@
 				BE2437052AD7E8D500FF2F21 /* XCRemoteSwiftPackageReference "SkyFloatingLabelTextField" */,
 				BE2437082AD7E8DF00FF2F21 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				BE24370E2AD7EBCF00FF2F21 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				BE66C7E52AEBB0A400357A71 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = BED362622ABC257F00143C55 /* Products */;
 			projectDirPath = "";
@@ -720,10 +755,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEA4F4322AE256E60001B937 /* savefolder.json in Resources */,
+				BE9560382AEBB5CF003BFB69 /* GoogleService-Info.plist in Resources */,
 				BE2437232ADA507F00FF2F21 /* pie_chart.png in Resources */,
 				BEAC63B32AE004F7000268ED /* micCircle.json in Resources */,
 				BEAC63B12AE002C6000268ED /* blueMic.json in Resources */,
 				BEAC63B52AE02899000268ED /* Launch Screen.storyboard in Resources */,
+				BEA4F4392AE369170001B937 /* camerOnOff.json in Resources */,
 				BE5CDA4C2AD7DDC3008596EB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -876,7 +913,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -962,7 +999,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7HDHR2SNR7;
@@ -970,18 +1007,20 @@
 				INFOPLIST_FILE = /Users/dongwanryoo/GreenLight/GreenLight/Source/Application/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "딕션";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
-				INFOPLIST_KEY_NSCameraUsageDescription = "카메라를 허가해주세요.";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "마이크를 허가해주세요.";
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "말하는 화면을 확인하기 위해 카메라 권한을 허가해주세요.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "녹음을 위해 마이크 권한을 허가해주세요.";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "음성인식을 허가해주세요.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lyoodong.Diction;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -998,7 +1037,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7HDHR2SNR7;
@@ -1006,18 +1045,20 @@
 				INFOPLIST_FILE = /Users/dongwanryoo/GreenLight/GreenLight/Source/Application/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "딕션";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
-				INFOPLIST_KEY_NSCameraUsageDescription = "카메라를 허가해주세요.";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "마이크를 허가해주세요.";
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "말하는 화면을 확인하기 위해 카메라 권한을 허가해주세요.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "녹음을 위해 마이크 권한을 허가해주세요.";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "음성인식을 허가해주세요.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lyoodong.Diction;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1101,6 +1142,14 @@
 				version = 10.43.0;
 			};
 		};
+		BE66C7E52AEBB0A400357A71 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1138,6 +1187,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BE24370E2AD7EBCF00FF2F21 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
+		};
+		BE66C7E62AEBB0A400357A71 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BE66C7E52AEBB0A400357A71 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
+		BE66C7E82AEBB0A400357A71 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BE66C7E52AEBB0A400357A71 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

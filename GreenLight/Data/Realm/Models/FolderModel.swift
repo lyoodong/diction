@@ -22,14 +22,12 @@ class FolderModel: Object {
             sum += item.familiarityDegree
         }
         
-        var result = 3
         if questions.count == 0 {
-
+            return 3
         } else {
-            result = sum / questions.count
+            return sum / questions.count
         }
-        
-        return result
+
     }
     
     

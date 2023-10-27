@@ -20,7 +20,7 @@ class RandomView: BaseView {
     }
     
     lazy var emptyText: UILabel = UILabel().then {
-        $0.text = "메인 탭에서 폴더를 생성해주세요!"
+        $0.text = "폴더에 질문을 추가해주세요!"
         $0.textColor = .textDarkGrey
         $0.font = UIFont.systemFont(ofSize: 16, weight: .medium)
     }

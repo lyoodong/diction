@@ -38,8 +38,8 @@ class CameraViewController: BaseViewController, CameraViewModelProtocol{
     
     override func configure() {
         cameraViewModel.delegate = self
-        cameraViewModel.setupFrontCamera()
         addTarget()
+        cameraViewModel.setupFrontCamera()
         cameraViewModel.fetchCurrentFamilarDegree()
         setTabBar()
         setNavigationBar()
@@ -62,15 +62,26 @@ class CameraViewController: BaseViewController, CameraViewModelProtocol{
                 self.cameraViewModel.fetchFolderTitle()
                 self.cameraView.currentIndexProgressBar.progress = self.cameraViewModel.fetchProgress()
                 self.cameraView.questionCountLabel.text = self.cameraViewModel.fetchCurrentIndexTxt()
-                checkNextButtonStatus(value: value)
                 self.cameraViewModel.fetchLimitTime(index: value)
+                checkNextButtonStatus(value: value)
+                checkBackButtonStatus(value: value)
             }
         }
         
         func checkNextButtonStatus(value: Int) {
             let questionCnt = cameraViewModel.fetchQuestionCnt()
-            if questionCnt == value {
+            if value == questionCnt - 1 {
                 cameraView.nextButton.isEnabled = false
+            } else {
+                cameraView.nextButton.isEnabled = true
+            }
+        }
+        
+        func checkBackButtonStatus(value: Int) {
+            if value == 0 {
+                cameraView.backButton.isEnabled = false
+            } else {
+                cameraView.backButton.isEnabled = true
             }
         }
         
@@ -84,9 +95,9 @@ class CameraViewController: BaseViewController, CameraViewModelProtocol{
             }
             self.cameraViewModel.uploadSelectedFamiliarityDegree(value: value)
         }
-    
+        
         cameraViewModel.limitTimeTxt.bind { value in
-            self.cameraView.limitTimeLabel.text = " \(value)  "
+            self.cameraView.limitTimeLabel.text = "\(value) "
         }
     }
 }
@@ -94,6 +105,8 @@ class CameraViewController: BaseViewController, CameraViewModelProtocol{
 extension CameraViewController {
     func setNavigationBar() {
         
+        let switchBarButton = UIBarButtonItem(customView: cameraView.cameraSwitchStackView)
+        navigationItem.rightBarButtonItem = switchBarButton
         navigationItem.largeTitleDisplayMode = .never
         navigationItem.backAction = UIAction(handler: { _ in
             self.tabBarController?.tabBar.isHidden = false
@@ -115,7 +128,7 @@ extension CameraViewController: CameraViewModelDelegate {
         view.layer.addSublayer(videoPreviewLayer)
         cameraViewModel.startCaptureSession()
     }
-
+    
     func cameraSessionError(error: Error) {
         print("Camera setup error: \(error.localizedDescription)")
     }
@@ -124,10 +137,12 @@ extension CameraViewController: CameraViewModelDelegate {
 extension CameraViewController {
     func addTarget() {
         cameraView.startButton.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)
+        cameraView.backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
         cameraView.nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
         cameraView.redLevelButton.addTarget(self, action: #selector(redLevelButton), for: .touchUpInside)
         cameraView.ornageLevelButton.addTarget(self, action: #selector(ornageLevelButton), for: .touchUpInside)
         cameraView.blueLevelButton.addTarget(self, action: #selector(blueLevelButton), for: .touchUpInside)
+        cameraView.cameraSwitchButton.addTarget(self, action: #selector(cameraSwitchButtonTapped), for: .valueChanged)
     }
     
     @objc
@@ -137,12 +152,14 @@ extension CameraViewController {
         
         if sender.isSelected {
             cameraView.recordAnimationView.play()
-            cameraView.testView.backgroundColor = .clear
-            self.cameraView.questionView.isHidden = true
+            cameraView.questionView.isHidden = true
+            cameraView.emptyText.isHidden = true
+            cameraView.emptyAnimationView.isHidden = true
         } else {
             cameraView.recordAnimationView.stop()
-            cameraView.testView.backgroundColor = .black.withAlphaComponent(0.7)
             cameraView.questionView.isHidden = false
+            cameraView.emptyText.isHidden = false
+            cameraView.emptyAnimationView.isHidden = false
         }
     }
     
@@ -159,11 +176,17 @@ extension CameraViewController {
             self.cameraViewModel.timer = nil
         }
     }
-
+    
     
     @objc
     func nextButtonTapped() {
         cameraViewModel.currnetQuestionIndex.value += 1
+        cameraViewModel.fetchCurrentFamilarDegree()
+    }
+    
+    @objc
+    func backButtonTapped() {
+        cameraViewModel.currnetQuestionIndex.value -= 1
         cameraViewModel.fetchCurrentFamilarDegree()
     }
     
@@ -209,6 +232,29 @@ extension CameraViewController {
         }
     }
     
+    @objc
+    func cameraSwitchButtonTapped(sender: UISwitch) {
+        if sender.isOn {
+            cameraView.testView.isHidden = true
+            cameraViewModel.checkCameraAuthorization { status in
+                if status == .authorized {
+                    self.cameraViewModel.setupFrontCamera()
+                } else if status == .denied {
+                    self.showTwoWayAlert(title: "권한을 변경하시겠습니까?") {
+                        if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
+                            UIApplication.shared.open(settingsURL)
+                        }
+                    }
+                }
+            }
+        } else {
+            cameraView.testView.isHidden = false
+        }
+    }
+    
+    
 }
+
+
 
 

@@ -12,13 +12,43 @@ import Lottie
 class CameraView: BaseView {
     
     lazy var testView: UIView = UIView().then {
-        $0.backgroundColor = .black.withAlphaComponent(0.7)
+        $0.backgroundColor = .bgGrey
     }
     
     lazy var questionCountLabel: UILabel = UILabel().then {
         $0.text = "1/3"
         $0.textColor = UIColor.textDarkGrey
         $0.font = UIFont.boldSystemFont(ofSize: 10)
+    }
+    
+    lazy var cameraSwitchLabel: UILabel = UILabel().then {
+        $0.text = "카메라"
+        $0.textColor = .textDarkGrey
+        $0.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+    }
+    
+    lazy var cameraSwitchButton: UISwitch = UISwitch().then {
+        $0.isOn = false
+        $0.onTintColor = .mainBlue
+    }
+    
+    lazy var cameraSwitchStackView: UIStackView = UIStackView().then {
+        $0.spacing = Constant.spacing
+        $0.addArrangedSubview(cameraSwitchLabel)
+        $0.addArrangedSubview(cameraSwitchButton)
+    }
+    
+    lazy var emptyAnimation = LottieAnimation.named("camerOnOff")
+    
+    lazy var emptyAnimationView = LottieAnimationView(animation: emptyAnimation).then {
+        $0.loopMode = .loop
+        $0.play()
+    }
+    
+    lazy var emptyText: UILabel = UILabel().then {
+        $0.text = "카메라를 키면 내 모습을 볼 수 있어요!"
+        $0.textColor = .textDarkGrey
+        $0.font = UIFont.systemFont(ofSize: 14, weight: .medium)
     }
     
     lazy var questionCntStackView = UIStackView().then {
@@ -40,12 +70,12 @@ class CameraView: BaseView {
     
     
     lazy var limitTimeLabel: UILabel = UILabel().then {
-        $0.text = " 00:00  "
+        $0.text = "00:00"
         $0.textAlignment = .center
         $0.textColor = .white
         $0.font = UIFont.boldSystemFont(ofSize: 24)
         $0.textAlignment = .center
-        $0.backgroundColor = .black.withAlphaComponent(0.7)
+        $0.backgroundColor = .mainBlue!
         $0.layer.cornerRadius = 12
         $0.clipsToBounds = true
     }
@@ -110,9 +140,9 @@ class CameraView: BaseView {
         $0.backgroundColor = .clear
     }
     
-    lazy var cancelButton = UIButton().then {
+    lazy var backButton = UIButton().then {
         $0.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .regular)
-        $0.setTitle("취소", for: .normal)
+        $0.setTitle("이전", for: .normal)
         $0.setTitleColor(.textDarkGrey, for: .normal)
     }
     
@@ -126,7 +156,7 @@ class CameraView: BaseView {
         $0.alignment = .center
         $0.distribution = .equalSpacing
         $0.spacing = 60
-        $0.addArrangedSubview(cancelButton)
+        $0.addArrangedSubview(backButton)
         $0.addArrangedSubview(startButton)
         $0.addArrangedSubview(nextButton)
     }
@@ -145,6 +175,18 @@ class CameraView: BaseView {
         addSubview(testView)
         testView.snp.makeConstraints {
             $0.edges.equalToSuperview()
+        }
+        
+        testView.addSubview(emptyAnimationView)
+        emptyAnimationView.snp.makeConstraints {
+            $0.center.equalToSuperview()
+            $0.size.equalTo(100)
+        }
+        
+        testView.addSubview(emptyText)
+        emptyText.snp.makeConstraints {
+            $0.top.equalTo(emptyAnimationView.snp.bottom).offset(-Constant.spacing * 2)
+            $0.centerX.equalToSuperview()
         }
     
         addSubview(limitTimeLabel)
@@ -209,7 +251,7 @@ class CameraView: BaseView {
         
 
         
-        cancelButton.snp.makeConstraints {
+        backButton.snp.makeConstraints {
             $0.size.equalTo(50)
         }
         
@@ -234,3 +276,8 @@ class CameraView: BaseView {
         }
     }
 }
+
+//lazy var testView: UIImageView = UIImageView().then {
+//        $0.image = UIImage(named: "person")
+//    }
+

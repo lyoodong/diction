@@ -30,6 +30,7 @@ class RecordViewModel {
     var audioFileURL: URL!
     var audioPlayer = AVAudioPlayer()
     var speechRecognition: SFSpeechRecognitionResult?
+    let fileManager = FileManager.default
     
     func setRealm() {
         question = repo.filterByObjcID(object: QuestionModel.self, key: "questionID", objectID: questionID)
@@ -51,14 +52,65 @@ class RecordViewModel {
         return question.first?.questionTitle ?? ""
     }
     
-    private func getDocumentsDirectory() -> URL {
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        return paths[0]
-    }
+//    private func getDocumentsDirectory() -> URL {
+//        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+//        return paths[0]
+//    }
+//
+////    func creatAudioFileURL() -> URL {
+////        return getDocumentsDirectory().appendingPathComponent("\(answerID).m4a")
+////    }
+////
+//    private func createDocumentsDirectory() -> URL {
+//        let documentPath = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
+//        return documentPath
+//    }
+//
+//    private func createLocalFolder() -> URL {
+//        let dictionFolderPath = createDocumentsDirectory().appendingPathComponent("Diction", conformingTo: .folder)
+//
+//        if !FileManager.default.fileExists(atPath: dictionFolderPath.path) {
+//            do {
+//                try FileManager.default.createDirectory(at: dictionFolderPath, withIntermediateDirectories: true, attributes: nil)
+//            } catch {
+//                print("폴더 생성 실패: \(error.localizedDescription)")
+//            }
+//        }
+//
+//        return dictionFolderPath
+//    }
+//
+//    func creatAudioFileURL() -> URL {
+//        return createLocalFolder().appendingPathComponent("\(answerID).m4a")
+//    }
     
-    func creatAudioFileURL() -> URL {
-        return getDocumentsDirectory().appendingPathComponent("\(answerID).m4a")
+    func createDictionFolder() -> URL? {
+        if let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            let dictionFolderURL = documentsDirectory.appendingPathComponent("diction")
+            
+            if !FileManager.default.fileExists(atPath: dictionFolderURL.path) {
+                do {
+                    try FileManager.default.createDirectory(at: dictionFolderURL, withIntermediateDirectories: true, attributes: nil)
+                    return dictionFolderURL
+                } catch {
+                    print("폴더 생성 실패: \(error.localizedDescription)")
+                    return nil
+                }
+            }
+            
+            return dictionFolderURL
+        }
+        return nil
     }
+
+    func createAudioFileURL(answerID: String) -> URL? {
+        if let dictionFolderURL = createDictionFolder() {
+            print(dictionFolderURL)
+            return dictionFolderURL.appendingPathComponent("\(answerID).aac")
+        }
+        return nil
+    }
+
     
     func formatTime(seconds: TimeInterval) -> String {
         let minutes = Int(seconds / 60)
@@ -220,7 +272,7 @@ class RecordViewModel {
     }
     
     func startRecording() {
-        audioFileURL = creatAudioFileURL()
+        audioFileURL = createAudioFileURL(answerID: answerID)
         
         let settings: [String: Any] = [
                 AVFormatIDKey: Int(kAudioFormatMPEG4AAC),

@@ -92,7 +92,7 @@ extension QuestionViewController {
         navigationItem.title = vm.fetchNavigationTitle()
         navigationItem.rightBarButtonItem = addButton
         navigationItem.searchController = searchBarController
-        navigationItem.largeTitleDisplayMode = .always
+        navigationItem.largeTitleDisplayMode =  .always
         navigationItem.backButtonTitle = ""
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.tintColor = .mainBlue

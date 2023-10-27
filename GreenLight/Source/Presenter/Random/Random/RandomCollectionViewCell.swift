@@ -77,7 +77,32 @@ class RandomCollectionViewCell: UICollectionViewCell {
     }
     
     func setRandomCollectioviewCell(folders: Results<FolderModel>, indexPath:IndexPath ) {
-        cellTitleLabel.text = folders[indexPath.row].folderTitle
-        folderCntLabel.text = "\(folders[indexPath.row].questions.count)개의 질문"
+        
+        let folder = folders[indexPath.row]
+        cellTitleLabel.text = folder.folderTitle
+        folderCntLabel.text = "\(folder.questions.count)개의 질문"
+        let familiarityDegree = folder.averageLevel
+        customLevelStackView.levelStatusImageView.image = calculateAveregeDegree(questions: folder.questions)
+    }
+    
+    
+    func calculateAveregeDegree(questions: List<QuestionModel>) -> UIImage {
+        var sum = 0
+        for item in questions {
+            sum += item.familiarityDegree
+        }
+        
+        var result = 3
+        if questions.count == 0 {
+
+        } else {
+            result = sum / questions.count
+        }
+        let lightImage = returnLightImage(familiarityDegree: result)
+
+        guard let lightImage = lightImage else {
+            return returnLightImage(familiarityDegree: 3)!
+        }
+        return lightImage
     }
 }

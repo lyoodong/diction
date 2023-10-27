@@ -34,6 +34,27 @@ class CameraViewModel {
         fetchLimitTimeTxt()
     }
     
+    func checkCameraAuthorization(completion: @escaping (_ status: AVAuthorizationStatus) -> Void) {
+        switch AVCaptureDevice.authorizationStatus(for: .video) {
+        case .authorized:
+            completion(.authorized)
+        case .notDetermined:
+            requestCameraAuthorization()
+        case .denied, .restricted:
+            completion(.denied)
+        }
+    }
+    
+    func requestCameraAuthorization() {
+           AVCaptureDevice.requestAccess(for: .video) { granted in
+               if granted {
+                   self.setupFrontCamera()
+               } else {
+                   return
+               }
+           }
+       }
+    
     func setupFrontCamera() {
         if let frontCamera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .front) {
             do {
@@ -99,7 +120,7 @@ class CameraViewModel {
         }
         
     }
-
+    
     func fetchLimitTime(index: Int){
         limitMinutes.value = questions[index].limitTimeMinutes
         limitSeconds.value = questions[index].limitTimeSeconds
@@ -136,4 +157,4 @@ class CameraViewModel {
     
     
 }
-    
+

@@ -38,7 +38,7 @@ extension TabBarViewController {
     
     private func addViewControllers() {
         let homeTab = createViewController(title: "내 질문", imageName: "headphones", viewController: home)
-        let randomTab = createViewController(title: "랜덤 면접", imageName: "dice", viewController: random)
+        let randomTab = createViewController(title: "모의 면접", imageName: "dice", viewController: random)
 //        let statisticsTab = createViewController(title: "통계", imageName: "chart.bar", viewController: statistics)
         let myPageTab = createViewController(title: "내 정보", imageName: "person.fill", viewController: myPage)
         self.viewControllers = [homeTab, randomTab, myPageTab]

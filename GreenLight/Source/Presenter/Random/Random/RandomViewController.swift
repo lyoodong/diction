@@ -20,6 +20,7 @@ class RandomViewController: BaseViewController {
         vm.setRealm()
         vm.checkFolderIsEmpty()
         randomView.randomCollectionView.reloadData()
+        tabBarController?.tabBar.isHidden = false
     }
 
     override func configure() {
@@ -44,14 +45,14 @@ class RandomViewController: BaseViewController {
 extension RandomViewController {
     private func setNavigationItem() {
         
-        let logoImage = UIImage(systemName: "waveform.circle.fill")
+        let logoImage = UIImage(named: "Logo")
         let logoBarButton = UIBarButtonItem(image: logoImage, style: .plain, target: self, action: nil)
         logoBarButton.tintColor = .mainBlue
         
         let navigationBarAppearance = UINavigationBarAppearance()
         navigationBarAppearance.backgroundColor = .red
     
-        navigationItem.title = "Do It Random Practice"
+        navigationItem.title = "모의 면접"
         navigationItem.largeTitleDisplayMode = .always
         navigationItem.backButtonTitle = ""
         navigationItem.leftBarButtonItem = logoBarButton
