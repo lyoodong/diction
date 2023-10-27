@@ -4,15 +4,15 @@
 ### O**utline**
 
 <p align="center">
-  <img src= "snapshot/diction_1.png" align="left" width="33%">
-  <img src= "snapshot/diction_2.png" align="left" width="33%" style="margin-left: 20" >
-  <img src= "snapshot/diction_3.png" align="left" width="33%" style="margin-left: 20" >
+  <img src= "Snapshot/diction_1.png" align="left" width="33%">
+  <img src= "Snapshot/diction_2.png" align="left" width="33%" style="margin-left: 20" >
+  <img src= "Snapshot/diction_3.png" align="left" width="33%" style="margin-left: 20" >
 </p>
 
 <p align="center">
-  <img src= "snapshot/diction_4.png" align="left" width="33%">
-  <img src= "snapshot/diction_5.png" align="left" width="33%" style="margin-left: 20" >
-  <img src= "snapshot/diction_6.png" align="left" width="33%" style="margin-left: 20" >
+  <img src= "Snapshot/diction_4.png" align="left" width="33%">
+  <img src= "Snapshot/diction_5.png" align="left" width="33%" style="margin-left: 20" >
+  <img src= "Snapshot/diction_6.png" align="left" width="33%" style="margin-left: 20" >
 </p>
 
 - **언어** : Swift
