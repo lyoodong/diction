@@ -7,50 +7,58 @@
 
 import UIKit
 
-class StatisticsViewController: BaseViewController {
+protocol StatisticsViewModelProtocol: AnyObject {
+    var StatisticsViewModel: StatisticsViewModel { get }
+}
 
+class StatisticsViewController: BaseViewController, StatisticsViewModelProtocol {
+    var StatisticsViewModel: StatisticsViewModel
     let statisticsView = StatisticsView()
-    let vm = StatisticsViewModel()
+    
+    init(StatisticsViewModel: StatisticsViewModel) {
+        self.StatisticsViewModel = StatisticsViewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func loadView() {
         view = statisticsView
+        setStatisticsCollectionView()
     }
     
     override func configure() {
-        setStatisticsCollectionView()
-    }
-}
-
-
-//MARK: - setUI
-extension StatisticsViewController {
-    func setStatisticsCollectionView() {
-        statisticsView.statisticsCollectionView.delegate = self
-        statisticsView.statisticsCollectionView.dataSource = self
         
-        let cellIdentifiers = [
-            "CellIdentifier1": FamiliarityCell.self
-        ]
-
-        cellIdentifiers.forEach { identifier, cellClass in
-            statisticsView.statisticsCollectionView.register(cellClass, forCellWithReuseIdentifier: identifier)
-        }
     }
 }
 
 //MARK: - UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 extension StatisticsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+    func setStatisticsCollectionView() {
+        statisticsView.statisticsCollectionView.delegate = self
+        statisticsView.statisticsCollectionView.dataSource = self
+        
+        let cellIdentifiers = [
+            InfoCell.IDF: InfoCell.self
+        ]
+
+        cellIdentifiers.forEach { identifier, cellClass in
+            statisticsView.statisticsCollectionView.register(cellClass, forCellWithReuseIdentifier: identifier)
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        1
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell: UICollectionViewCell
-        switch indexPath.item {
+    
+        switch indexPath.row {
         case 0:
-            cell = statisticsView.statisticsCollectionView.dequeueReusableCell(withReuseIdentifier: "CellIdentifier1", for: indexPath) as! FamiliarityCell
+            let cell = statisticsView.statisticsCollectionView.dequeueReusableCell(withReuseIdentifier: InfoCell.IDF, for: indexPath) as! InfoCell
     
             return cell
       

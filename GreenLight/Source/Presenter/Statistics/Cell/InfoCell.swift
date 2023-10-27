@@ -1,5 +1,5 @@
 //
-//  FamiliarityCell.swift
+//  InfoCell.swift
 //  GreenLight
 //
 //  Created by Dongwan Ryoo on 2023/10/17.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FamiliarityCell: UICollectionViewCell {
+class InfoCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)

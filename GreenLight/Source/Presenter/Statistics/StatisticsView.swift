@@ -9,10 +9,9 @@ import UIKit
 
 class StatisticsView: BaseView {
     
-    lazy var statisticsCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout()).then {
-        $0.backgroundColor = .bgGrey
+    lazy var statisticsCollectionView: UICollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
+        $0.backgroundColor = .black
     }
-    
     
     override func layouts() {
         

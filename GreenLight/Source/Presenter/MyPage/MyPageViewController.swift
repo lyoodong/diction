@@ -9,7 +9,6 @@ import UIKit
 
 protocol MyPageViewModelProtocol {
     var myPageViewModel: MyPageViewModel { get }
-    
 }
 
 class MyPageViewController: BaseViewController, MyPageViewModelProtocol {

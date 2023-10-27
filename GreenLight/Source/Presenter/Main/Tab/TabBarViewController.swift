@@ -13,6 +13,7 @@ final class TabBarViewController: UITabBarController {
     
     private let home = HomeViewController()
     private let random = RandomViewController()
+    private let statistics = StatisticsViewController(StatisticsViewModel: StatisticsViewModel())
     private let myPage = MyPageViewController(myPageViewModel: MyPageViewModel())
     private let feedbackGenerator = UIImpactFeedbackGenerator(style: .medium)
     
@@ -39,9 +40,9 @@ extension TabBarViewController {
     private func addViewControllers() {
         let homeTab = createViewController(title: "내 질문", imageName: "headphones", viewController: home)
         let randomTab = createViewController(title: "모의 면접", imageName: "dice", viewController: random)
-//        let statisticsTab = createViewController(title: "통계", imageName: "chart.bar", viewController: statistics)
+        let statisticsTab = createViewController(title: "분석", imageName: "chart.bar", viewController: statistics)
         let myPageTab = createViewController(title: "내 정보", imageName: "person.fill", viewController: myPage)
-        self.viewControllers = [homeTab, randomTab, myPageTab]
+        self.viewControllers = [homeTab, randomTab, statisticsTab, myPageTab]
     }
     
     private func createViewController(title: String, imageName: String, viewController: UIViewController) -> UIViewController {
