@@ -3,17 +3,17 @@
 
 ### O**utline**
 
-![Simulator Screenshot - iPhone 14 - 2023-10-27 at 19.46.22.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f10ba715-b66d-41e7-8fe0-785d96f7142e/8044ac8b-2f6d-4be7-a06d-a6eabf4db1e7/Simulator_Screenshot_-_iPhone_14_-_2023-10-27_at_19.46.22.png)
+<p align="center">
+  <img src= "snapshot/diction_1.png" align="left" width="33%">
+  <img src= "snapshot/diction_2.png" align="left" width="33%" style="margin-left: 20" >
+  <img src= "snapshot/diction_3.png" align="left" width="33%" style="margin-left: 20" >
+</p>
 
-![Simulator Screenshot - iPhone 14 - 2023-10-27 at 19.47.07.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f10ba715-b66d-41e7-8fe0-785d96f7142e/cb41e69f-7b80-454b-9a04-05a32d406593/Simulator_Screenshot_-_iPhone_14_-_2023-10-27_at_19.47.07.png)
-
-![Simulator Screenshot - iPhone 14 - 2023-10-20 at 22.26.39.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f10ba715-b66d-41e7-8fe0-785d96f7142e/6c3e9ccf-5297-4bd8-b4f0-e9b09b7269cf/Simulator_Screenshot_-_iPhone_14_-_2023-10-20_at_22.26.39.png)
-
-![Simulator Screenshot - iPhone 14 - 2023-10-20 at 22.30.53.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f10ba715-b66d-41e7-8fe0-785d96f7142e/ea11c60d-758f-4725-b772-eb11d26ea5b3/Simulator_Screenshot_-_iPhone_14_-_2023-10-20_at_22.30.53.png)
-
-![Simulator Screenshot - iPhone 14 - 2023-10-27 at 19.47.24.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f10ba715-b66d-41e7-8fe0-785d96f7142e/d820a17e-87aa-4ab3-b932-9883027e2db5/Simulator_Screenshot_-_iPhone_14_-_2023-10-27_at_19.47.24.png)
-
-![Simulator Screenshot - iPhone 14 - 2023-10-20 at 23.00.21.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f10ba715-b66d-41e7-8fe0-785d96f7142e/50d4b796-2a07-412b-81ad-04debbd29454/Simulator_Screenshot_-_iPhone_14_-_2023-10-20_at_23.00.21.png)
+<p align="center">
+  <img src= "snapshot/diction_4.png" align="left" width="33%">
+  <img src= "snapshot/diction_5.png" align="left" width="33%" style="margin-left: 20" >
+  <img src= "snapshot/diction_6.png" align="left" width="33%" style="margin-left: 20" >
+</p>
 
 - **언어** : Swift
 - **프레임워크**: UIkit, AVFoundation, Speech
