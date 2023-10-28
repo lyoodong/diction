@@ -24,6 +24,7 @@ extension Date {
         } else {
             return "날짜 계산 오류"
         }
+
     }
     
     var dateFormatter: String {
@@ -38,5 +39,18 @@ extension Date {
         dateFormatter.dateFormat = "yyyy.MM월 dd일 E HH:mm:ss"
         
         return dateFormatter.string(from: self)
+    }
+    
+    var weekAgo: Date {
+        let calendar = Calendar.current
+    
+        return calendar.date(byAdding: .day, value: -7, to: Date())!
+    }
+    
+    var convertWeekToString: String {
+        let current = Date().dateFormatter
+        let weekAgo = self.weekAgo.dateFormatter
+        
+        return "\(current) ~ \(weekAgo)"
     }
 }

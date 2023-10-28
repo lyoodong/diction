@@ -13,23 +13,24 @@ protocol StatisticsViewModelProtocol: AnyObject {
 
 class StatisticsViewController: BaseViewController, StatisticsViewModelProtocol {
     var StatisticsViewModel: StatisticsViewModel
-    let statisticsView = StatisticsView()
+    private let statisticsView = StatisticsView()
     
     init(StatisticsViewModel: StatisticsViewModel) {
         self.StatisticsViewModel = StatisticsViewModel
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     override func loadView() {
         view = statisticsView
-        setStatisticsCollectionView()
     }
     
+    
     override func configure() {
+        setStatisticsCollectionView()
         
     }
 }
@@ -37,12 +38,13 @@ class StatisticsViewController: BaseViewController, StatisticsViewModelProtocol 
 //MARK: - UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 extension StatisticsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    func setStatisticsCollectionView() {
+    private func setStatisticsCollectionView() {
         statisticsView.statisticsCollectionView.delegate = self
         statisticsView.statisticsCollectionView.dataSource = self
         
         let cellIdentifiers = [
-            InfoCell.IDF: InfoCell.self
+            TotalAswerTimeCell.IDF: TotalAswerTimeCell.self,
+            WeeklyLearningRecordCell.IDF : WeeklyLearningRecordCell.self
         ]
 
         cellIdentifiers.forEach { identifier, cellClass in
@@ -51,18 +53,32 @@ extension StatisticsViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     
         switch indexPath.row {
         case 0:
-            let cell = statisticsView.statisticsCollectionView.dequeueReusableCell(withReuseIdentifier: InfoCell.IDF, for: indexPath) as! InfoCell
+            let cell = statisticsView.statisticsCollectionView.dequeueReusableCell(withReuseIdentifier: TotalAswerTimeCell.IDF, for: indexPath) as! TotalAswerTimeCell
+            
+            let totalAnswerTime = StatisticsViewModel.fetchWeeklyAnsweringTime()
+            cell.setCell(totalAnswerTime: totalAnswerTime)
     
             return cell
-      
             
+        case 1:
+            let cell = statisticsView.statisticsCollectionView.dequeueReusableCell(withReuseIdentifier: WeeklyLearningRecordCell.IDF, for: indexPath) as! WeeklyLearningRecordCell
+            
+            let folderCount = StatisticsViewModel.fetchWeeklyModelCount(with: FolderModel.self)
+            let questionCount = StatisticsViewModel.fetchWeeklyModelCount(with: QuestionModel.self)
+            let answerCount = StatisticsViewModel.fetchWeeklyModelCount(with: AnswerModel.self)
+            
+            cell.setCell(folderCount: folderCount, questionCount: questionCount, answerCount: answerCount)
+            
+            return cell
+            
+      
         default:
             fatalError("Invalid cell index")
         }
@@ -70,21 +86,19 @@ extension StatisticsViewController: UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let spacing: CGFloat = 8
-        let width = UIScreen.main.bounds.width - spacing * 6
+        let spacing = LayoutSpacing()
         
         switch indexPath.item {
             
         case 0:
-            return CGSize(width: width, height: width)
+            return CGSize(width: spacing.width, height: spacing.width * 0.4)
+        case 1:
+            return CGSize(width: spacing.narrowedWidth(3), height: spacing.width * 0.5)
         
         default:
-            return CGSize(width: width, height: width)
+            return CGSize(width: 0, height: 0)
         }
     }
-    
-    
-    
 }
 
 

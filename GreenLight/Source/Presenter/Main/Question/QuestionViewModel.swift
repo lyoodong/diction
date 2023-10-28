@@ -19,7 +19,7 @@ class QuestionViewModel {
     
     func setRealm() {
         selectedFolder = repo.filterByObjcID(object: FolderModel.self, key: "folderID", objectID: folderID)
-        questions = selectedFolder.first?.questions.sorted(byKeyPath: "creationDate", ascending: true)
+        questions = selectedFolder.first?.questions.sorted(byKeyPath: "createdDate", ascending: true)
     }
     
     func checkQuestionIsEmpty() {
@@ -35,7 +35,7 @@ class QuestionViewModel {
     }
     
     func fetchQuestions() {
-        questions = selectedFolder.first?.questions.sorted(byKeyPath: "creationDate", ascending: true)
+        questions = selectedFolder.first?.questions.sorted(byKeyPath: "createdDate", ascending: true)
     }
     
     func fetchQuestionsByLevel() {
@@ -43,11 +43,11 @@ class QuestionViewModel {
     }
     
     func fetchQuestionsbyNew() {
-        questions = selectedFolder.first?.questions.sorted(byKeyPath: "creationDate", ascending: true)
+        questions = selectedFolder.first?.questions.sorted(byKeyPath: "createdDate", ascending: true)
     }
     
     func fetchQuestionsByOld() {
-        questions = selectedFolder.first?.questions.sorted(byKeyPath: "creationDate", ascending: false)
+        questions = selectedFolder.first?.questions.sorted(byKeyPath: "createdDate", ascending: false)
     }
     
     func fetchNavigationTitle() -> String {

@@ -27,4 +27,5 @@ struct Constant {
         case smallLogo = "smallLogo"
         case stop = "stop"
     }
+    
 }

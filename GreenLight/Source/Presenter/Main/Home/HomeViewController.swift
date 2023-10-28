@@ -91,7 +91,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func setCollectionView() {
         homeView.homeCollectionView.delegate = self
         homeView.homeCollectionView.dataSource = self
-        homeView.homeCollectionView.register(BaseCollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        homeView.homeCollectionView.register(BaseMainCollectionViewCell.self, forCellWithReuseIdentifier: BaseMainCollectionViewCell.IDF)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -99,7 +99,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? BaseCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BaseMainCollectionViewCell.IDF, for: indexPath) as? BaseMainCollectionViewCell else {
             return UICollectionViewCell()
         }
         

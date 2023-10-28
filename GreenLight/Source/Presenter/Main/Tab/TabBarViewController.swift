@@ -32,8 +32,10 @@ extension TabBarViewController {
         self.tabBar.tintColor = .mainBlue
         self.tabBar.unselectedItemTintColor = .tabBarGrey
         self.tabBar.backgroundColor = .white
+        self.tabBar.addShadow()
         self.tabBar.isTranslucent = true
         self.delegate = self
+
         
     }
     

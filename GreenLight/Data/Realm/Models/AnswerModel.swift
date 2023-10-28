@@ -10,7 +10,7 @@ import RealmSwift
 
 class AnswerModel: Object {
     @Persisted(primaryKey: true) var answerID: String
-    @Persisted var creationDate: Date
+    @Persisted var createdDate: Date
     @Persisted var answeringTime: TimeInterval
     @Persisted var recordText: String
     @Persisted var recordUrl: String
@@ -23,11 +23,11 @@ class AnswerModel: Object {
     }
     
     
-    convenience init(answerID:String, recordText: String, creationDate: Date, answeringTime: TimeInterval, recordUrl: String, questionID: ObjectId) {
+    convenience init(answerID:String, recordText: String, createdDate: Date, answeringTime: TimeInterval, recordUrl: String, questionID: ObjectId) {
         self.init()
         self.answerID = answerID
         self.recordText = recordText
-        self.creationDate = creationDate
+        self.createdDate = createdDate
         self.answeringTime = answeringTime
         self.recordUrl = recordUrl
         self.questionID = questionID

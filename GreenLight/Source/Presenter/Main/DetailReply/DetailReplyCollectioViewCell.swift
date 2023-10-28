@@ -95,7 +95,7 @@ class DetailReplyCollectioViewCell: UICollectionViewCell {
     }
     
     func setDetailReplyCollectioViewCell(answers: Results<AnswerModel>, indexPath: IndexPath ) {
-        cellTitleLabel.text = answers[indexPath.row].creationDate.detailDateFormatter + "  녹음"
+        cellTitleLabel.text = answers[indexPath.row].createdDate.detailDateFormatter + "  녹음"
         replyTextLabel.text = answers[indexPath.row].recordText + "···"
         timeLabel.text = answers[indexPath.row].answeringTimeToString
         addShadow()

@@ -118,7 +118,7 @@ extension DetailReplyViewController {
     func setViewData() {
         detailReplyView.limitTimeLabel.text = vm.fetchLimitTime()
         detailReplyView.customTextView.resultTextView.text = vm.fetchMemoText()
-        detailReplyView.interviewDateLabel.text = vm.fetchCreationDate()
+        detailReplyView.interviewDateLabel.text = vm.fetchCreatedDate()
         detailReplyView.customLevelStackView.levelStatusImageView.image = returnLightImage(familiarityDegree: vm.fetchFamiliartyDegree())
         detailReplyView.replyListCollectionView.reloadData()
     }

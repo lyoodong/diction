@@ -36,11 +36,11 @@ class  DetailViewModel {
     }
     
     func fetchCreationDate() -> String {
-        return answer.first?.creationDate.detailDateFormatter ?? ""
+        return answer.first?.createdDate.detailDateFormatter ?? ""
     }
     
     func fetchCreationDateSimple() -> String {
-        return answer.first?.creationDate.dateFormatter ?? ""
+        return answer.first?.createdDate.dateFormatter ?? ""
     }
     
     func formatTime(seconds: TimeInterval) -> String {
