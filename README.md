@@ -11,7 +11,7 @@
 - **디자인패턴**: MVVM, Singleton
 - **협업**: Git, Figma
 - **앱스토어 링크**: https://apps.apple.com/app/diction/id6470106057
-- - **AVFoundation, Speech** 프레임워크를 활용해 **실시간 STT, 녹음, Player 기능** 구현
+- **AVFoundation, Speech** 프레임워크를 활용해 **실시간 STT, 녹음, Player 기능** 구현
 - **RealmList**를 활용해 N:M 스키마 대응
 - **DIP**를 활용해 의존성 역전
 
