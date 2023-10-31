@@ -1,4 +1,3 @@
-
 <img src="Snapshot/딕션스냅샷.png" align="left">  
 
 # diction
