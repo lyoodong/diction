@@ -12,7 +12,7 @@ class QuestionModel: Object {
     @Persisted(primaryKey: true) var questionID: ObjectId
     @Persisted var questionTitle: String
     @Persisted var familiarityDegree: Int
-    @Persisted var creationDate: Date
+    @Persisted var createdDate: Date
     @Persisted var limitTimeMinutes: Int
     @Persisted var limitTimeSeconds: Int
     @Persisted var questionMemoText: String
@@ -24,11 +24,11 @@ class QuestionModel: Object {
         return "\(limitTimeMinutes)분 \(limitTimeSeconds)초"
     }
     
-    convenience init(questionTitle: String, familiarityDegree: Int, creationDate: Date, limitTimeMinutes: Int, limitTimeSeconds: Int, folders: List<FolderModel>) {
+    convenience init(questionTitle: String, familiarityDegree: Int, createdDate: Date, limitTimeMinutes: Int, limitTimeSeconds: Int, folders: List<FolderModel>) {
         self.init()
         self.questionTitle = questionTitle
         self.familiarityDegree = familiarityDegree
-        self.creationDate = creationDate
+        self.createdDate = createdDate
         self.limitTimeMinutes = limitTimeMinutes
         self.limitTimeSeconds = limitTimeSeconds
         self.folders = folders

@@ -312,7 +312,7 @@ class RecordViewModel {
         
         let answeringTime = audioRecorder.currentTime
         print("answeringTime",answeringTime)
-        let objc = AnswerModel(answerID: answerID, recordText: recordedText, creationDate: Date(), answeringTime: answeringTime, recordUrl: "\(audioRecorder.url)", questionID: questionID)
+        let objc = AnswerModel(answerID: answerID, recordText: recordedText, createdDate: Date(), answeringTime: answeringTime, recordUrl: "\(audioRecorder.url)", questionID: questionID)
         repo.write(object: objc)
         
         return objc.answerID

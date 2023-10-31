@@ -107,7 +107,7 @@ class EditQuestionViewModel {
     }
     
     func creatQuestion() {
-        let objc = QuestionModel(questionTitle: questionTitle.value, familiarityDegree: familarDegree.value, creationDate: Date(), limitTimeMinutes: selectedMinutes.value, limitTimeSeconds: selectedSeconds.value, folders: selectedFoldersList)
+        let objc = QuestionModel(questionTitle: questionTitle.value, familiarityDegree: familarDegree.value, createdDate: Date(), limitTimeMinutes: selectedMinutes.value, limitTimeSeconds: selectedSeconds.value, folders: selectedFoldersList)
         
         repo.write(object: objc)
         

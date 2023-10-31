@@ -18,8 +18,9 @@ class DetailReplyViewModel {
     
     func setRealm() {
         question = repo.filterByObjcID(object: QuestionModel.self, key: "questionID", objectID: questionID)
-        answers = repo.filterByObjcID(object: AnswerModel.self, key: "questionID", objectID: questionID).sorted(byKeyPath: "creationDate", ascending: false)
+        answers = repo.filterByObjcID(object: AnswerModel.self, key: "questionID", objectID: questionID).sorted(byKeyPath: "createdDate", ascending: false)
     }
+    
     
     func fetchMemoText() -> String {
         guard let savedMemoText = question.first?.questionMemoText else {
@@ -41,9 +42,9 @@ class DetailReplyViewModel {
         return answers.count
     }
     
-    func fetchCreationDate() -> String{
+    func fetchCreatedDate() -> String{
         
-        guard let createdDate = question.first?.creationDate else { return
+        guard let createdDate = question.first?.createdDate else { return
             ""
         }
         

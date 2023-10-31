@@ -143,7 +143,7 @@ extension QuestionViewController: UICollectionViewDelegate, UICollectionViewData
     func setCollectionView() {
         questionView.questionCollectionView.delegate = self
         questionView.questionCollectionView.dataSource = self
-        questionView.questionCollectionView.register(BaseCollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        questionView.questionCollectionView.register(BaseMainCollectionViewCell.self, forCellWithReuseIdentifier: BaseMainCollectionViewCell.IDF)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -151,7 +151,7 @@ extension QuestionViewController: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? BaseCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BaseMainCollectionViewCell.IDF, for: indexPath) as? BaseMainCollectionViewCell else {
             return UICollectionViewCell()
         }
         

@@ -21,10 +21,10 @@ extension UIView {
     }
     
     func addShadow() {
-        layer.shadowColor = UIColor.mainBlue?.cgColor
+        layer.shadowColor = UIColor.textDarkGrey?.cgColor
         layer.shadowOpacity = 0.1
         layer.shadowRadius = 6
-        layer.shadowOffset = CGSize(width: 0, height: 1)
+        layer.shadowOffset = CGSize(width: 0, height: 4)
     }
     
     func returnLightImage(familiarityDegree:Int) -> UIImage? {
