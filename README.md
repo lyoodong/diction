@@ -1,16 +1,13 @@
-<img width="150" alt="image" src="https://github.com/lyoodong/GreenLight/assets/115209527/f2f4abb7-3ea6-4ff9-b720-4cf88a792d5f"><img width="178" alt="image" src="https://github.com/lyoodong/GreenLight/assets/115209527/46f9cacf-dff3-480f-a589-cc498430bd24"><img width="142" alt="image" src="https://github.com/lyoodong/GreenLight/assets/115209527/9e35b727-c00a-4bb5-943b-cbd662fc9306"><img width="81" alt="image" src="https://github.com/lyoodong/GreenLight/assets/115209527/128d92d8-499a-4e96-ad4a-8d9d5ee2e7b4"><img width="296" alt="image" src="https://github.com/lyoodong/GreenLight/assets/115209527/89b74a7a-cff2-41e9-9f39-f92a04b26a4b">
-# GreenLight
 ---
-
 ### Outline
 
 <p align="left">
-  <img src="Snapshot/diction_1.png" align="left" width="14%">
-  <img src="Snapshot/diction_2.png" align="left" width="14%">
-  <img src="Snapshot/diction_3.png" align="left" width="14%">
-  <img src="Snapshot/diction_4.png" align="left" width="14%">
-  <img src="Snapshot/diction_5.png" align="left" width="14%">
-  <img src="Snapshot/diction_6.png" align="left" width="14%">
+  <img src="Snapshot/diction_1.png" align="left" width="15%">
+  <img src="Snapshot/diction_2.png" align="left" width="15%">
+  <img src="Snapshot/diction_3.png" align="left" width="15%">
+  <img src="Snapshot/diction_4.png" align="left" width="15%">
+  <img src="Snapshot/diction_5.png" align="left" width="15%">
+  <img src="Snapshot/diction_6.png" align="left" width="15%">
 </p>
 
 <br><br><br><br><br><br><br><br><br><br><br><br>
