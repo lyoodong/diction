@@ -1,4 +1,4 @@
-
+<img width="150" alt="image" src="https://github.com/lyoodong/GreenLight/assets/115209527/f2f4abb7-3ea6-4ff9-b720-4cf88a792d5f"><img width="178" alt="image" src="https://github.com/lyoodong/GreenLight/assets/115209527/46f9cacf-dff3-480f-a589-cc498430bd24"><img width="142" alt="image" src="https://github.com/lyoodong/GreenLight/assets/115209527/9e35b727-c00a-4bb5-943b-cbd662fc9306"><img width="81" alt="image" src="https://github.com/lyoodong/GreenLight/assets/115209527/128d92d8-499a-4e96-ad4a-8d9d5ee2e7b4"><img width="296" alt="image" src="https://github.com/lyoodong/GreenLight/assets/115209527/89b74a7a-cff2-41e9-9f39-f92a04b26a4b">
 # GreenLight
 ---
 
@@ -14,19 +14,27 @@
 </p>
 
 <br><br><br><br><br><br><br><br><br><br><br><br>
-
----
+### 기술 스택
 - **언어**: Swift
 - **프레임워크**: UIkit, AVFoundation, Speech
 - **디자인패턴**: MVVM, Singleton
+
+### 서비스
+- **최소 버전**: iOS 16.0
+- **개발 인원**: 1인
+- **개발 기간** : 2023.1  0 ~ 2022.11 현재 지속적으로 서비스 운영 중(ver 1.0.1)
+- **iOS 앱스토어:** [딕션바로가기](https://www.notion.so/b0524f98433846f98e9cad8ddec4df8c?pvs=21)
 - **협업**: Git, Figma
-- **iOS 앱스토어 링크:** [딕션바로가기](https://www.notion.so/b0524f98433846f98e9cad8ddec4df8c?pvs=21)
-- **AVFoundation, Speech** 프레임워크를 활용해 **실시간 STT, 녹음, Player 기능** 구현
-- **RealmList**를 활용해 N:M 스키마 대응
-- **DIP**를 활용해 의존성 역전
+
+### 핵심 기능
+- Speech 프레임워크 기반 실시간 STT(Speech To Text) 기능 구현
+- AVFoundation 프레임워크 기반 AudioPlayer, AudioRecorder, AVCaptureVideoPreviewLayer 기능 구현
+- Realm DB를 활용해 N:M 스키마 대응
+- FileManager를 활용해 녹음 파일 관리
+- DIP를 통한 의존성 역전
+- 샘플레이트 컨트롤을 통한 오디오 품질 및 용량 최적화
 
 ### Experience
-
 > **UI**
 > 
 - 셀 클릭 시 커스텀한 에니메이션 추가
