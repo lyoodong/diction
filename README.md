@@ -1,13 +1,7 @@
 ---
 ### Outline
-
 <p align="left">
-  <img src="Snapshot/diction_1.png" align="left" width="14%">
-  <img src="Snapshot/diction_2.png" align="left" width="14%">
-  <img src="Snapshot/diction_3.png" align="left" width="14%">
-  <img src="Snapshot/diction_4.png" align="left" width="14%">
-  <img src="Snapshot/diction_5.png" align="left" width="14%">
-  <img src="Snapshot/diction_6.png" align="left" width="14%">
+  <img src="Snapshot/딕션스냅샷.png" align="left">
 </p>
 
 <br><br><br><br><br><br><br><br><br><br><br><br>
