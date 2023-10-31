@@ -4,7 +4,6 @@
   <img src="Snapshot/딕션스냅샷.png" align="left">
 </p>
 
-<br><br><br><br><br><br><br><br><br><br><br><br>
 ### 기술 스택
 - **언어**: Swift
 - **프레임워크**: UIkit, AVFoundation, Speech
