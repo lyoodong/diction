@@ -86,7 +86,6 @@ func startRecording() {
 // 오디오 확장자 및 파일URL 생성
 func createAudioFileURL(answerID: String) -> URL? {
     if let dictionFolderURL = createDictionFolder() {
-        print(dictionFolderURL)
         return dictionFolderURL.appendingPathComponent("\(answerID).aac")
     }
     return nil
