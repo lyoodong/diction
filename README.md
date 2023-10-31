@@ -103,7 +103,8 @@ func createAudioFileURL(answerID: String) -> URL? {
 | AVEncoderAudioQualityKey | high | high | high |
 | **음성 품질** | **적절** | **적절** | **우수** |
 | **용량(1분 기준)** | **160KB** | **496KB** | **5.4MB** |
-![Uploading 스크린샷 2023-10-31 오후 11.10.44.png…]()
+
+<img width="860" alt="스크린샷 2023-10-31 오후 11 11 41" src="https://github.com/lyoodong/diction/assets/115209527/b25b7ffd-7e6e-4e01-b20a-512e562f0d76">
 
 - 오디오 코덱 양식을 독립 변수로 테스트한 결과 무손실 WAV는 AAC에 비해 10배 이상의 용량을 차지했다. 아무리 음질이 우수하다고 하더라도, 1분 내외의 녹음 파일이 5MB이상을 차지하는 것은 앱을 사용하는 사용자 입장에서 큰 부담일 것이라 생각해 WAV 대신 AAC를 선택했다.
 - 샘플 레이트를 독립 변수로 테스트한 결과 Case 1과 Case 2의 용량 차이는 약 3배였다. Case 1의 경우, 목표했던 기준치를 충족하였지만, Case 2의 경우 목표했던 기준를 한참 상회하는 용량(약 500KB)이 나왔기 때문에 최종적으로 Case 2 또한 선택하지 않았다.
