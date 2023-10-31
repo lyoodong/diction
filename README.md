@@ -5,12 +5,12 @@
 ### Outline
 
 <p align="left">
-  <img src="Snapshot/diction_1.png" align="left" width="13%">
-  <img src="Snapshot/diction_2.png" align="left" width="13%">
-  <img src="Snapshot/diction_3.png" align="left" width="13%">
-  <img src="Snapshot/diction_4.png" align="left" width="13%">
-  <img src="Snapshot/diction_5.png" align="left" width="13%">
-  <img src="Snapshot/diction_6.png" align="left" width="13%">
+  <img src="Snapshot/diction_1.png" align="left" width="14%">
+  <img src="Snapshot/diction_2.png" align="left" width="14%">
+  <img src="Snapshot/diction_3.png" align="left" width="14%">
+  <img src="Snapshot/diction_4.png" align="left" width="14%">
+  <img src="Snapshot/diction_5.png" align="left" width="14%">
+  <img src="Snapshot/diction_6.png" align="left" width="14%">
 </p>
 
 <br><br><br><br><br><br><br><br><br><br><br><br>
