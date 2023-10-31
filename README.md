@@ -61,7 +61,7 @@
 스테레오를 통한 입체감은 요구된 스펙에서 굳이 필요없을 것 같아 용량 측면에서 이점이 있는 `모노`로 지정
 
 ```swift
-//용량 및 품질에 대한 핵심 설정코드
+//용량 및 품질에 대한 핵심설정 코드
 func startRecording() {
     
     audioFileURL = createAudioFileURL(answerID: answerID)
