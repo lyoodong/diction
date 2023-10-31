@@ -1,13 +1,11 @@
 
-# GreenLight
+<img src="Snapshot/딕션스냅샷.png" align="left">  
 
-<p align="left">
-  <img src="Snapshot/딕션스냅샷.png" align="left">
-</p>
+# GreenLight
 
 ### 기술 스택
 - **언어**: Swift
-- **프레임워크**: UIkit, AVFoundation, Speech
+- **프레임워크**: UIkit,AVFoundation, Speech
 - **디자인패턴**: MVVM, Singleton
 
 ### 서비스
