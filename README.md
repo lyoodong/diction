@@ -1,6 +1,6 @@
 <img src="Snapshot/딕션스냅샷.png" align="left">  
 
-# diction
+# diction - 실시간 STT로 연습하는 나의 말하기 친구
 
 > 핵심 기능
 - Speech 프레임워크 기반 **실시간 STT(Speech To Text)** 기능 구현
