@@ -15,7 +15,7 @@
 - **언어**: Swift
 - **프레임워크**: AVFoundation, Speech, UIkit
 - **디자인패턴**: MVVM, Singleton, Repository
-- **라이브러리**: RealmSwift,SnapKit, Then, Lottie, SkyFloatingLabelTextField, IQKeyboardManager
+- **라이브러리**: RxSwift, RxCocoa, RealmSwift,SnapKit, Then, Lottie, SkyFloatingLabelTextField, IQKeyboardManager
 ---
 
 > 적용한 CS 지식
