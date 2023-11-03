@@ -15,11 +15,11 @@
 - **언어**: Swift
 - **프레임워크**: AVFoundation, Speech, UIkit
 - **디자인패턴**: MVVM, Singleton, Repository
-- **라이브러리**: RxSwift, RxCocoa, RealmSwift,SnapKit, Then, Lottie, SkyFloatingLabelTextField, IQKeyboardManager
+- **라이브러리**: RxSwift, RxCocoa, RealmSwift, SnapKit, Then, Lottie, SkyFloatingLabelTextField, IQKeyboardManager
 ---
 
 > 적용한 CS 지식
-- **MIDI - 데이터**: 오디오 용량/품질 핸들링을 위한 기초적인 오디오 데이터 개념
+- **MIDI - 데이터**: 오디오 용량/품질 최적화 위한 기초적인 오디오 데이터 개념
 - **데이터베이스**: Realm을 통한 DB관리에 필요한 기초 개념
 ---
 
@@ -89,15 +89,15 @@ override func viewDidDisappear(_ animated: Bool) {
 		cameraViewModel.familiaritySubject.onCompleted()
 }
 ```
-
+---
 
 **2. 오디오 품질/용량 핸들링**
 
 **Issue**
-- 1분 기준 **200KB**내외의 용량으로 **들을 만한 음성** 녹음하기 
+- 1분 기준 **200KB**내외의 용량으로 음성 파일 최적화하기
 - 질문에 대해 사용자가 자신의 목소리를 녹음하기 때문에, 외부 잡음이 개입할 가능성은 낮아 보임
 - 필요 이상의 음성 품질은 용량이 지나치게 클 수 있음
-- 따라서, **적절한 품질과 용량의 협의점을 찾는 것이 핵심**
+- 따라서, **적절한 품질과 용량의 협의점을 찾아 이를 최적화하는 것이 핵심**
 
 **Solution**
 - `AVAudioRecorder settings`을 통해 녹음 파일 생성 시 여려 세팅값을 핸들링해 용량 및 품질 최적화
@@ -177,6 +177,24 @@ func createAudioFileURL(answerID: String) -> URL? {
   - (23.10.26) 업데이트 내용: 다크모드 블락
  
 ---
+> 회고
+**What I Learned**
+
+- Sppech 프레임 워크 기반, 실시간 STT 서비스 구현 경험
+- 오디오 관련 CS 지식과 이를 적용해, AVFoudation 기반 오디오 처리
+- RealmSwift와 fileManager를 통한 파일 관리
+- 전체 코드에 MVVM 패턴 적용
+- DIP를 통해, 코드 간 결합도를 낮추고 유지보수성 증대
+
+**Areas for Improvement**
+
+- 미흡한 런타임 에러 대응
+- audioEngine에 대한 더욱 확실한 이해도
+
+이번 프로젝트에서는 이전 프로젝트에서 부족했던 점들을 보완할 수 있었다. MVVM, RxSwift, DIP 등 개선된 패턴 또는 기술을 도입해 코드의 질을 높이려고 노력했다. 다만, 이러한 적용에 대해서 아직 미숙한 점이 많다는 것 또한 느꼈다. RxSwift는 일부만 적용되어 리펙토링을 통해, RxSwift를 활용할 수 있는 많은 부분에 대해 개선이 필요하다고 생각한다. 또한, Swinject과 같은 라이브러리를 활용해 좀 더 엄격한 의미의 DIP를 구현해보고 싶은 욕심도 생겼다. 
+
+프로젝트에서 구현한 기술적 난이도가 이전 프로젝트에 비해 꽤나 커졌다. 출시 후에도 런타임 에러나, 사용성을 방해하는 요소들이 일부 있다고 피드백을 받았다. 이러한 점들을 빠르게 개선해야 되겠다고 생각한다. 
+
 
 > 📒 커밋 메시지 형식
 
