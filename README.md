@@ -33,7 +33,65 @@
 
 > 트러블 슈팅
 
-**1. 오디오 품질/용량 핸들링**
+**1. 숙련도 점수 수정 시 마지막으로 수정한 값만 Realm에 저장**
+
+**Issue**
+
+- 모의 면접 화면에서 사용자가 질문에 대한 숙련도를 수정할 수 있음
+- 하지만, 기존 코드에서는 숙련도만 클릭하면 그 즉시 값을 Realm DB에 업로드
+- 사용자가 마지막으로 선택한 값만 Realm DB에 저장함으로써 **불필요한 DB 연산 제거**
+
+**Solution**
+
+- `RxSwift`의 `AsyncSubject` 활용해, 마지막으로 수정한 값만 Realm DB에 저장
+- `onCompleted` 시점을 아래와 같이 적용
+  1. 다음 질문으로 이동 → `nextButtonTapped()`
+  2. 이전 질문으로 이동 → `backuttonTapped()`
+  3. 다른 뷰로 이동 → `viewDidDisappear()`
+
+**Result**
+
+- 불필요한 DB 연산 제거, **마지막으로 방출한 값만 DB에 저장**
+
+```swift
+//개선된 코드
+func uploadSelectedFamiliarityDegree() {
+    familiaritySubject
+        .subscribe(with: self) { owner, value in
+            let realm = try! Realm()
+            try! realm.write {
+                owner.questions[owner.currnetQuestionIndex.value].familiarityDegree = value
+            }
+            
+            print("uploadSelectedFamiliarityDegree 실행")
+            owner.repo.realmFileLocation()
+        }
+        .disposed(by: disposeBag)
+}
+
+//1. 다음 질문으로 이동
+@objc func nextButtonTapped() {
+    cameraViewModel.familiaritySubject.onCompleted()
+    cameraViewModel.currnetQuestionIndex.value += 1
+    cameraViewModel.fetchCurrentFamilarDegree()
+}
+
+//2. 이전 질문으로 이동
+@objc func backButtonTapped() {
+    cameraViewModel.familiaritySubject.onCompleted()
+    cameraViewModel.currnetQuestionIndex.value -= 1
+    cameraViewModel.fetchCurrentFamilarDegree()
+}
+
+//3. 다른 뷰로 이동
+override func viewDidDisappear(_ animated: Bool) {
+		super.viewDidDisappear(animated)
+		cameraViewModel.familiaritySubject.onCompleted()
+}
+```
+
+
+**2. 오디오 품질/용량 핸들링**
 
 **Issue**
 - 1분 기준 **200KB**내외의 용량으로 **들을 만한 음성** 녹음하기 
