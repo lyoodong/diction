@@ -3,12 +3,17 @@
 # diction 
 
 > 핵심 기능
-- Speech 프레임워크 기반 **실시간 STT(Speech To Text)** 기능 구현
-- AVFoundation 프레임워크 기반 **AudioPlayer, AudioRecorder, AVCaptureVideoPreviewLayer** 기능 구현
+- AVFoundation 프레임워크 기반 AudioPlayer, AudioRecorder를 통해
+  **음성 녹음, 기록 재생 기능** 구현
+- Speech 프레임워크 기반 speechRecognizer를 통해 녹음과 동시에
+  **실시간 STT(Speech To Text)기능** 구현
+- AVFoundation 프레임워크 기반 AVCaptureVideoPreviewLayer를 통해 실시간으로
+  **말하는 표정, 동작을 확인**하는 기능 구현
 - Realm DB를 활용해 **N:M 스키마** 대응
 - FileManager를 활용해 **녹음 파일 관리**
 - **DIP**를 통한 의존성 역전
 - 샘플레이트 핸들링을 통한 **오디오 품질 및 용량 최적화**
+
 ---
 
 > 기술 스택
