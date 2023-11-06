@@ -511,7 +511,7 @@
 		BED362582ABC257F00143C55 = {
 			isa = PBXGroup;
 			children = (
-				BED362632ABC257F00143C55 /* GreenLight */,
+				BED362632ABC257F00143C55 /* Diction */,
 				BED362622ABC257F00143C55 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -524,7 +524,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BED362632ABC257F00143C55 /* GreenLight */ = {
+		BED362632ABC257F00143C55 /* Diction */ = {
 			isa = PBXGroup;
 			children = (
 				BE9560372AEBB5CF003BFB69 /* GoogleService-Info.plist */,
@@ -532,7 +532,7 @@
 				BEE96DAE2AC18E6400CDD722 /* Source */,
 				BEE96DB22AC18EC500CDD722 /* Data */,
 			);
-			path = GreenLight;
+			path = Diction;
 			sourceTree = "<group>";
 		};
 		BED3627A2ABC2A4200143C55 /* Wireframe */ = {
@@ -1035,7 +1035,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7HDHR2SNR7;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = /Users/dongwanryoo/GreenLight/GreenLight/Source/Application/Info.plist;
+				INFOPLIST_FILE = /Users/dongwanryoo/diction/Diction/Source/Application/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "딕션";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
@@ -1073,7 +1073,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7HDHR2SNR7;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = /Users/dongwanryoo/GreenLight/GreenLight/Source/Application/Info.plist;
+				INFOPLIST_FILE = /Users/dongwanryoo/diction/Diction/Source/Application/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "딕션";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
