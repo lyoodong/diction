@@ -5,9 +5,12 @@
 //  Created by Dongwan Ryoo on 2023/10/19.
 //
 
-import UIKit
-import SnapKit
 import AVFoundation
+import UIKit
+
+import SnapKit
+import RxCocoa
+import RxSwift
 
 protocol CameraViewModelProtocol: AnyObject {
     var cameraViewModel: CameraViewModel { get }
@@ -21,7 +24,6 @@ class CameraViewController: BaseViewController, CameraViewModelProtocol{
     var videoPreviewLayer: AVCaptureVideoPreviewLayer!
     let cameraView = CameraView()
     
-    
     init(cameraViewModel: CameraViewModel) {
         self.cameraViewModel = cameraViewModel
         super.init(nibName: nil, bundle: nil)
@@ -34,6 +36,11 @@ class CameraViewController: BaseViewController, CameraViewModelProtocol{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         cameraViewModel.setRealm()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        cameraViewModel.familiaritySubject.onCompleted()
     }
     
     override func configure() {
@@ -93,7 +100,8 @@ class CameraViewController: BaseViewController, CameraViewModelProtocol{
             } else {
                 self.activeBlueLevelButton(sender: self.cameraView.blueLevelButton)
             }
-            self.cameraViewModel.uploadSelectedFamiliarityDegree(value: value)
+            self.cameraViewModel.familiaritySubject.on(.next(value))
+            print(self.cameraViewModel.familiaritySubject)
         }
         
         cameraViewModel.limitTimeTxt.bind { value in
@@ -180,12 +188,14 @@ extension CameraViewController {
     
     @objc
     func nextButtonTapped() {
+        cameraViewModel.familiaritySubject.onCompleted()
         cameraViewModel.currnetQuestionIndex.value += 1
         cameraViewModel.fetchCurrentFamilarDegree()
     }
     
     @objc
     func backButtonTapped() {
+        cameraViewModel.familiaritySubject.onCompleted()
         cameraViewModel.currnetQuestionIndex.value -= 1
         cameraViewModel.fetchCurrentFamilarDegree()
     }
@@ -254,7 +264,6 @@ extension CameraViewController {
     
     
 }
-
 
 
 
