@@ -276,11 +276,12 @@ class RecordViewModel {
         
         let settings: [String: Any] = [
                 AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
-                AVSampleRateKey: 44100,
+                AVSampleRateKey: 12000,
                 AVNumberOfChannelsKey: 1,
                 AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
             ]
-
+        
+        repo.realmFileLocation()
 
         do {
             audioRecorder = try AVAudioRecorder(url: audioFileURL, settings: settings)
@@ -364,6 +365,5 @@ class RecordViewModel {
         SFSpeechRecognizer.requestAuthorization { _ in }
     }
 }
-
 
 

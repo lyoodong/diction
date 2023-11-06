@@ -92,6 +92,8 @@
 		BEC118392AC945E90087BDD2 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC118382AC945E90087BDD2 /* TabBarViewController.swift */; };
 		BEC1183B2AC946050087BDD2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC1183A2AC946050087BDD2 /* HomeViewController.swift */; };
 		BEC1183D2AC946250087BDD2 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC1183C2AC946250087BDD2 /* MyPageViewController.swift */; };
+		BED2B71E2AF4E07A0063EE9D /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = BED2B71D2AF4E07A0063EE9D /* RxCocoa */; };
+		BED2B7202AF4E07A0063EE9D /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BED2B71F2AF4E07A0063EE9D /* RxSwift */; };
 		BED31A1F2AC191C8007E8B2B /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED31A1E2AC191C8007E8B2B /* BaseView.swift */; };
 		BED31A212AC191D7007E8B2B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED31A202AC191D7007E8B2B /* BaseViewController.swift */; };
 		BED31A232AC191E7007E8B2B /* BaseMainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED31A222AC191E7007E8B2B /* BaseMainCollectionViewCell.swift */; };
@@ -244,6 +246,7 @@
 			files = (
 				BE2437102AD7EBCF00FF2F21 /* Realm in Frameworks */,
 				BE2437042AD7E8C800FF2F21 /* IQKeyboardManagerSwift in Frameworks */,
+				BED2B71E2AF4E07A0063EE9D /* RxCocoa in Frameworks */,
 				BE2437122AD7EBCF00FF2F21 /* RealmSwift in Frameworks */,
 				BE2437012AD7E8B800FF2F21 /* SnapKit in Frameworks */,
 				BE2437072AD7E8D500FF2F21 /* SkyFloatingLabelTextField in Frameworks */,
@@ -251,6 +254,7 @@
 				BE66C7E92AEBB0A400357A71 /* FirebaseCrashlytics in Frameworks */,
 				BE24370A2AD7E8DF00FF2F21 /* Lottie in Frameworks */,
 				BE66C7E72AEBB0A400357A71 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
+				BED2B7202AF4E07A0063EE9D /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -720,6 +724,8 @@
 				BE2437112AD7EBCF00FF2F21 /* RealmSwift */,
 				BE66C7E62AEBB0A400357A71 /* FirebaseAnalyticsWithoutAdIdSupport */,
 				BE66C7E82AEBB0A400357A71 /* FirebaseCrashlytics */,
+				BED2B71D2AF4E07A0063EE9D /* RxCocoa */,
+				BED2B71F2AF4E07A0063EE9D /* RxSwift */,
 			);
 			productName = GreenLight;
 			productReference = BED362612ABC257F00143C55 /* GreenLight.app */;
@@ -757,6 +763,7 @@
 				BE2437082AD7E8DF00FF2F21 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				BE24370E2AD7EBCF00FF2F21 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				BE66C7E52AEBB0A400357A71 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				BED2B71C2AF4E07A0063EE9D /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = BED362622ABC257F00143C55 /* Products */;
 			projectDirPath = "";
@@ -1174,6 +1181,14 @@
 				minimumVersion = 10.0.0;
 			};
 		};
+		BED2B71C2AF4E07A0063EE9D /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1221,6 +1236,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BE66C7E52AEBB0A400357A71 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseCrashlytics;
+		};
+		BED2B71D2AF4E07A0063EE9D /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BED2B71C2AF4E07A0063EE9D /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		BED2B71F2AF4E07A0063EE9D /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BED2B71C2AF4E07A0063EE9D /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

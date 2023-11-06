@@ -5,9 +5,12 @@
 //  Created by Dongwan Ryoo on 2023/10/19.
 //
 
-import Foundation
 import AVFoundation
+import Foundation
+
 import RealmSwift
+import RxCocoa
+import RxSwift
 
 protocol CameraViewModelDelegate: AnyObject {
     func cameraSessionConfigured(session: AVCaptureSession)
@@ -23,15 +26,19 @@ class CameraViewModel {
     var folder: Results<FolderModel>!
     var currnetQuestionIndex = Observable(0)
     var familarDegree = Observable(0)
+    let familiaritySubject = AsyncSubject<Int>()
     var limitMinutes = Observable(0)
     var limitSeconds = Observable(0)
     var limitTime = Observable(TimeInterval())
     var limitTimeTxt = Observable("")
     var timer: Timer?
+    let disposeBag = DisposeBag()
+
     
     init() {
         setRealm()
         fetchLimitTimeTxt()
+        uploadSelectedFamiliarityDegree()
     }
     
     func checkCameraAuthorization(completion: @escaping (_ status: AVAuthorizationStatus) -> Void) {
@@ -75,7 +82,6 @@ class CameraViewModel {
         }
     }
     
-    
     func setRealm() {
         objectID.bind { ObjectId in
             self.folder = self.repo.filterByObjcID(object: FolderModel.self, key: "folderID", objectID: ObjectId)
@@ -110,15 +116,19 @@ class CameraViewModel {
     func fetchCurrentIndexTxt() -> String {
         return "\(currnetQuestionIndex.value + 1)번 / \(questions.count)"
     }
-    
-    func uploadSelectedFamiliarityDegree(value: Int) {
         
-        let realm = try! Realm()
-        
-        try! realm.write {
-            questions[currnetQuestionIndex.value].familiarityDegree = value
-        }
-        
+    func uploadSelectedFamiliarityDegree() {
+        familiaritySubject
+            .subscribe(with: self) { owner, value in
+                let realm = try! Realm()
+                try! realm.write {
+                    owner.questions[owner.currnetQuestionIndex.value].familiarityDegree = value
+                }
+                
+                print("uploadSelectedFamiliarityDegree 실행")
+                owner.repo.realmFileLocation()
+            }
+            .disposed(by: disposeBag)
     }
     
     func fetchLimitTime(index: Int){
@@ -154,6 +164,7 @@ class CameraViewModel {
         let seconds = Int(timeInterval.truncatingRemainder(dividingBy: 60))
         return String(format: "%02d:%02d", minutes, seconds)
     }
+
     
     
 }

@@ -209,7 +209,7 @@ class CameraView: BaseView {
         
         folderTitleLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(spacing)
-            $0.leading.equalToSuperview().offset(leading)
+            $0.centerX.equalToSuperview()
         }
         
         questionView.addSubview(questionTitleLabel)
